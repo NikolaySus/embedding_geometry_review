@@ -1,0 +1,181 @@
+{
+  "passed": true,
+  "smoke": true,
+  "seeds": [
+    42
+  ],
+  "checks": [
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/raw_minilm/seed_42/m0/manifest.json",
+      "exists": true
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/raw_minilm/seed_42/control/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "control",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 0.04866385459899902,
+        "final_loss": 0.018857300281524658,
+        "mean_loss": 0.02542266994714737,
+        "elapsed_seconds": 13.628214597702026,
+        "embedding_norms": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/raw_minilm/seed_42/sts/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "sts",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 10.067405700683594,
+        "final_loss": 7.529943943023682,
+        "mean_loss": 7.960694003105163,
+        "elapsed_seconds": 13.055286169052124,
+        "embedding_norms": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/raw_minilm/seed_42/classification/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "classification",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 4.835497856140137,
+        "final_loss": 3.558542013168335,
+        "mean_loss": 3.925291895866394,
+        "elapsed_seconds": 13.473628520965576,
+        "embedding_norms": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/raw_minilm/seed_42/retrieval/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "retrieval",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 3.947509765625,
+        "final_loss": 1.8442840576171875,
+        "mean_loss": 2.38012809753418,
+        "elapsed_seconds": 14.712876558303833,
+        "embedding_norms": {
+          "minimum": 0.9999999403953552,
+          "maximum": 1.0,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/all_minilm/seed_42/control/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "control",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 1.0509975254535675e-05,
+        "final_loss": 4.1620805859565735e-06,
+        "mean_loss": 7.474515587091446e-06,
+        "elapsed_seconds": 9.106040239334106,
+        "embedding_norms": {
+          "minimum": 1.0,
+          "maximum": 1.0,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/all_minilm/seed_42/sts/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "sts",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 9.961081504821777,
+        "final_loss": 8.922563552856445,
+        "mean_loss": 10.215847206115722,
+        "elapsed_seconds": 8.845695495605469,
+        "embedding_norms": {
+          "minimum": 0.9999998211860657,
+          "maximum": 1.0,
+          "mean": 0.9999998807907104
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/all_minilm/seed_42/classification/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "classification",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 5.833022594451904,
+        "final_loss": 5.162915229797363,
+        "mean_loss": 5.138532376289367,
+        "elapsed_seconds": 8.734673976898193,
+        "embedding_norms": {
+          "minimum": 0.9999999403953552,
+          "maximum": 1.0000001192092896,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    },
+    {
+      "path": "runs/english_geometry_pilot_v1/smoke/all_minilm/seed_42/retrieval/manifest.json",
+      "exists": true,
+      "passed": true,
+      "detail": {
+        "branch": "retrieval",
+        "seed": 42,
+        "steps": 20,
+        "examples": 1280,
+        "initial_loss": 0.09767690300941467,
+        "final_loss": 0.15361401438713074,
+        "mean_loss": 0.15253066420555114,
+        "elapsed_seconds": 9.766915559768677,
+        "embedding_norms": {
+          "minimum": 0.9999999403953552,
+          "maximum": 1.0,
+          "mean": 1.0
+        },
+        "technical_status": "pass"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "name": "mix_s060_c040_r000",
+  "seed": 44,
+  "weights": {
+    "sts": 0.6,
+    "classification": 0.4,
+    "retrieval": 0.0
+  },
+  "evaluation_complete": true,
+  "summary": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_44/mix_s060_c040_r000/evaluation_summary.json",
+  "model_sha256": "3bae509da805d3c22f02969cd735b42f7271c677e0b92f201488e79edbf0eb29",
+  "model_retained": false
+}

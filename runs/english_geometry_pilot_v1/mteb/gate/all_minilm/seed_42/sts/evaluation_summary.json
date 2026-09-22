@@ -1,0 +1,62 @@
+{
+  "model": "all_minilm",
+  "seed": 42,
+  "branch": "sts",
+  "suite": "gate",
+  "mteb_version": "1.38.30",
+  "mteb": {
+    "Banking77Classification": {
+      "main_score": "accuracy",
+      "score": 0.749188,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/Banking77Classification.json"
+    },
+    "RedditClustering.v2": {
+      "main_score": "v_measure",
+      "score": 0.457186,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/RedditClustering.v2.json"
+    },
+    "TwentyNewsgroupsClustering.v2": {
+      "main_score": "v_measure",
+      "score": 0.424218,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/TwentyNewsgroupsClustering.v2.json"
+    },
+    "STSBenchmark": {
+      "main_score": "cosine_spearman",
+      "score": 0.852355,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/STSBenchmark.json"
+    },
+    "EmotionClassification": {
+      "main_score": "accuracy",
+      "score": 0.4106,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/EmotionClassification.json"
+    },
+    "SciFact": {
+      "main_score": "ndcg_at_10",
+      "score": 0.59154,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/SciFact.json"
+    },
+    "BIOSSES": {
+      "main_score": "cosine_spearman",
+      "score": 0.782632,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/BIOSSES.json"
+    },
+    "NFCorpus": {
+      "main_score": "ndcg_at_10",
+      "score": 0.27111,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/all_minilm/seed_42/sts/no_model_name_available/no_revision_available/NFCorpus.json"
+    }
+  },
+  "AGNewsClassification": {
+    "accuracy": 0.8702631578947368,
+    "train_rows": 5760,
+    "test_rows": 7600
+  },
+  "MSMARCORerankingGate": {
+    "mrr": 0.9723333333333333,
+    "ndcg_at_10": 0.9795464876785728,
+    "recall_at_10": 1.0,
+    "hardest_negative_margin": 0.0853907779455185,
+    "queries": 1000,
+    "candidates_per_query": 100
+  }
+}

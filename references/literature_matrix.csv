@@ -1,0 +1,26 @@
+ref_id,geometry,objective_or_method,task_family,evidence_status
+1,alignment and uniformity,contrastive learning,general representation learning,direct theoretical and empirical
+2,anisotropy,normalizing flow,STS,direct empirical
+3,isotropy,whitening,STS,direct empirical
+4,alignment uniformity and hard negatives,contrastive learning,STS,direct empirical
+5,layerwise anisotropy,language-model pretraining,contextual representations,direct empirical
+6,isotropy,transformer scale and training,language models,counterevidence
+7,dominant directions,mean and principal-component removal,multiple NLP tasks,direct empirical
+8,hubness,hubness reduction,classification by neighbours,direct empirical
+9,multiple implicit geometries,benchmark comparison,eight task families,direct empirical
+10,metric sentence space,siamese and triplet training,STS and classification,direct empirical
+11,query-document geometry,zero-shot retrieval,retrieval,direct empirical
+12,query-document asymmetry,dual-encoder contrastive learning,retrieval,direct empirical
+13,contrastive geometry,weak supervision,retrieval STS classification,direct empirical
+14,task-conditioned geometry,instruction-conditioned contrastive learning,multiple task families,direct empirical
+15,class compactness,supervised contrastive learning,classification,direct empirical outside NLP
+16,gradient conflict,projected gradients,multitask learning,direct empirical
+17,gradient conflict,conflict-averse descent,multitask learning,direct empirical
+18,local manifold structure,locality preservation,STS classification clustering,direct empirical
+19,embedding dimensionality,separate encoder and pooler training,STS classification,direct empirical
+20,rank bottleneck,dimension-wise contrastive learning,STS,direct empirical
+21,capacity by prefix dimension,Matryoshka objective,classification retrieval,direct empirical across modalities
+22,dataset-dependent isotropy,kernel whitening,STS,direct empirical
+23,task-conditioned representations,multitask instruction tuning,multiple task families,direct empirical
+24,multiple task geometries,MTEB benchmark,multiple task families,direct empirical
+

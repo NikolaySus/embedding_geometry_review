@@ -1,0 +1,135 @@
+{
+  "model": "all_minilm",
+  "seed": 43,
+  "branch": "mix_s000_c100_r000",
+  "suite": "full",
+  "mteb_version": "1.38.30",
+  "mteb": {
+    "STS14": {
+      "main_score": "cosine_spearman",
+      "score": 0.574639,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/STS14.json"
+    },
+    "Banking77Classification": {
+      "main_score": "accuracy",
+      "score": 0.656039,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/Banking77Classification.json"
+    },
+    "RedditClustering.v2": {
+      "main_score": "v_measure",
+      "score": 0.383718,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/RedditClustering.v2.json"
+    },
+    "AmazonCounterfactualClassification": {
+      "main_score": "accuracy",
+      "score": 0.665401,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/AmazonCounterfactualClassification.json"
+    },
+    "TwentyNewsgroupsClustering.v2": {
+      "main_score": "v_measure",
+      "score": 0.397508,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/TwentyNewsgroupsClustering.v2.json"
+    },
+    "STSBenchmark": {
+      "main_score": "cosine_spearman",
+      "score": 0.648411,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/STSBenchmark.json"
+    },
+    "ArguAna": {
+      "main_score": "ndcg_at_10",
+      "score": 0.19252,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/ArguAna.json"
+    },
+    "STS13": {
+      "main_score": "cosine_spearman",
+      "score": 0.620563,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/STS13.json"
+    },
+    "EmotionClassification": {
+      "main_score": "accuracy",
+      "score": 0.3024,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/EmotionClassification.json"
+    },
+    "STS12": {
+      "main_score": "cosine_spearman",
+      "score": 0.563367,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/STS12.json"
+    },
+    "SciFact": {
+      "main_score": "ndcg_at_10",
+      "score": 0.33619,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/SciFact.json"
+    },
+    "BIOSSES": {
+      "main_score": "cosine_spearman",
+      "score": 0.463944,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/BIOSSES.json"
+    },
+    "FiQA2018": {
+      "main_score": "ndcg_at_10",
+      "score": 0.1245,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/FiQA2018.json"
+    },
+    "SICK-R": {
+      "main_score": "cosine_spearman",
+      "score": 0.655193,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/SICK-R.json"
+    },
+    "NFCorpus": {
+      "main_score": "ndcg_at_10",
+      "score": 0.12016,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/NFCorpus.json"
+    },
+    "MassiveIntentClassification": {
+      "main_score": "accuracy",
+      "score": 0.5877330000000001,
+      "artifact": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_43/mix_s000_c100_r000/no_model_name_available/no_revision_available/MassiveIntentClassification.json"
+    }
+  },
+  "AGNewsClassification": {
+    "accuracy": 0.8876315789473684,
+    "train_rows": 5760,
+    "test_rows": 7600
+  },
+  "MSMARCORerankingGate": {
+    "mrr": 0.7841090075266434,
+    "ndcg_at_10": 0.8323203454401484,
+    "recall_at_10": 0.98,
+    "hardest_negative_margin": 0.01614174661040306,
+    "queries": 1000,
+    "candidates_per_query": 100
+  },
+  "reused_gate_results": false,
+  "CleanSTS": {
+    "STSBenchmark.clean_exact": {
+      "cosine_spearman": 0.6135922725083958,
+      "rows": 1130,
+      "removed_rows": 249
+    },
+    "SICK-R.clean_exact": {
+      "cosine_spearman": 0.6519656007001754,
+      "rows": 7611,
+      "removed_rows": 2316
+    },
+    "STS12.clean_exact": {
+      "cosine_spearman": 0.5625379222883874,
+      "rows": 3106,
+      "removed_rows": 2
+    },
+    "STS13.clean_exact": {
+      "cosine_spearman": 0.6123376351431824,
+      "rows": 1000,
+      "removed_rows": 500
+    },
+    "STS14.clean_exact": {
+      "cosine_spearman": 0.5901444391908622,
+      "rows": 3181,
+      "removed_rows": 569
+    }
+  },
+  "mixture_weights": {
+    "sts": 0.0,
+    "classification": 1.0,
+    "retrieval": 0.0
+  }
+}

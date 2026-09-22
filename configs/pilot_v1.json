@@ -1,0 +1,84 @@
+{
+  "experiment_id": "english_geometry_pilot_v1",
+  "seeds": [42, 43, 44],
+  "models": {
+    "raw_minilm": {
+      "model_id": "microsoft/MiniLM-L12-H384-uncased",
+      "build_neutral_m0": true,
+      "max_seq_length": 128
+    },
+    "all_minilm": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "build_neutral_m0": false,
+      "max_seq_length": 128
+    }
+  },
+  "data": {
+    "examples_per_epoch": 5760,
+    "epochs": 3,
+    "neutral_m0_examples": 100000,
+    "neutral_source": "Salesforce/wikitext",
+    "neutral_config": "wikitext-103-raw-v1",
+    "sts_source": "sentence-transformers/stsb",
+    "classification_source": "fancyzhx/ag_news",
+    "retrieval_source": "sentence-transformers/msmarco-co-condenser-margin-mse-sym-mnrl-mean-v1",
+    "retrieval_config": "triplet-hard",
+    "retrieval_scan_limit": 100000
+  },
+  "training": {
+    "batch_size": 64,
+    "m0_batch_size": 128,
+    "learning_rate": 2e-5,
+    "m0_learning_rate": 3e-5,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "temperature": 0.05,
+    "cosent_scale": 20.0,
+    "trajectory_fractions": [0.0, 0.25, 0.5, 1.0],
+    "smoke_steps": 20,
+    "mixed_precision": "bf16"
+  },
+  "evaluation": {
+    "gate_tasks": [
+      "STSBenchmark",
+      "BIOSSES",
+      "Banking77Classification",
+      "EmotionClassification",
+      "TwentyNewsgroupsClustering.v2",
+      "RedditClustering.v2",
+      "SciFact",
+      "NFCorpus"
+    ],
+    "full_tasks": [
+      "STSBenchmark",
+      "BIOSSES",
+      "SICK-R",
+      "STS12",
+      "STS13",
+      "STS14",
+      "Banking77Classification",
+      "EmotionClassification",
+      "AmazonCounterfactualClassification",
+      "MassiveIntentClassification",
+      "TwentyNewsgroupsClustering.v2",
+      "RedditClustering.v2",
+      "SciFact",
+      "NFCorpus",
+      "ArguAna",
+      "FiQA2018"
+    ],
+    "batch_size": 256,
+    "output_folder": "runs/mteb"
+  },
+  "geometry": {
+    "generic_sample_size": 10000,
+    "classification_sample_size": 4000,
+    "knn_k": 10,
+    "pair_sample_size": 100000
+  },
+  "storage": {
+    "minimum_free_gb": 5,
+    "keep_optimizer_state": false
+  }
+}

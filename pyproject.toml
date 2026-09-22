@@ -1,0 +1,42 @@
+[project]
+name = "embedding-geometry-review"
+version = "0.1.0"
+description = "Reproducible sources and document build for a review on text-embedding geometry"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "accelerate==1.13.0",
+  "datasets==2.21.0",
+  "datasketch>=1.6.5",
+  "kaleido>=1.4.0",
+  "matplotlib>=3.10.0",
+  "mistune>=3.1.0",
+  "mteb==1.38.30",
+  "numpy>=2.2,<3",
+  "pandas>=2.3.0",
+  "pillow>=11.0.0",
+  "plotly>=7.1.0",
+  "pypdf>=6.0.0",
+  "pytest>=8.3.0",
+  "python-docx>=1.2.0",
+  "safetensors==0.7.0",
+  "scikit-learn==1.6.1",
+  "scipy>=1.15",
+  "sentence-transformers==5.5.1",
+  "torch==2.12.0",
+  "tqdm>=4.67.0",
+  "transformers==4.51.0",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[[tool.uv.index]]
+name = "pytorch-cu130"
+url = "https://download.pytorch.org/whl/cu130"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu130" }

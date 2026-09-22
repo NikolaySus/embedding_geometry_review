@@ -1,0 +1,23 @@
+{
+  "name": "control",
+  "weights": {
+    "control": 1.0
+  },
+  "seed": 43,
+  "steps": 270,
+  "step_counts": {
+    "control": 270
+  },
+  "schedule_sha256": "ea541193d050ab010d9ee3be0744e1446b36f04eea696c8954233c3be7736eed",
+  "examples": 17280,
+  "initial_loss": 1.27376988530159e-05,
+  "final_loss": 3.2726675271987915e-06,
+  "mean_loss": 7.902510050270292e-06,
+  "elapsed_seconds": 40.55711054801941,
+  "embedding_norms": {
+    "minimum": 0.9999998807907104,
+    "maximum": 0.9999999403953552,
+    "mean": 0.9999998807907104
+  },
+  "technical_status": "pass"
+}

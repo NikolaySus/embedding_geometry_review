@@ -1,0 +1,187 @@
+{
+  "scope": "exact normalized text overlap; English evaluation subsets only",
+  "tasks_checked": 18,
+  "training_sources": {
+    "neutral_m0": 100000,
+    "neutral_control": 5760,
+    "sts": 10506,
+    "classification": 5758,
+    "retrieval": 10672
+  },
+  "tasks_with_overlap": 7,
+  "results": [
+    {
+      "task": "STSBenchmark",
+      "unique_evaluation_texts": 3395,
+      "exact_overlap_counts": {
+        "sts": 256
+      },
+      "examples": {
+        "sts": [
+          "a girl is styling her hair",
+          "a man is slicing a cucumber",
+          "a man is playing a harp",
+          "a man is playing a keyboard",
+          "a woman is cutting tofu"
+        ]
+      }
+    },
+    {
+      "task": "BIOSSES",
+      "unique_evaluation_texts": 175,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "SICK-R",
+      "unique_evaluation_texts": 6077,
+      "exact_overlap_counts": {
+        "sts": 368
+      },
+      "examples": {
+        "sts": [
+          "a woman is riding a horse",
+          "a dog is riding a skateboard",
+          "a sea turtle is hunting for fish",
+          "a man is driving a car",
+          "a man is playing a guitar"
+        ]
+      }
+    },
+    {
+      "task": "STS12",
+      "unique_evaluation_texts": 4943,
+      "exact_overlap_counts": {
+        "sts": 2
+      },
+      "examples": {
+        "sts": [
+          "a man is playing with frogs",
+          "a person riding a mechanical bull"
+        ]
+      }
+    },
+    {
+      "task": "STS13",
+      "unique_evaluation_texts": 2634,
+      "exact_overlap_counts": {
+        "sts": 753
+      },
+      "examples": {
+        "sts": [
+          "drug lord captured by marines in mexico",
+          "explosion hits pipeline as assad attacks cities",
+          "nato soldier killed in afghan attack",
+          "nato soldier killed in s afghanistan",
+          "castro celebrates 86th birthday monday"
+        ]
+      }
+    },
+    {
+      "task": "STS14",
+      "unique_evaluation_texts": 6352,
+      "exact_overlap_counts": {
+        "sts": 882
+      },
+      "examples": {
+        "sts": [
+          "pacific requirements ",
+          "i atlantic requirements ",
+          "the nazis lowered the minimum age to buy a firearm from to ",
+          "elementary commoditycapital valueform ",
+          "morals have absolutely nothing to do with it "
+        ]
+      }
+    },
+    {
+      "task": "Banking77Classification",
+      "unique_evaluation_texts": 3156,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "EmotionClassification",
+      "unique_evaluation_texts": 2006,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "AmazonCounterfactualClassification",
+      "unique_evaluation_texts": 0,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "MassiveIntentClassification",
+      "unique_evaluation_texts": 0,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "TwentyNewsgroupsClustering.v2",
+      "unique_evaluation_texts": 5153,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "RedditClustering.v2",
+      "unique_evaluation_texts": 2018,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "SciFact",
+      "unique_evaluation_texts": 5483,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "NFCorpus",
+      "unique_evaluation_texts": 3915,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "ArguAna",
+      "unique_evaluation_texts": 9918,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "FiQA2018",
+      "unique_evaluation_texts": 58246,
+      "exact_overlap_counts": {},
+      "examples": {}
+    },
+    {
+      "task": "AGNewsClassification.custom_test",
+      "unique_evaluation_texts": 7599,
+      "exact_overlap_counts": {
+        "classification": 1
+      },
+      "examples": {
+        "classification": [
+          "china sighs in relief as yao scores high beijing reuters  china breathed a measured sigh of relief after the skills of its basketball giant yao ming dwarfed new zealand to sweep his team nearer to their goal of reaching the athens olympics semifinals"
+        ]
+      }
+    },
+    {
+      "task": "MSMARCORerankingGate.custom_test",
+      "unique_evaluation_texts": 2674,
+      "exact_overlap_counts": {
+        "retrieval": 1387
+      },
+      "examples": {
+        "retrieval": [
+          "total amount of money in fantomcoin 1956839 current fantomcoin price 02867 fantomcoin  of current crypto market 000 estimated total amount of m0 money worldwide december 2016 6700000000000",
+          "fantomcoin current price",
+          "mulga snake has grooved venomous fangs in the front part of the mouth and few solid teeth behind them mulga snake is terrestrial animal that lives in the abandoned burrows areas under the logs and rocks and in the cracks in the soil mulga snake can be active during the day or night mulga snake is a ",
+          "what is mulga snake",
+          "acerola malpighia emarginata is a significant source of vitamin c in the natural form of ascorbic acid containing as much as 1000 to 4500 milligrams per 100 grams of edible fruit vitamin c is an essential dietary nutrient playing a role in immune system healthowever acerola interacts with blood thin"
+        ]
+      }
+    }
+  ],
+  "decision": "review",
+  "limitations": "Near-duplicate and semantic overlap are not covered by this exact-match audit."
+}

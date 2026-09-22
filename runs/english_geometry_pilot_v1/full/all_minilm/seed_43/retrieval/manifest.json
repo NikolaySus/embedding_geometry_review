@@ -1,0 +1,16 @@
+{
+  "branch": "retrieval",
+  "seed": 43,
+  "steps": 270,
+  "examples": 17280,
+  "initial_loss": 0.21558083593845367,
+  "final_loss": 0.045639634132385254,
+  "mean_loss": 0.10626309107023257,
+  "elapsed_seconds": 48.56371331214905,
+  "embedding_norms": {
+    "minimum": 0.9999999403953552,
+    "maximum": 1.0,
+    "mean": 1.0
+  },
+  "technical_status": "pass"
+}

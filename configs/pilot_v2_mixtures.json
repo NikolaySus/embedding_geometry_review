@@ -1,0 +1,68 @@
+{
+  "experiment_id": "english_geometry_pilot_v2_mixtures",
+  "source_experiment_id": "english_geometry_pilot_v1",
+  "seeds": [42, 43, 44],
+  "models": {
+    "all_minilm": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "build_neutral_m0": false,
+      "max_seq_length": 128
+    }
+  },
+  "data": {
+    "examples_per_epoch": 5760,
+    "epochs": 3,
+    "classification_source": "fancyzhx/ag_news"
+  },
+  "training": {
+    "batch_size": 64,
+    "learning_rate": 2e-5,
+    "weight_decay": 0.01,
+    "warmup_ratio": 0.1,
+    "max_grad_norm": 1.0,
+    "temperature": 0.05,
+    "cosent_scale": 20.0,
+    "total_steps": 270,
+    "trajectory_fractions": [0.0, 0.25, 0.5, 1.0],
+    "smoke_steps": 20,
+    "mixed_precision": "bf16"
+  },
+  "mixtures": {
+    "simplex_denominator": 5,
+    "include_barycenter": true,
+    "include_control": true,
+    "prune_after_evaluation": true
+  },
+  "evaluation": {
+    "full_tasks": [
+      "STSBenchmark",
+      "BIOSSES",
+      "SICK-R",
+      "STS12",
+      "STS13",
+      "STS14",
+      "Banking77Classification",
+      "EmotionClassification",
+      "AmazonCounterfactualClassification",
+      "MassiveIntentClassification",
+      "TwentyNewsgroupsClustering.v2",
+      "RedditClustering.v2",
+      "SciFact",
+      "NFCorpus",
+      "ArguAna",
+      "FiQA2018"
+    ],
+    "batch_size": 256,
+    "output_folder": "runs/mteb"
+  },
+  "geometry": {
+    "generic_sample_size": 10000,
+    "classification_sample_size": 4000,
+    "knn_k": 10,
+    "pair_sample_size": 100000
+  },
+  "storage": {
+    "minimum_free_gb": 3,
+    "keep_optimizer_state": false
+  }
+}

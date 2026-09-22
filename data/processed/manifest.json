@@ -1,0 +1,49 @@
+{
+  "neutral": {
+    "source_rows_scanned": 300000,
+    "parts": {
+      "neutral_m0": {
+        "path": "data/processed/neutral_m0.jsonl",
+        "rows": 100000,
+        "sha256": "89fa29b9fe8417ddca9a002797ee72fb30b7d52dd015076d288e7c8900390e58"
+      },
+      "neutral_control": {
+        "path": "data/processed/neutral_control.jsonl",
+        "rows": 5760,
+        "sha256": "d571513ff87a8d4565df72845c9835721a7b2d2f31f740b2dfaa5f153ec4a770"
+      },
+      "neutral_diagnostic": {
+        "path": "data/processed/neutral_diagnostic.jsonl",
+        "rows": 10000,
+        "sha256": "84079d6b0ef005ec9d625019656dc38711f8270d9454eaca4254cc9291b0d7e7"
+      }
+    }
+  },
+  "sts": {
+    "path": "data/processed/sts.jsonl",
+    "rows": 5760,
+    "unique_source_rows": 5708,
+    "cycled_rows": 52,
+    "sha256": "84562f075c775940cad3550fdd1be4cc1b6dc73d6e3e3ae7d2f99418038bbf96"
+  },
+  "classification": {
+    "path": "data/processed/classification.jsonl",
+    "rows": 5760,
+    "class_counts": {
+      "3": 1440,
+      "2": 1440,
+      "1": 1440,
+      "0": 1440
+    },
+    "sha256": "9836a437b17d226390d46e141b5391707c1a2200b10062a7b23f388d36d06c1d"
+  },
+  "retrieval": {
+    "path": "data/processed/retrieval.jsonl",
+    "rows": 5760,
+    "source_rows_scanned": 100000,
+    "sha256": "7a63462bc796abf4ff8d928bc3a0b115188d7470c812cef0dedd1d4553a876a2",
+    "gate_path": "data/processed/retrieval_gate.jsonl",
+    "gate_rows": 1000,
+    "gate_sha256": "906f1367f693568227f10fce10a4d77cdad331608248c9fb0cd6fefa438dcadb"
+  }
+}

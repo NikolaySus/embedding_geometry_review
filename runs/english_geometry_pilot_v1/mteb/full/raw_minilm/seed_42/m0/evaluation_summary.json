@@ -1,0 +1,130 @@
+{
+  "model": "raw_minilm",
+  "seed": 42,
+  "branch": "m0",
+  "suite": "full",
+  "mteb_version": "1.38.30",
+  "mteb": {
+    "Banking77Classification": {
+      "main_score": "accuracy",
+      "score": 0.572922,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/Banking77Classification.json"
+    },
+    "RedditClustering.v2": {
+      "main_score": "v_measure",
+      "score": 0.330065,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/RedditClustering.v2.json"
+    },
+    "TwentyNewsgroupsClustering.v2": {
+      "main_score": "v_measure",
+      "score": 0.213054,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/TwentyNewsgroupsClustering.v2.json"
+    },
+    "STSBenchmark": {
+      "main_score": "cosine_spearman",
+      "score": 0.643671,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/STSBenchmark.json"
+    },
+    "EmotionClassification": {
+      "main_score": "accuracy",
+      "score": 0.3324,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/EmotionClassification.json"
+    },
+    "SciFact": {
+      "main_score": "ndcg_at_10",
+      "score": 0.0994,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/SciFact.json"
+    },
+    "BIOSSES": {
+      "main_score": "cosine_spearman",
+      "score": 0.546091,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/BIOSSES.json"
+    },
+    "NFCorpus": {
+      "main_score": "ndcg_at_10",
+      "score": 0.0399,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/gate/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/NFCorpus.json"
+    },
+    "STS14": {
+      "main_score": "cosine_spearman",
+      "score": 0.548434,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/STS14.json"
+    },
+    "AmazonCounterfactualClassification": {
+      "main_score": "accuracy",
+      "score": 0.6765935000000001,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/AmazonCounterfactualClassification.json"
+    },
+    "ArguAna": {
+      "main_score": "ndcg_at_10",
+      "score": 0.22855,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/ArguAna.json"
+    },
+    "STS13": {
+      "main_score": "cosine_spearman",
+      "score": 0.630566,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/STS13.json"
+    },
+    "STS12": {
+      "main_score": "cosine_spearman",
+      "score": 0.457723,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/STS12.json"
+    },
+    "FiQA2018": {
+      "main_score": "ndcg_at_10",
+      "score": 0.01038,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/FiQA2018.json"
+    },
+    "SICK-R": {
+      "main_score": "cosine_spearman",
+      "score": 0.649212,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/SICK-R.json"
+    },
+    "MassiveIntentClassification": {
+      "main_score": "accuracy",
+      "score": 0.5214805,
+      "artifact": "runs/english_geometry_pilot_v1/mteb/full/raw_minilm/seed_42/m0/no_model_name_available/no_revision_available/MassiveIntentClassification.json"
+    }
+  },
+  "AGNewsClassification": {
+    "accuracy": 0.8661842105263158,
+    "train_rows": 5760,
+    "test_rows": 7600
+  },
+  "MSMARCORerankingGate": {
+    "mrr": 0.47188860797316556,
+    "ndcg_at_10": 0.5410188582993892,
+    "recall_at_10": 0.791,
+    "hardest_negative_margin": -0.06764906994253397,
+    "queries": 1000,
+    "candidates_per_query": 100
+  },
+  "reused_gate_results": true,
+  "CleanSTS": {
+    "STSBenchmark.clean_exact": {
+      "cosine_spearman": 0.6576044963282333,
+      "rows": 1130,
+      "removed_rows": 249
+    },
+    "SICK-R.clean_exact": {
+      "cosine_spearman": 0.6464040979859078,
+      "rows": 7611,
+      "removed_rows": 2316
+    },
+    "STS12.clean_exact": {
+      "cosine_spearman": 0.4570206601815323,
+      "rows": 3106,
+      "removed_rows": 2
+    },
+    "STS13.clean_exact": {
+      "cosine_spearman": 0.6268239971061057,
+      "rows": 1000,
+      "removed_rows": 500
+    },
+    "STS14.clean_exact": {
+      "cosine_spearman": 0.5629874205216145,
+      "rows": 3181,
+      "removed_rows": 569
+    }
+  }
+}

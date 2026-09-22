@@ -1,0 +1,34 @@
+{
+  "dataset_revision": "24640382cdbf8abc73003fb0fa6d111a705499eb",
+  "task_name": "RedditClustering.v2",
+  "mteb_version": "1.38.30",
+  "scores": {
+    "test": [
+      {
+        "v_measures": {
+          "Level 0": [
+            0.368295,
+            0.371105,
+            0.35478,
+            0.363213,
+            0.371897,
+            0.367931,
+            0.371533,
+            0.37456,
+            0.367826,
+            0.379578
+          ]
+        },
+        "v_measure": 0.369072,
+        "v_measure_std": 0.00633,
+        "main_score": 0.369072,
+        "hf_subset": "default",
+        "languages": [
+          "eng-Latn"
+        ]
+      }
+    ]
+  },
+  "evaluation_time": 1.8327910900115967,
+  "kg_co2_emissions": null
+}

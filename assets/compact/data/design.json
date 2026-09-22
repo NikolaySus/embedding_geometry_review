@@ -1,0 +1,11 @@
+{
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "steps": 270,
+  "batch_size": 64,
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "simplex_points": 22
+}

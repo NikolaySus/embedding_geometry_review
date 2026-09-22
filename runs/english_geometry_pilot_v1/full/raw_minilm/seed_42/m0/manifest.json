@@ -1,0 +1,17 @@
+{
+  "branch": "control",
+  "seed": 42,
+  "steps": 781,
+  "examples": 99968,
+  "initial_loss": 2.798248291015625,
+  "final_loss": 0.00021724216639995575,
+  "mean_loss": 0.07630094708982145,
+  "elapsed_seconds": 133.68413877487183,
+  "embedding_norms": {
+    "minimum": 0.9999999403953552,
+    "maximum": 1.0,
+    "mean": 1.0
+  },
+  "technical_status": "pass",
+  "role": "neutral_m0"
+}

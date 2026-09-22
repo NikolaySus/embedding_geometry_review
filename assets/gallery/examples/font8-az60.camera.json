@@ -1,0 +1,63 @@
+{
+  "variant": "2D-compact-1",
+  "roof_ratio": 0.45,
+  "label_font": 8,
+  "azimuth": 60,
+  "camera": {
+    "up": {
+      "x": 0,
+      "y": 0,
+      "z": 1
+    },
+    "center": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+    },
+    "eye": {
+      "x": 0.6103277807866853,
+      "y": 1.0571187255932986,
+      "z": 1.73
+    },
+    "projection": {
+      "type": "orthographic"
+    }
+  },
+  "aspectratio": {
+    "x": 1.4172368398600925,
+    "y": 1.2762187927159414,
+    "z": 1.2
+  },
+  "xaxis": {
+    "autorange": false,
+    "range": [
+      -0.33723683986009256,
+      1.08
+    ],
+    "visible": false,
+    "type": "linear"
+  },
+  "yaxis": {
+    "autorange": false,
+    "range": [
+      -0.32621879271594156,
+      0.95
+    ],
+    "visible": false,
+    "type": "linear"
+  },
+  "zaxis": {
+    "autorange": false,
+    "range": [
+      -184.2901377868652,
+      126.48284511566169
+    ],
+    "showbackground": false,
+    "title": {
+      "text": "Δ Rank"
+    },
+    "visible": false,
+    "type": "linear"
+  },
+  "surface_visible": true
+}

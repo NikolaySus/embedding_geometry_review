@@ -1,0 +1,21 @@
+{
+  "sample_size": 10000.0,
+  "dimension": 384.0,
+  "mean_cosine": 0.02441442385315895,
+  "cosine_std": 0.1303088366985321,
+  "uniformity": -3.757115364074707,
+  "effective_rank": 100.60334777832031,
+  "participation_ratio": 57.496403700775105,
+  "top_eigenvalue_share": 0.05263682082295418,
+  "top10_eigenvalue_share": 0.3192436695098877,
+  "hubness_skew_k10": 0.9562396385883974,
+  "neighborhood_preservation": 1.0,
+  "sts_alignment": 0.2377648949623108,
+  "sts_mean_cosine": 0.791912317276001,
+  "classification_intra_distance": 0.6427533626556396,
+  "classification_inter_distance": 0.7551175355911255,
+  "classification_margin": 0.11236417293548584,
+  "retrieval_positive_cosine": 0.1660517156124115,
+  "retrieval_negative_cosine": 0.11808791756629944,
+  "retrieval_margin": 0.04796379432082176
+}

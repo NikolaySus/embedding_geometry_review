@@ -1,0 +1,26 @@
+{
+  "name": "mix_s060_c000_r040",
+  "weights": {
+    "sts": 0.6,
+    "classification": 0.0,
+    "retrieval": 0.4
+  },
+  "seed": 44,
+  "steps": 270,
+  "step_counts": {
+    "sts": 162,
+    "retrieval": 108
+  },
+  "schedule_sha256": "ee96795d43ef7f3c61052b6e49a6cbb418946925276d9e1da5484a1f4d4ad7af",
+  "examples": 17280,
+  "initial_loss": 10.312457084655762,
+  "final_loss": 0.14888232946395874,
+  "mean_loss": 5.1035734920590015,
+  "elapsed_seconds": 43.14924669265747,
+  "embedding_norms": {
+    "minimum": 0.9999999403953552,
+    "maximum": 1.0,
+    "mean": 1.0
+  },
+  "technical_status": "pass"
+}

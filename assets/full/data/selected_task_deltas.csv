@@ -1,0 +1,17 @@
+model,branch,task,mean,std
+all_minilm,classification,AGNewsClassification,0.021929824561403435,0.0014069311344162478
+all_minilm,classification,STSBenchmark.clean_exact,-0.18584603832417615,0.002431106374817715
+all_minilm,classification,SciFact,-0.27292999999999995,0.017695765030085617
+all_minilm,classification,TwentyNewsgroupsClustering.v2,-0.051665333333333306,0.0025468341786094736
+all_minilm,control,AGNewsClassification,-0.011973684210526366,0.004235125510376602
+all_minilm,control,STSBenchmark.clean_exact,0.015376934553882332,0.000690051166632151
+all_minilm,control,SciFact,-0.0032433333333332995,0.0060463652993623124
+all_minilm,control,TwentyNewsgroupsClustering.v2,-0.01865333333333333,0.008541045271706113
+all_minilm,retrieval,AGNewsClassification,-0.006535087719298233,0.0010956136839295925
+all_minilm,retrieval,STSBenchmark.clean_exact,0.0050709094924776335,0.00048288060013123923
+all_minilm,retrieval,SciFact,-0.008106666666666566,0.003093644021753849
+all_minilm,retrieval,TwentyNewsgroupsClustering.v2,-0.036782333333333334,0.009485782325846053
+all_minilm,sts,AGNewsClassification,0.0019298245614034002,0.0003311330892662081
+all_minilm,sts,STSBenchmark.clean_exact,0.03192962769796833,0.0009375184580475358
+all_minilm,sts,SciFact,-0.03352999999999993,0.0032297213502096227
+all_minilm,sts,TwentyNewsgroupsClustering.v2,-0.03287233333333333,0.0037976643260474357

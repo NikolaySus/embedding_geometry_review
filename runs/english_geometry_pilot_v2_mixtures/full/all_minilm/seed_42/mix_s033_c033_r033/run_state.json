@@ -1,0 +1,13 @@
+{
+  "name": "mix_s033_c033_r033",
+  "seed": 42,
+  "weights": {
+    "sts": 0.3333333333333333,
+    "classification": 0.3333333333333333,
+    "retrieval": 0.3333333333333333
+  },
+  "evaluation_complete": true,
+  "summary": "runs/english_geometry_pilot_v2_mixtures/mteb/full/all_minilm/seed_42/mix_s033_c033_r033/evaluation_summary.json",
+  "model_sha256": "93219b8f2550bbb6270cd6d9979bef19af444a50ddca99bd0e528b81ad797f47",
+  "model_retained": false
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "text": "Wang T., Isola P. Understanding Contrastive Representation Learning through Alignment and Uniformity on the Hypersphere // Proceedings of the 37th International Conference on Machine Learning. 2020. Vol. 119. P. 9929–9939.",
+    "url": "https://proceedings.mlr.press/v119/wang20k.html"
+  },
+  {
+    "id": 2,
+    "text": "Li B., Zhou H., He J., Wang M., Yang Y., Li L. On the Sentence Embeddings from Pre-trained Language Models // Proceedings of EMNLP 2020. 2020. P. 9119–9130. DOI: 10.18653/v1/2020.emnlp-main.733.",
+    "url": "https://aclanthology.org/2020.emnlp-main.733/"
+  },
+  {
+    "id": 3,
+    "text": "Huang J., Tang D., Zhong W., Lu S., Shou L., Gong M., Jiang D., Duan N. WhiteningBERT: An Easy Unsupervised Sentence Embedding Approach // Findings of EMNLP 2021. 2021. P. 238–244. DOI: 10.18653/v1/2021.findings-emnlp.23.",
+    "url": "https://aclanthology.org/2021.findings-emnlp.23/"
+  },
+  {
+    "id": 4,
+    "text": "Gao T., Yao X., Chen D. SimCSE: Simple Contrastive Learning of Sentence Embeddings // Proceedings of EMNLP 2021. 2021. P. 6894–6910. DOI: 10.18653/v1/2021.emnlp-main.552.",
+    "url": "https://aclanthology.org/2021.emnlp-main.552/"
+  },
+  {
+    "id": 5,
+    "text": "Ethayarajh K. How Contextual are Contextualized Word Representations? Comparing the Geometry of BERT, ELMo, and GPT-2 Embeddings // Proceedings of EMNLP-IJCNLP 2019. 2019. P. 55–65. DOI: 10.18653/v1/D19-1006.",
+    "url": "https://aclanthology.org/D19-1006/"
+  },
+  {
+    "id": 6,
+    "text": "Machina J., Mercer R. E. Anisotropy is Not Inherent to Transformers // Proceedings of NAACL 2024. 2024. P. 4892–4907. DOI: 10.18653/v1/2024.naacl-long.274.",
+    "url": "https://aclanthology.org/2024.naacl-long.274/"
+  },
+  {
+    "id": 7,
+    "text": "Mu J., Viswanath P. All-but-the-Top: Simple and Effective Postprocessing for Word Representations // International Conference on Learning Representations. 2018.",
+    "url": "https://openreview.net/forum?id=HkuGJ3kCb"
+  },
+  {
+    "id": 8,
+    "text": "Nielsen J. L., Hansen L. K. Hubness Reduction Improves Sentence-BERT Semantic Spaces // Proceedings of the Northern Lights Deep Learning Conference. 2024. Vol. 233. P. 181–204.",
+    "url": "https://proceedings.mlr.press/v233/nielsen24a.html"
+  },
+  {
+    "id": 9,
+    "text": "Muennighoff N., Tazi N., Magne L., Reimers N. MTEB: Massive Text Embedding Benchmark // Proceedings of EACL 2023. 2023. P. 2014–2037. DOI: 10.18653/v1/2023.eacl-main.148.",
+    "url": "https://aclanthology.org/2023.eacl-main.148/"
+  },
+  {
+    "id": 10,
+    "text": "Reimers N., Gurevych I. Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks // Proceedings of EMNLP-IJCNLP 2019. 2019. P. 3982–3992. DOI: 10.18653/v1/D19-1410.",
+    "url": "https://aclanthology.org/D19-1410/"
+  },
+  {
+    "id": 11,
+    "text": "Thakur N., Reimers N., Rücklé A., Srivastava A., Gurevych I. BEIR: A Heterogeneous Benchmark for Zero-shot Evaluation of Information Retrieval Models // Advances in Neural Information Processing Systems. 2021. Vol. 34.",
+    "url": "https://datasets-benchmarks-proceedings.neurips.cc/paper/2021/hash/65b9eea6e1cc6bb9f0cd2a47751a186f-Abstract-round2.html"
+  },
+  {
+    "id": 12,
+    "text": "Karpukhin V., Oguz B., Min S., Lewis P., Wu L., Edunov S., Chen D., Yih W. Dense Passage Retrieval for Open-Domain Question Answering // Proceedings of EMNLP 2020. 2020. P. 6769–6781. DOI: 10.18653/v1/2020.emnlp-main.550.",
+    "url": "https://aclanthology.org/2020.emnlp-main.550/"
+  },
+  {
+    "id": 13,
+    "text": "Wang L., Yang N., Huang X., Jiao B., Yang L., Jiang D., Majumder R., Wei F. Text Embeddings by Weakly-Supervised Contrastive Pre-training. Technical report, arXiv:2212.03533, 2022.",
+    "url": "https://arxiv.org/abs/2212.03533"
+  },
+  {
+    "id": 14,
+    "text": "Su H., Shi W., Kasai J., Wang Y., Hu Y., Ostendorf M., Yih W., Smith N. A., Zettlemoyer L., Yu T. One Embedder, Any Task: Instruction-Finetuned Text Embeddings // Findings of ACL 2023. 2023. P. 1102–1121. DOI: 10.18653/v1/2023.findings-acl.71.",
+    "url": "https://aclanthology.org/2023.findings-acl.71/"
+  },
+  {
+    "id": 15,
+    "text": "Khosla P., Teterwak P., Wang C., Sarna A., Tian Y., Isola P., Maschinot A., Liu C., Krishnan D. Supervised Contrastive Learning // Advances in Neural Information Processing Systems. 2020. Vol. 33. P. 18661–18673.",
+    "url": "https://proceedings.neurips.cc/paper/2020/hash/d89a66c7c80a29b1bdbab0f2a1a94af8-Abstract.html"
+  },
+  {
+    "id": 16,
+    "text": "Yu T., Kumar S., Gupta A., Levine S., Hausman K., Finn C. Gradient Surgery for Multi-Task Learning // Advances in Neural Information Processing Systems. 2020. Vol. 33. P. 5824–5836.",
+    "url": "https://proceedings.neurips.cc/paper/2020/hash/3fe78a8acf5fda99de95303940a2420c-Abstract.html"
+  },
+  {
+    "id": 17,
+    "text": "Liu B., Liu X., Jin X., Stone P., Liu Q. Conflict-Averse Gradient Descent for Multi-task Learning // Advances in Neural Information Processing Systems. 2021. Vol. 34. P. 18878–18890.",
+    "url": "https://proceedings.neurips.cc/paper/2021/hash/9d27fdf2477ffbff837d73ef7ae23db9-Abstract.html"
+  },
+  {
+    "id": 18,
+    "text": "Min C., Chu Y., Yang L., Xu B., Lin H. Locality Preserving Sentence Encoding // Findings of EMNLP 2021. 2021. P. 3050–3060. DOI: 10.18653/v1/2021.findings-emnlp.262.",
+    "url": "https://aclanthology.org/2021.findings-emnlp.262/"
+  },
+  {
+    "id": 19,
+    "text": "Wang H., Zhang H., Yu D. On the Dimensionality of Sentence Embeddings // Findings of EMNLP 2023. 2023. P. 10344–10354. DOI: 10.18653/v1/2023.findings-emnlp.694.",
+    "url": "https://aclanthology.org/2023.findings-emnlp.694/"
+  },
+  {
+    "id": 20,
+    "text": "Xu J., Shao W., Chen L., Liu L. SimCSE++: Improving Contrastive Learning for Sentence Embeddings from Two Perspectives // Proceedings of EMNLP 2023. 2023. P. 12028–12040. DOI: 10.18653/v1/2023.emnlp-main.737.",
+    "url": "https://aclanthology.org/2023.emnlp-main.737/"
+  },
+  {
+    "id": 21,
+    "text": "Kusupati A., Bhatt G., Rege A., Wallingford M., Sinha A., Ramanujan V., Howard-Snyder W., Chen K., Kakade S., Jain P., Farhadi A. Matryoshka Representation Learning // Advances in Neural Information Processing Systems. 2022. Vol. 35.",
+    "url": "https://proceedings.neurips.cc/paper_files/paper/2022/hash/c32319f4868da7613d78af9993100e42-Abstract-Conference.html"
+  },
+  {
+    "id": 22,
+    "text": "Gao J., He D., Tan X., Qin T., Wang L., Liu T.-Y. Kernel-Whitening: Overcome Dataset Bias with Isotropic Sentence Embedding // Proceedings of EMNLP 2022. 2022. P. 4112–4122. DOI: 10.18653/v1/2022.emnlp-main.275.",
+    "url": "https://aclanthology.org/2022.emnlp-main.275/"
+  },
+  {
+    "id": 23,
+    "text": "Chuang Y.-S., Dangovski R., Luo H., Zhang Y., Chang S., Soljačić M., Li S.-W., Yih W., Kim Y., Glass J. DiffCSE: Difference-based Contrastive Learning for Sentence Embeddings // Proceedings of NAACL 2022. 2022. P. 4207–4218. DOI: 10.18653/v1/2022.naacl-main.311.",
+    "url": "https://aclanthology.org/2022.naacl-main.311/"
+  },
+  {
+    "id": 24,
+    "text": "Chen Z., Badrinarayanan V., Lee C.-Y., Rabinovich A. GradNorm: Gradient Normalization for Adaptive Loss Balancing in Deep Multitask Networks // Proceedings of the 35th International Conference on Machine Learning. 2018. Vol. 80. P. 794–803.",
+    "url": "https://proceedings.mlr.press/v80/chen18a.html"
+  }
+]

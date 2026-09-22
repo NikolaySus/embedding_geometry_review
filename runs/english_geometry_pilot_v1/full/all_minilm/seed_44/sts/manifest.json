@@ -1,0 +1,16 @@
+{
+  "branch": "sts",
+  "seed": 44,
+  "steps": 270,
+  "examples": 17280,
+  "initial_loss": 10.653421401977539,
+  "final_loss": 6.984374046325684,
+  "mean_loss": 7.736421210677536,
+  "elapsed_seconds": 38.9418785572052,
+  "embedding_norms": {
+    "minimum": 0.9999999403953552,
+    "maximum": 1.0,
+    "mean": 1.0
+  },
+  "technical_status": "pass"
+}
