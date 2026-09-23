@@ -79,3 +79,27 @@ def endpoints():
     )
     pd.DataFrame(records).to_csv(OUT / "data/endpoints.csv", index=False)
     return fig
+
+
+def compact_trajectories(dense=False):
+    """Return compact endpoint means/SD, optionally on a shorter print canvas."""
+    fig = endpoints()
+    fig.subplots_adjust(
+        left=0.11, right=0.99, top=0.91, bottom=0.20, hspace=0.30, wspace=0.29
+    )
+    for ax in fig.axes:
+        ax.set_xlim(-5, 380)
+    if dense:
+        fig.set_size_inches(6.2, 5.2)
+        fig.subplots_adjust(
+            left=0.11, right=0.99, top=0.91, bottom=0.22, hspace=0.29, wspace=0.27
+        )
+        for text in fig.texts:
+            text.set_text(
+                text.get_text()
+                .replace("Первый этап:", "Этап 1:")
+                .replace("у конца линии:", "в конце:")
+                .replace("Подписи разведены по высоте и соединены с фактическими конечными точками.",
+                         "Подписи разведены по высоте; выноски ведут к фактическим концам линий.")
+            )
+    return fig

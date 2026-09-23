@@ -8,7 +8,8 @@
   },
   "quality_palette": "RdBu",
   "variants": [
-    {"id": "1C-09-absolute-unit", "quality_range": [0.0, 1.0]}
+    {"id": "1C-09-absolute-unit", "quality_range": [0.0, 1.0]},
+    {"id": "1C-09-absolute-unit-dense", "quality_range": [0.0, 1.0], "layout": "dense"}
   ],
   "geometry": {
     "effective_rank": {"palette": "Purples", "range": [0.0, 250.0]},

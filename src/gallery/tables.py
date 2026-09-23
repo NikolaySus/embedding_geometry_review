@@ -42,9 +42,11 @@ def absolute_table(frame, variant):
     sd = frame.groupby("branch")[Q + G].std().loc[order]
     scales = absolute_scales(mean, variant)
     # Keep cell sizes and font sizes; reclaim vertical space above the table.
-    height = 7.6
+    dense = variant.get("layout") == "dense"
+    height = 7.1 if dense else 7.6
+    bottom = 1.06 if dense else 1.52
     fig = plt.figure(figsize=(6.2, height))
-    ax = fig.add_axes([0.15, 1.52 / height, 0.83, 5.28 / height])
+    ax = fig.add_axes([0.15, bottom / height, 0.83, 5.28 / height])
     rgba = np.empty((len(mean), 9, 4))
     for j, c in enumerate(Q + G):
         s = scales.loc[c]
@@ -67,14 +69,15 @@ def absolute_table(frame, variant):
     ax.tick_params(which="minor", length=0)
     ax.axvline(4.5, color="#555555", lw=1)
     ax.axhline(0.5, color="#555555", lw=0.8)
-    fig.text(0.15, 7.41 / height, "Абсолютное качество", fontsize=9)
-    fig.text(0.63, 7.41 / height, "Геометрия: отдельные шкалы", fontsize=8)
+    heading_y = 6.96 if dense else 7.41
+    fig.text(0.15, heading_y / height, "Абсолютное качество", fontsize=9)
+    fig.text(0.63, heading_y / height, "Геометрия: отдельные шкалы", fontsize=8)
     # Legends use the very same lightened palettes as the cells.
     for c, x, width, title in [(Q[0], .15, .44, "Общая шкала AG / STS / Cls-tr / Clust / Ret")] + [
         (c, .15 + (5+j)*.83/9 + .008, .075, LABEL[c]) for j,c in enumerate(G)
     ]:
         s = scales.loc[c]
-        bar = fig.add_axes([x, 7.10 / height, width, .104 / height])
+        bar = fig.add_axes([x, (6.68 if dense else 7.10) / height, width, .104 / height])
         colors = plt.colormaps[s.palette](np.linspace(0, 1, 256))
         colors[:, :3] = .5 * colors[:, :3] + .5
         bar.imshow(colors[None, :, :], aspect="auto", extent=[s.lower, s.upper, 0, 1])
@@ -86,7 +89,15 @@ def absolute_table(frame, variant):
         bar.set_title(title, fontsize=6.5, pad=4)
         for spine in bar.spines.values():
             spine.set_visible(False)
-    fig.text(.15, .216 / height,
+    caption = (
+        "Абсолютное среднее ± SD трёх seed; строки: веса STS:Cls:Ret.\n"
+        "AG / Cls-tr: accuracy (Cls-tr без AG News); STS: Spearman.\n"
+        "Clust: V-measure; Ret: nDCG@10; семейства усреднены по задачам.\n"
+        "Красный → синий: ниже → выше, не Δ; равные числа ≠ равная полезность.\n"
+        "Rank: эффективный ранг; Top10: доля дисперсии; kNN: соседи M0.\n"
+        "Margin: query-document зазор. Для геометрии нет общего «лучше».\n"
+        "M0: исходная модель; SD повторной оценки, не независимого обучения."
+        if dense else
         "Ячейка: абсолютное среднее ± SD трёх seed; веса STS:Cls:Ret.\n"
         "AG: accuracy AG News; STS: Spearman; Cls-tr: accuracy без AG News;\n"
         "Clust: V-measure; Ret: nDCG@10. Семейства: среднее по задачам.\n"
@@ -94,7 +105,9 @@ def absolute_table(frame, variant):
         "Одинаковый цвет качества означает одинаковое число, не равную полезность.\n"
         "Rank: эффективный ранг; Top10: доля дисперсии; kNN: доля соседей M0;\n"
         "Margin: query-document зазор. Геометрия не имеет общего «лучше/хуже».\n"
-        "M0: исходная модель; её SD описывает повторную оценку, не обучение.",
+        "M0: исходная модель; её SD описывает повторную оценку, не обучение."
+    )
+    fig.text(.15, (.10 if dense else .216) / height, caption,
         fontsize=7, linespacing=1.3)
     scales.to_csv(OUT / "data" / f"{variant['id']}-scales.csv")
     return fig

@@ -19,20 +19,43 @@ original overlap diagnostics). `examples/font8-az60.camera.json` is an
 known to be author-selected and is never applied or exported automatically.
 Default cameras are generated under `build/gallery/interactive/`.
 
-All generated outputs live in `build/gallery/`: `COMPARISON.pdf` (10 pages, 9 variants),
+All generated outputs live in `build/gallery/`: `COMPARISON.pdf` (11 pages, 10 variants),
 `manifest.json`, `figures/`, derived `data/`, and `interactive/index.html`.
 The interactive HTML files embed Plotly and open directly without a server.
-The refined v3 comparison is the migration baseline. Figure 1 now has only the selected absolute table; other variant IDs and
-controls are preserved; cover/index titles are neutral. There are no
-versioned packages or output directories.
+The refined v3 comparison is the migration baseline. The current gallery has five
+selected bases and exactly one denser alternative per figure, ordered as pairs.
+There are no versioned packages or output directories. Earlier designs remain
+available in Git rather than as extra pages of the current gallery.
+
+| Figure | Selected base | Denser alternative |
+| --- | --- | --- |
+| 1 | `1C-09-absolute-unit` | `1C-09-absolute-unit-dense` |
+| 2 | `2D-compact` | `2D-compact-dense` |
+| 3 | `3E-compact` | `3E-compact-dense` |
+| 4 | `4A-compact` | `4A-compact-dense` |
+| 5 | `5A-compact` | `5A-compact-dense` |
+
+The bases retain the previously selected rendering. Dense variants reduce canvas
+height at the same 6.2-inch width, without smaller fonts or omitted measurements.
+They reclaim margins, inter-panel gaps and caption space. All absolute table cells,
+surface vertices and roof values, trajectory steps, endpoint means and SDs remain.
+Captions are reworded more concisely, retaining the distinctions between absolute
+quality, changes relative to M0, interpolation residuals and sampling uncertainty.
+
+`manifest.json` and `data/layout_comparison.csv` record physical dimensions and
+area reduction against each base. The comparison PDF shows figures at native
+size, not rescaled to fill the page; this makes the density savings comparable.
+The 12 interactive surface panels retain their existing controls and camera IDs.
+The new alternatives concern static layout, not extra measurements or cameras.
 
 ## Selected absolute-value table
 
-`absolute_tables.json` selects `1C-09-absolute-unit` (quality 0–1) as the sole
-figure 1 variant, based on the numeric-table design of `1C-01-symmetric-uniform`.
+`absolute_tables.json` selects `1C-09-absolute-unit` (quality 0–1) as the base
+figure 1 variant, plus its `-dense` layout, based on the numeric-table design of
+`1C-01-symmetric-uniform`.
 Retired table PDFs, PNGs and scale metadata are removed during gallery builds.
 Color bars sit close to the table; cell dimensions and text sizes are preserved
-while the figure height is reduced from 8.0 to 7.6 inches. All five quality
+while the base figure height is 7.6 inches and the dense height is 7.1 inches. All five quality
 columns share one RdBu scale. The four geometry columns use distinct sequential
 palettes and explicitly labelled independent ranges. No displayed mean is clipped.
 These are absolute values for all nine columns, with an added M0 reference row.

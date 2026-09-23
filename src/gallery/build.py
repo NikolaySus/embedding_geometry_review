@@ -14,11 +14,12 @@ from pypdf import PdfReader, PdfWriter, Transformation
 from matplotlib.backends.backend_pdf import PdfPages
 from .data import OUT, SRC, Q, G, load_data, layout_config, load_absolute_data, absolute_config
 from .tables import PALETTES, absolute_table
-from .surfaces import large_surface
-from .trajectories import endpoints
+from .surfaces import compact_surface
+from .trajectories import compact_trajectories
 from .interactive import compact_scene, interactive, apply_roof, apply_font, snap_camera
 
-BASES = ["1C-09-absolute-unit", "2D-large", "3E-large", "4A-endpoints", "5A-large"]
+BASES = ["1C-09-absolute-unit", "2D-compact", "3E-compact", "4A-compact", "5A-compact"]
+ALTERNATIVES = [identity + "-dense" for identity in BASES]
 
 
 def camera_figure(state):
@@ -82,7 +83,7 @@ def main():
     plt.rcParams.update(
         {"font.family": "DejaVu Sans", "font.size": 8, "axes.labelsize": 8}
     )
-    frame, m, residual, tri = load_data()
+    _, m, residual, tri = load_data()
     config = layout_config()
     shutil.copyfile(
         SRC / "quality_geometry_by_seed.csv", OUT / "data/quality_geometry_by_seed.csv"
@@ -93,49 +94,36 @@ def main():
     )
     variants = []
     absolute = load_absolute_data()
-    baselines = {
-        "1C-09-absolute-unit": absolute_table(absolute, absolute_config()["variants"][0]),
-        "4A-endpoints": endpoints(),
-    }
     absolute.to_csv(OUT / "data/absolute_quality_geometry_by_seed.csv", index=False)
     absolute.groupby("branch")[Q + G].agg(["mean", "std"]).to_csv(OUT / "data/absolute_summary.csv")
-    for kind, values in [("2D", m[G]), ("3E", m[Q[1:]]), ("5A", residual)]:
-        cfg = config[kind]
-        baselines[kind + "-large"] = large_surface(
-            values, tri, kind, cfg["azimuth"], cfg["label_font"]
-        )[0]
-    for key in BASES:
-        fig = baselines[key]
+
+    def save(key, fig, note):
+        width, height = fig.get_size_inches()
         fig.savefig(OUT / "figures" / f"{key}.pdf")
         fig.savefig(OUT / "figures" / f"{key}.png", dpi=180)
         plt.close(fig)
         variants.append(
-            dict(id=key, base=True, note=(
-                "Выбранный рисунок 1: абсолютные значения и M0. Общая шкала качества 0–1; четыре отдельные палитры геометрии. Уплотнённое расположение шкал."
-                if key.startswith("1C-") else "Выбранная основа, без изменений."
-            ))
+            dict(id=key, base=key in BASES, note=note,
+                 width_inches=float(width), height_inches=float(height))
         )
 
-    def save(key, fig, note):
-        fig.savefig(OUT / "figures" / f"{key}.pdf")
-        fig.savefig(OUT / "figures" / f"{key}.png", dpi=180)
-        plt.close(fig)
-        variants.append(dict(id=key, base=False, note=note))
+    for variant in absolute_config()["variants"]:
+        save(
+            variant["id"], absolute_table(absolute, variant),
+            "Абсолютные значения и M0; общая шкала качества 0–1 и отдельные шкалы геометрии. "
+            + ("Плотная альтернатива: сокращены поля и подпись; размеры ячеек и шрифтов прежние."
+               if variant.get("layout") == "dense" else "Выбранная основа, без изменений."),
+        )
 
     for kind, values in [("2D", m[G]), ("3E", m[Q[1:]]), ("5A", residual)]:
-        fig, labels = large_surface(values, tri, kind, -60, 6.5)
-        for n, ax in enumerate(fig.axes):
-            ax.set_position(
-                [0.065 + (n % 2) * 0.49, 0.545 if n < 2 else 0.165, 0.445, 0.405]
+        for dense in (False, True):
+            fig, _ = compact_surface(values, tri, kind, dense=dense)
+            save(
+                kind + "-compact" + ("-dense" if dense else ""), fig,
+                "Сетка 2×2; измеренные точки и шкалы сохранены. "
+                + ("Плотная альтернатива: сокращены поля, межпанельное пространство и подпись; шрифты не уменьшены."
+                   if dense else "Прежний compact теперь основа, без изменений."),
             )
-            x = ax.get_xlim()
-            y = ax.get_ylim()
-            ax.set_box_aspect((x[1] - x[0], y[1] - y[0], 1.2), zoom=1.19)
-        save(
-            kind + "-compact",
-            fig,
-            "Уплотнённая сетка 2×2; одинаковый масштаб единиц X/Y. Азимут 300°: одна сторона основания вертикальна в проекции. Шрифты прежние.",
-        )
         for panel in range(1, 5):
             interactive(
                 values,
@@ -145,18 +133,22 @@ def main():
                 config[kind]["azimuth"],
                 config[kind]["label_font"],
             )
-    fig = endpoints()
-    fig.subplots_adjust(
-        left=0.11, right=0.99, top=0.91, bottom=0.20, hspace=0.30, wspace=0.29
-    )
-    for ax in fig.axes:
-        ax.set_xlim(-5, 380)
-    save(
-        "4A-compact",
-        fig,
-        "Меньше межпанельные промежутки и правая область после шага 270; конечные числа сохранены.",
-    )
+    for dense in (False, True):
+        save(
+            "4A-compact" + ("-dense" if dense else ""),
+            compact_trajectories(dense=dense),
+            "Траектории первого этапа; все шаги, конечные значения и SD сохранены. "
+            + ("Плотная альтернатива: меньше промежутки, поля и высота рисунка; шрифты не уменьшены."
+               if dense else "Прежний compact теперь основа, без изменений."),
+        )
     variants.sort(key=lambda v: (v["id"][0], not v["base"], v["id"]))
+    for variant in variants:
+        base = next(v for v in variants if v["base"] and v["id"][0] == variant["id"][0])
+        variant["area_reduction_percent"] = 100 * (
+            1 - variant["width_inches"] * variant["height_inches"]
+            / (base["width_inches"] * base["height_inches"])
+        )
+    pd.DataFrame(variants).to_csv(OUT / "data/layout_comparison.csv", index=False)
     cover_pages = (len(variants) + 9) // 10
     writer = PdfWriter()
     with PdfPages(OUT / "renders/cover.pdf") as pdf:
@@ -188,6 +180,13 @@ def main():
     for i, v in enumerate(variants):
         f = plt.figure(figsize=(8.27, 11.69))
         f.text(0.08, 0.955, v["id"], fontsize=13)
+        f.text(
+            0.08, 0.922,
+            f"{v['width_inches'] * 25.4:.1f} × {v['height_inches'] * 25.4:.1f} мм; "
+            + ("основа" if v["base"] else f"площадь меньше на {v['area_reduction_percent']:.1f}%")
+            + "; показано в исходном масштабе",
+            fontsize=9,
+        )
         f.text(0.08, 0.07, "\n".join(textwrap.wrap(v["note"], 90)), fontsize=9)
         f.text(0.08, 0.03, str(i + cover_pages + 1), fontsize=8)
         path = OUT / "renders" / f"{v['id']}.pdf"
@@ -211,26 +210,31 @@ def main():
         for p in sorted((OUT / "interactive").glob("*.html"))
         if p.name != "index.html"
     )
-    absolute_links = "".join(
-        f'<li>{v["id"]}: <a href="../figures/{v["id"]}.pdf">PDF</a> · '
-        f'<a href="../figures/{v["id"]}.png">PNG</a></li>'
-        for v in absolute_config()["variants"]
+    static_links = "".join(
+        f'<li>{v["id"]} ({"основа" if v["base"] else "плотная альтернатива"}): '
+        f'<a href="../figures/{v["id"]}.pdf">PDF</a> · '
+        f'<a href="../figures/{v["id"]}.png">PNG</a>'
+        + (f' · −{v["area_reduction_percent"]:.1f}% площади' if not v["base"] else '')
+        + '</li>'
+        for v in variants
     )
     (OUT / "interactive/index.html").write_text(
         '<!doctype html><meta charset="utf-8"><h1>Галерея рисунков</h1>'
         '<p><a href="../COMPARISON.pdf">Все варианты в PDF</a></p>'
-        '<h2>Абсолютные значения качества и геометрии</h2><ul>' + absolute_links + '</ul>'
+        '<h2>Основы и плотные альтернативы</h2><ul>' + static_links + '</ul>'
         '<h2>Интерактивные панели</h2><p>Азимут: шесть значений. После отпускания мыши ракурс привязывается к ближайшему. Высота обзора свободная. Наклон камеры вокруг направления взгляда отключён.</p><ul>'
         + links
         + "</ul>", encoding="utf-8",
     )
-    # Remove only retired generated table outputs, keeping other figures/cameras.
-    selected = "1C-09-absolute-unit"
-    for folder in ["figures", "renders", "data"]:
+    # Remove only named retired gallery products, not manually exported cameras.
+    selected = set(BASES + ALTERNATIVES)
+    retired = {"2D-large", "3E-large", "4A-endpoints", "5A-large", "1C-alternating"}
+    retired.update("1C-" + key for key, _, _ in PALETTES)
+    for folder in ["figures", "renders"]:
         directory = (OUT / folder).resolve()
-        for path in directory.glob("1C-*"):
-            if path.is_file() and not path.name.startswith(selected + ".") and not path.name.startswith(selected + "-"):
-                path.unlink()
+        for identity in retired - selected:
+            for extension in ("pdf", "png"):
+                (directory / f"{identity}.{extension}").unlink(missing_ok=True)
     for name in ["scales_alternating.csv", "scales_independent.csv"] + [f"{key}-scales.csv" for key, _, _ in PALETTES]:
         (OUT / "data" / name).unlink(missing_ok=True)
     print(OUT / "COMPARISON.pdf")

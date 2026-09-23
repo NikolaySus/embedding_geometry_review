@@ -142,6 +142,42 @@ def surface(m, tri, kind, style, azim=-55, font=7):
     return fig, labels
 
 
+def compact_surface(m, tri, kind, dense=False):
+    """Return the original compact surface or its tighter static print layout.
+
+    Dense pages retain the physical panel size, fonts, camera and data scales;
+    only the vertical panel spacing and unused page margins change.
+    """
+    fig, labels = large_surface(m, tri, kind, -60, 6.5)
+    for n, ax in enumerate(fig.axes):
+        ax.set_position(
+            [0.065 + (n % 2) * 0.49, 0.545 if n < 2 else 0.165, 0.445, 0.405]
+        )
+        x = ax.get_xlim()
+        y = ax.get_ylim()
+        ax.set_box_aspect((x[1] - x[0], y[1] - y[0], 1.2), zoom=1.19)
+    if dense:
+        # Work in inches so reducing the page does not shrink measured panels.
+        positions = [ax.get_position().frozen() for ax in fig.axes]
+        fig.set_size_inches(6.2, 6.65)
+        for n, (ax, pos) in enumerate(zip(fig.axes, positions)):
+            ax.set_position(
+                [pos.x0, (pos.y0 * 7.4 - (0.25 if n < 2 else 0)) / 6.65,
+                 pos.width, pos.height * 7.4 / 6.65]
+            )
+            ax.patch.set_alpha(0)
+        for text in fig.texts:
+            text.set_y(text.get_position()[1] * 7.4 / 6.65)
+            text.set_text(
+                text.get_text()
+                .replace("Грани соединяют измерения; промежуточные значения не измерены.",
+                         "Грани соединяют измерения; между ними измерений нет.")
+                .replace("Числа наверху: значения точек; высота верхнего слоя условна.",
+                         "Числа сверху: значения точек; высота слоя условна.")
+            )
+    return fig, labels
+
+
 def large_surface(m, tri, kind, azim, font):
     fig, labels = surface(m, tri, kind, "roof-gradient", azim, font)
     for n, ax in enumerate(fig.axes):

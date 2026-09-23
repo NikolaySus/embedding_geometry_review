@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import proj3d
 import plotly.io as pio
 from pypdf import PdfReader
-from .build import OUT, BASES, snap_camera, apply_font
+from .build import OUT, BASES, ALTERNATIVES, snap_camera, apply_font
 from .data import ASSETS, SRC, Q, G, load_data, load_absolute_data, absolute_config
 from .tables import absolute_scales
 
@@ -127,17 +127,28 @@ def main():
             and "plotly_relayout" in html
         )
     manifest = json.loads((OUT / "manifest.json").read_text())
-    expected_variants = (
-        set(BASES)
-        | {"2D-compact", "3E-compact", "4A-compact", "5A-compact"}
-        | {v["id"] for v in absolute_config()["variants"]}
-    )
+    expected_variants = set(BASES + ALTERNATIVES)
     assert {v["id"] for v in manifest["variants"]} == expected_variants
-    assert {p.stem for p in (OUT / "figures").glob("1C-*.pdf")} == {"1C-09-absolute-unit"}
+    assert {
+        p.stem for p in (OUT / "figures").glob("1C-*.pdf")
+        if not p.stem.endswith("-camera")
+    } == {v["id"] for v in absolute_config()["variants"]}
     assert {v["id"] for v in manifest["variants"] if v["base"]} == set(BASES)
     for identity in expected_variants:
         assert len(PdfReader(OUT / "figures" / f"{identity}.pdf").pages) == 1
         assert (OUT / "figures" / f"{identity}.png").stat().st_size > 10000
+    expected_order = [item for pair in zip(BASES, ALTERNATIVES) for item in pair]
+    assert [v["id"] for v in manifest["variants"]] == expected_order
+    for base_id, alt_id in zip(BASES, ALTERNATIVES):
+        base = next(v for v in manifest["variants"] if v["id"] == base_id)
+        alt = next(v for v in manifest["variants"] if v["id"] == alt_id)
+        assert np.isclose(base["width_inches"], alt["width_inches"])
+        assert alt["height_inches"] < base["height_inches"]
+        assert 0 < alt["area_reduction_percent"] < 100
+        for variant in (base, alt):
+            page = PdfReader(OUT / "figures" / f"{variant['id']}.pdf").pages[0]
+            assert np.isclose(float(page.mediabox.width), variant["width_inches"] * 72)
+            assert np.isclose(float(page.mediabox.height), variant["height_inches"] * 72)
     count = len(expected_variants)
     pages = count + (count + 9) // 10
     assert len(manifest["variants"]) == count
@@ -147,7 +158,8 @@ def main():
         variants=count,
         pages=pages,
         palette_alternatives=0,
-        absolute_alternatives=len(absolute_config()["variants"]),
+        base_variants=len(BASES),
+        dense_alternatives=len(ALTERNATIVES),
         interactive_panels=12,
         azimuths=list(range(0, 360, 60)),
         checks=[
@@ -159,6 +171,8 @@ def main():
             "vertical edge projection at 18 views",
             "font units",
             "saved settings",
+            "one unchanged base and one physically denser alternative per figure",
+            "PDF dimensions match recorded area savings",
         ],
     )
     (OUT / "validation.json").write_text(json.dumps(result, indent=2))
