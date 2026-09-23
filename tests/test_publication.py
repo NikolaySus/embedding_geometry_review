@@ -6,6 +6,7 @@ from pathlib import Path
 from docx import Document
 from docx.shared import Cm, Pt
 from PIL import Image
+import pytest
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,3 +56,24 @@ def test_contact_sheets_are_scoped_to_output_directory(tmp_path):
     assert sheets[0].is_file()
     assert not stale.exists()
     assert sentinel.exists()
+
+
+def test_editorial_comments_hidden_without_removing_surrounding_content(tmp_path):
+    text = '# Title\n\nBefore <!-- editorial: transfer-candidate TC-01 --> after.\n\n<!-- editorial:\nmultiline note\n-->\n\n| A | B |\n|---|---|\n| 1 | 2 |\n'
+    manuscript = tmp_path / 'article.md'
+    manuscript.write_text(text)
+    refs = tmp_path / 'refs.json'
+    refs.write_text('[]')
+    output = tmp_path / 'article.docx'
+    document.build_docx(manuscript, refs, output)
+    rendered = Document(output)
+    assert [p.text for p in rendered.paragraphs if p.text] == ['Title', 'Before after.']
+    assert len(rendered.tables) == 1
+    assert 'editorial' not in document.publication_text(text)
+    assert document.publication_text('Unchanged text.') == 'Unchanged text.'
+
+
+@pytest.mark.parametrize('text', ['Text <!-- missing end', 'Text -->'])
+def test_unclosed_editorial_comment_fails(text):
+    with pytest.raises(ValueError):
+        document.publication_text(text)

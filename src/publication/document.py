@@ -196,9 +196,17 @@ def add_references(doc: Document, refs: list[dict]) -> None:
         run.underline = True
 
 
+def publication_text(text: str) -> str:
+    """Keep source-only editorial comments out of all rendered content."""
+    text = re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+    if "<!--" in text or "-->" in text:
+        raise ValueError("Unclosed or unmatched Markdown editorial comment")
+    return text
+
+
 def build_docx(manuscript: Path, references: Path, output: Path) -> Path:
     refs = json.loads(references.read_text(encoding="utf-8"))
-    lines = manuscript.read_text(encoding="utf-8").splitlines()
+    lines = publication_text(manuscript.read_text(encoding="utf-8")).splitlines()
     doc = Document()
     configure_document(doc)
     doc.styles["References"].font.size = Pt(9)
@@ -338,4 +346,3 @@ def build_contact_sheets(pages: list[Path], contacts_dir: Path, per_sheet: int =
         canvas.save(output)
         outputs.append(output)
     return outputs
-

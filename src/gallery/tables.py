@@ -34,7 +34,7 @@ def absolute_scales(mean, variant):
     return pd.DataFrame(rows).set_index("column")
 
 
-def absolute_table(frame, variant):
+def absolute_table(frame, variant, *, data_dir=None):
     """Same numeric-table design as 1C-01, with explicit absolute scales."""
     mean = frame.groupby("branch")[Q + G].mean()
     order = ["m0"] + [b for b in mean.index if b != "m0"]
@@ -109,7 +109,8 @@ def absolute_table(frame, variant):
     )
     fig.text(.15, (.10 if dense else .216) / height, caption,
         fontsize=7, linespacing=1.3)
-    scales.to_csv(OUT / "data" / f"{variant['id']}-scales.csv")
+    destination = OUT / "data" if data_dir is None else data_dir
+    scales.to_csv(destination / f"{variant['id']}-scales.csv")
     return fig
 
 

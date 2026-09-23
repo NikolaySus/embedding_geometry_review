@@ -5,7 +5,7 @@ import pandas as pd
 from .data import SRC, OUT, COLORS, LABEL
 
 
-def endpoints():
+def endpoints(*, data_dir=None):
     d = pd.read_csv(SRC / "geometry_trajectories.csv")
     fig, axes = plt.subplots(2, 2, figsize=(6.2, 5.8))
     records = []
@@ -77,13 +77,14 @@ def endpoints():
         "Первый этап: отдельные режимы, не смеси; три seed.\nМаркеры: шаги 0, 68, 135, 270; линии лишь соединяют измерения.\nПолоса: ± SD; у конца линии: среднее и ± SD на шаге 270.\nПодписи разведены по высоте и соединены с фактическими конечными точками.",
         fontsize=8,
     )
-    pd.DataFrame(records).to_csv(OUT / "data/endpoints.csv", index=False)
+    destination = OUT / "data" if data_dir is None else data_dir
+    pd.DataFrame(records).to_csv(destination / "endpoints.csv", index=False)
     return fig
 
 
-def compact_trajectories(dense=False):
+def compact_trajectories(dense=False, *, data_dir=None):
     """Return compact endpoint means/SD, optionally on a shorter print canvas."""
-    fig = endpoints()
+    fig = endpoints(data_dir=data_dir)
     fig.subplots_adjust(
         left=0.11, right=0.99, top=0.91, bottom=0.20, hspace=0.30, wspace=0.29
     )
