@@ -54,10 +54,10 @@ def test_migration_storage_matches_git_policy(repository):
     manifest = json.loads((ROOT / "docs/migration_manifest.json").read_text())
     paths = [entry["path"] for entry in manifest["files"]]
     result = subprocess.run(
-        ["git", "check-ignore", "--no-index", "--stdin"], cwd=repository,
-        input="\n".join(paths) + "\n", text=True, capture_output=True,
+        ["git", "check-ignore", "--no-index", "--stdin", "-z"], cwd=repository,
+        input=("\0".join(paths) + "\0").encode("utf-8"), capture_output=True,
     )
     assert result.returncode in (0, 1), result.stderr
-    ignored = set(result.stdout.splitlines())
+    ignored = set(result.stdout.decode("utf-8").split("\0"))
     for entry in manifest["files"]:
         assert (entry["path"] in ignored) == (entry["storage"] == "local"), entry["path"]

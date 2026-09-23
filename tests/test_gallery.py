@@ -9,6 +9,8 @@ import pytest
 
 from gallery.build import camera_figure
 from gallery.data import ASSETS, ROOT, SRC, G, Q, load_data, layout_config
+from gallery.data import load_absolute_data, absolute_config
+from gallery.tables import absolute_scales
 from gallery.interactive import apply_font, apply_roof, compact_scene, snap_camera
 
 
@@ -27,6 +29,37 @@ def test_measured_data_contract():
     assert set(triangles.flat) == set(range(22))
     for branch in ["mix_s100_c000_r000", "mix_s000_c100_r000", "mix_s000_c000_r100"]:
         np.testing.assert_allclose(residual.loc[branch], 0, atol=1e-14)
+
+
+def test_absolute_scores_use_clean_tasks_and_preserve_per_seed_deltas():
+    import pandas as pd
+
+    absolute = load_absolute_data().set_index(["branch", "seed"])
+    assert absolute.shape == (72, 9)
+    source = pd.read_csv(ROOT / "reports/pilot_v2_mixtures/score_deltas.csv")
+    baseline = source[(source.branch == "m0") & (source.seed == 42)].set_index("task").score
+    clean_sts = ["BIOSSES", "STSBenchmark.clean_exact", "SICK-R.clean_exact",
+                 "STS12.clean_exact", "STS13.clean_exact", "STS14.clean_exact"]
+    assert absolute.loc[("m0", 42), "sts"] == pytest.approx(baseline[clean_sts].mean())
+    assert absolute.loc[("m0", 42), "AG News"] == pytest.approx(baseline["AGNewsClassification"])
+    assert absolute.loc[("m0", 42), "effective_rank"] == pytest.approx(203.61087036132812)
+    assert absolute.loc[("m0", 42), "neighborhood_preservation"] == 1
+    delta = load_data()[0].set_index(["branch", "seed"])
+    for (branch, seed), values in delta.iterrows():
+        np.testing.assert_allclose(absolute.loc[(branch, seed)] - absolute.loc[("m0", seed)],
+                                   values, atol=1e-10, rtol=1e-10)
+
+
+@pytest.mark.parametrize("variant", absolute_config()["variants"], ids=lambda v: v["id"])
+def test_absolute_color_scales_share_quality_limits_without_clipping(variant):
+    mean = load_absolute_data().groupby("branch")[Q + G].mean()
+    scales = absolute_scales(mean, variant)
+    assert scales.loc[Q, ["lower", "upper", "palette"]].drop_duplicates().shape[0] == 1
+    assert scales.loc[Q, "palette"].eq("RdBu").all()
+    assert len(set(scales.loc[G, "palette"]) | {"RdBu"}) == 5
+    for c in Q + G:
+        assert mean[c].between(scales.loc[c, "lower"], scales.loc[c, "upper"]).all()
+    assert scales.clipped.eq(0).all()
 
 
 @pytest.mark.parametrize("kind", ["2D", "3E", "5A"])

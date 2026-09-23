@@ -6,8 +6,9 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import proj3d
 import plotly.io as pio
 from pypdf import PdfReader
-from .build import OUT, BASES, PALETTES, snap_camera, apply_font
-from .data import ASSETS, SRC, Q, G, load_data
+from .build import OUT, BASES, snap_camera, apply_font
+from .data import ASSETS, SRC, Q, G, load_data, load_absolute_data, absolute_config
+from .tables import absolute_scales
 
 
 def main():
@@ -26,25 +27,15 @@ def main():
     assert (OUT / "data/quality_geometry_by_seed.csv").read_bytes() == (
         SRC / "quality_geometry_by_seed.csv"
     ).read_bytes()
-    mean = data.groupby("branch")[Q + G].mean()
-    for key, mode, palettes in PALETTES:
-        s = pd.read_csv(OUT / "data" / f"{key}-scales.csv").set_index("column")
-        for c in mean:
-            v = mean[c]
-            low, high = v.min(), v.max()
-            if mode == "symmetric":
-                low = -abs(v).max()
-                high = -low
-            elif mode == "zero":
-                low = min(low, 0)
-                high = max(high, 0)
-            elif mode == "rank":
-                low, high = 0, 1
-            elif mode == "quantile":
-                low, high = v.quantile([0.05, 0.95])
-            assert np.isclose(s.loc[c, "lower"], low) and np.isclose(
-                s.loc[c, "upper"], high
-            )
+    absolute = load_absolute_data()
+    pd.testing.assert_frame_equal(
+        pd.read_csv(OUT / "data/absolute_quality_geometry_by_seed.csv"), absolute,
+        check_exact=False, atol=1e-12, rtol=1e-12,
+    )
+    abs_mean = absolute.groupby("branch")[Q + G].mean()
+    for variant in absolute_config()["variants"]:
+        stored = pd.read_csv(OUT / "data" / f"{variant['id']}-scales.csv").set_index("column")
+        pd.testing.assert_frame_equal(stored, absolute_scales(abs_mean, variant))
     fig = plt.figure()
     ax = fig.add_subplot(projection="3d")
     ax.set(xlim=(-0.4, 1.2), ylim=(-0.5, 1.1), zlim=(-1, 1))
@@ -136,27 +127,33 @@ def main():
             and "plotly_relayout" in html
         )
     manifest = json.loads((OUT / "manifest.json").read_text())
-    assert len(manifest["variants"]) == 17
     expected_variants = (
         set(BASES)
-        | {"1C-" + key for key, _, _ in PALETTES}
         | {"2D-compact", "3E-compact", "4A-compact", "5A-compact"}
+        | {v["id"] for v in absolute_config()["variants"]}
     )
     assert {v["id"] for v in manifest["variants"]} == expected_variants
+    assert {p.stem for p in (OUT / "figures").glob("1C-*.pdf")} == {"1C-09-absolute-unit"}
     assert {v["id"] for v in manifest["variants"] if v["base"]} == set(BASES)
     for identity in expected_variants:
         assert len(PdfReader(OUT / "figures" / f"{identity}.pdf").pages) == 1
         assert (OUT / "figures" / f"{identity}.png").stat().st_size > 10000
-    assert len(PdfReader(OUT / "COMPARISON.pdf").pages) == 19
+    count = len(expected_variants)
+    pages = count + (count + 9) // 10
+    assert len(manifest["variants"]) == count
+    assert len(PdfReader(OUT / "COMPARISON.pdf").pages) == pages
     result = dict(
         status="passed",
-        variants=17,
-        pages=19,
-        palette_alternatives=8,
+        variants=count,
+        pages=pages,
+        palette_alternatives=0,
+        absolute_alternatives=len(absolute_config()["variants"]),
         interactive_panels=12,
         azimuths=list(range(0, 360, 60)),
         checks=[
             "palette limits",
+            "absolute scores and geometry match recorded observations and per-seed deltas",
+            "shared quality scale and unclipped absolute values",
             "unchanged source inputs",
             "isotropic XY scaling",
             "vertical edge projection at 18 views",

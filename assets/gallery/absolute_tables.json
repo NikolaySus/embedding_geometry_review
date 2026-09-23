@@ -1,0 +1,19 @@
+{
+  "quality_tasks": {
+    "AG News": ["AGNewsClassification"],
+    "sts": ["BIOSSES", "STSBenchmark.clean_exact", "SICK-R.clean_exact", "STS12.clean_exact", "STS13.clean_exact", "STS14.clean_exact"],
+    "classification_transfer": ["Banking77Classification", "EmotionClassification", "AmazonCounterfactualClassification", "MassiveIntentClassification"],
+    "clustering": ["TwentyNewsgroupsClustering.v2", "RedditClustering.v2"],
+    "retrieval": ["SciFact", "NFCorpus", "ArguAna", "FiQA2018"]
+  },
+  "quality_palette": "RdBu",
+  "variants": [
+    {"id": "1C-09-absolute-unit", "quality_range": [0.0, 1.0]}
+  ],
+  "geometry": {
+    "effective_rank": {"palette": "Purples", "range": [0.0, 250.0]},
+    "top10_eigenvalue_share": {"palette": "Greens", "range": [0.0, 1.0]},
+    "neighborhood_preservation": {"palette": "Oranges", "range": [0.0, 1.0]},
+    "retrieval_margin": {"palette": "Greys", "range": [0.0, 0.3]}
+  }
+}

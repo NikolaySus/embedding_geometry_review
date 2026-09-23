@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 import numpy as np
 import pandas as pd
-from .data import OUT, Q, G, LABEL, short
+from .data import OUT, Q, G, LABEL, short, absolute_config
 
 PALETTES = [
     ("01-symmetric-uniform", "symmetric", ["RdBu"]),
@@ -16,6 +16,88 @@ PALETTES = [
     ("07-robust-quantiles", "quantile", ["viridis", "cividis"]),
     ("08-empirical-rank", "rank", ["viridis", "cividis"]),
 ]
+
+
+def absolute_scales(mean, variant):
+    config = absolute_config()
+    bounds = variant["quality_range"]
+    if bounds == "observed":
+        bounds = [float(mean[Q].to_numpy().min()), float(mean[Q].to_numpy().max())]
+    rows = []
+    for c in Q + G:
+        low, high = bounds if c in Q else config["geometry"][c]["range"]
+        palette = config["quality_palette"] if c in Q else config["geometry"][c]["palette"]
+        clipped = int(((mean[c] < low) | (mean[c] > high)).sum())
+        if clipped:
+            raise ValueError(f"Absolute scale would clip {c}: {low}..{high}")
+        rows.append(dict(column=c, palette=palette, lower=low, upper=high, clipped=clipped))
+    return pd.DataFrame(rows).set_index("column")
+
+
+def absolute_table(frame, variant):
+    """Same numeric-table design as 1C-01, with explicit absolute scales."""
+    mean = frame.groupby("branch")[Q + G].mean()
+    order = ["m0"] + [b for b in mean.index if b != "m0"]
+    mean = mean.loc[order]
+    sd = frame.groupby("branch")[Q + G].std().loc[order]
+    scales = absolute_scales(mean, variant)
+    # Keep cell sizes and font sizes; reclaim vertical space above the table.
+    height = 7.6
+    fig = plt.figure(figsize=(6.2, height))
+    ax = fig.add_axes([0.15, 1.52 / height, 0.83, 5.28 / height])
+    rgba = np.empty((len(mean), 9, 4))
+    for j, c in enumerate(Q + G):
+        s = scales.loc[c]
+        cmap = plt.colormaps[s.palette]
+        colors = cmap(Normalize(s.lower, s.upper)(mean[c].to_numpy()))
+        colors[:, :3] = 0.5 * colors[:, :3] + 0.5
+        rgba[:, j] = colors
+        for i, branch in enumerate(order):
+            digits = 1 if c == "effective_rank" else 3
+            ax.text(j, i, f"{mean.loc[branch,c]:.{digits}f}\n±{sd.loc[branch,c]:.{digits}f}",
+                    ha="center", va="center", fontsize=7.5, linespacing=1.05)
+    ax.imshow(rgba, aspect="auto")
+    ax.set(xticks=range(9), xticklabels=[LABEL[c] + (" ↑" if c in Q else "") for c in Q + G],
+           yticks=range(len(order)), yticklabels=["M0" if b == "m0" else short(b) for b in order])
+    ax.xaxis.tick_top()
+    ax.tick_params(length=0, labelsize=8)
+    ax.set_xticks(np.arange(-0.5, 9), minor=True)
+    ax.set_yticks(np.arange(-0.5, len(order)), minor=True)
+    ax.grid(which="minor", color="white", lw=0.6)
+    ax.tick_params(which="minor", length=0)
+    ax.axvline(4.5, color="#555555", lw=1)
+    ax.axhline(0.5, color="#555555", lw=0.8)
+    fig.text(0.15, 7.41 / height, "Абсолютное качество", fontsize=9)
+    fig.text(0.63, 7.41 / height, "Геометрия: отдельные шкалы", fontsize=8)
+    # Legends use the very same lightened palettes as the cells.
+    for c, x, width, title in [(Q[0], .15, .44, "Общая шкала AG / STS / Cls-tr / Clust / Ret")] + [
+        (c, .15 + (5+j)*.83/9 + .008, .075, LABEL[c]) for j,c in enumerate(G)
+    ]:
+        s = scales.loc[c]
+        bar = fig.add_axes([x, 7.10 / height, width, .104 / height])
+        colors = plt.colormaps[s.palette](np.linspace(0, 1, 256))
+        colors[:, :3] = .5 * colors[:, :3] + .5
+        bar.imshow(colors[None, :, :], aspect="auto", extent=[s.lower, s.upper, 0, 1])
+        bar.set(yticks=[], xticks=[s.lower, s.upper])
+        bar.set_xticklabels([f"{s.lower:.3g}", f"{s.upper:.3g}"])
+        bar.get_xticklabels()[0].set_ha("left")
+        bar.get_xticklabels()[-1].set_ha("right")
+        bar.tick_params(length=2, labelsize=6.5, pad=2)
+        bar.set_title(title, fontsize=6.5, pad=4)
+        for spine in bar.spines.values():
+            spine.set_visible(False)
+    fig.text(.15, .216 / height,
+        "Ячейка: абсолютное среднее ± SD трёх seed; веса STS:Cls:Ret.\n"
+        "AG: accuracy AG News; STS: Spearman; Cls-tr: accuracy без AG News;\n"
+        "Clust: V-measure; Ret: nDCG@10. Семейства: среднее по задачам.\n"
+        "Качество: красный — ниже, синий — выше; середина не означает Δ = 0.\n"
+        "Одинаковый цвет качества означает одинаковое число, не равную полезность.\n"
+        "Rank: эффективный ранг; Top10: доля дисперсии; kNN: доля соседей M0;\n"
+        "Margin: query-document зазор. Геометрия не имеет общего «лучше/хуже».\n"
+        "M0: исходная модель; её SD описывает повторную оценку, не обучение.",
+        fontsize=7, linespacing=1.3)
+    scales.to_csv(OUT / "data" / f"{variant['id']}-scales.csv")
+    return fig
 
 
 def heat_table(frame, split=False):

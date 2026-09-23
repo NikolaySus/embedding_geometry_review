@@ -12,13 +12,13 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pypdf import PdfReader, PdfWriter, Transformation
 from matplotlib.backends.backend_pdf import PdfPages
-from .data import OUT, SRC, Q, G, load_data, layout_config
-from .tables import PALETTES, palette_table, independent_table
+from .data import OUT, SRC, Q, G, load_data, layout_config, load_absolute_data, absolute_config
+from .tables import PALETTES, absolute_table
 from .surfaces import large_surface
 from .trajectories import endpoints
 from .interactive import compact_scene, interactive, apply_roof, apply_font, snap_camera
 
-BASES = ["1C-alternating", "2D-large", "3E-large", "4A-endpoints", "5A-large"]
+BASES = ["1C-09-absolute-unit", "2D-large", "3E-large", "4A-endpoints", "5A-large"]
 
 
 def camera_figure(state):
@@ -92,10 +92,13 @@ def main():
         OUT / "data/triangles.csv", index=False
     )
     variants = []
+    absolute = load_absolute_data()
     baselines = {
-        "1C-alternating": independent_table(frame, True),
+        "1C-09-absolute-unit": absolute_table(absolute, absolute_config()["variants"][0]),
         "4A-endpoints": endpoints(),
     }
+    absolute.to_csv(OUT / "data/absolute_quality_geometry_by_seed.csv", index=False)
+    absolute.groupby("branch")[Q + G].agg(["mean", "std"]).to_csv(OUT / "data/absolute_summary.csv")
     for kind, values in [("2D", m[G]), ("3E", m[Q[1:]]), ("5A", residual)]:
         cfg = config[kind]
         baselines[kind + "-large"] = large_surface(
@@ -107,7 +110,10 @@ def main():
         fig.savefig(OUT / "figures" / f"{key}.png", dpi=180)
         plt.close(fig)
         variants.append(
-            dict(id=key, base=True, note="Выбранная основа, без изменений.")
+            dict(id=key, base=True, note=(
+                "Выбранный рисунок 1: абсолютные значения и M0. Общая шкала качества 0–1; четыре отдельные палитры геометрии. Уплотнённое расположение шкал."
+                if key.startswith("1C-") else "Выбранная основа, без изменений."
+            ))
         )
 
     def save(key, fig, note):
@@ -116,16 +122,6 @@ def main():
         plt.close(fig)
         variants.append(dict(id=key, base=False, note=note))
 
-    for key, mode, palettes in PALETTES:
-        save(
-            "1C-" + key,
-            palette_table(frame, key, mode, palettes),
-            "Палитры: "
-            + ", ".join(palettes)
-            + "; нормировка: "
-            + mode
-            + ". Числа и SD одинаковы во всех вариантах.",
-        )
     for kind, values in [("2D", m[G]), ("3E", m[Q[1:]]), ("5A", residual)]:
         fig, labels = large_surface(values, tri, kind, -60, 6.5)
         for n, ax in enumerate(fig.axes):
@@ -161,9 +157,10 @@ def main():
         "Меньше межпанельные промежутки и правая область после шага 270; конечные числа сохранены.",
     )
     variants.sort(key=lambda v: (v["id"][0], not v["base"], v["id"]))
+    cover_pages = (len(variants) + 9) // 10
     writer = PdfWriter()
     with PdfPages(OUT / "renders/cover.pdf") as pdf:
-        for start in [0, 10]:
+        for start in range(0, len(variants), 10):
             f = plt.figure(figsize=(8.27, 11.69))
             f.text(
                 0.08,
@@ -175,7 +172,7 @@ def main():
                 f.text(
                     0.1,
                     0.85 - i * 0.065,
-                    f"{start + i + 3:02d}   {v['id']}"
+                    f"{start + i + cover_pages + 1:02d}   {v['id']}"
                     + (" (основа)" if v["base"] else ""),
                     fontsize=11,
                 )
@@ -192,7 +189,7 @@ def main():
         f = plt.figure(figsize=(8.27, 11.69))
         f.text(0.08, 0.955, v["id"], fontsize=13)
         f.text(0.08, 0.07, "\n".join(textwrap.wrap(v["note"], 90)), fontsize=9)
-        f.text(0.08, 0.03, str(i + 3), fontsize=8)
+        f.text(0.08, 0.03, str(i + cover_pages + 1), fontsize=8)
         path = OUT / "renders" / f"{v['id']}.pdf"
         f.savefig(path)
         plt.close(f)
@@ -214,9 +211,26 @@ def main():
         for p in sorted((OUT / "interactive").glob("*.html"))
         if p.name != "index.html"
     )
-    (OUT / "interactive/index.html").write_text(
-        '<!doctype html><meta charset="utf-8"><h1>Галерея рисунков</h1><p>Азимут: шесть значений. После отпускания мыши ракурс привязывается к ближайшему. Высота обзора свободная. Наклон камеры вокруг направления взгляда отключён.</p><ul>'
-        + links
-        + "</ul>"
+    absolute_links = "".join(
+        f'<li>{v["id"]}: <a href="../figures/{v["id"]}.pdf">PDF</a> · '
+        f'<a href="../figures/{v["id"]}.png">PNG</a></li>'
+        for v in absolute_config()["variants"]
     )
+    (OUT / "interactive/index.html").write_text(
+        '<!doctype html><meta charset="utf-8"><h1>Галерея рисунков</h1>'
+        '<p><a href="../COMPARISON.pdf">Все варианты в PDF</a></p>'
+        '<h2>Абсолютные значения качества и геометрии</h2><ul>' + absolute_links + '</ul>'
+        '<h2>Интерактивные панели</h2><p>Азимут: шесть значений. После отпускания мыши ракурс привязывается к ближайшему. Высота обзора свободная. Наклон камеры вокруг направления взгляда отключён.</p><ul>'
+        + links
+        + "</ul>", encoding="utf-8",
+    )
+    # Remove only retired generated table outputs, keeping other figures/cameras.
+    selected = "1C-09-absolute-unit"
+    for folder in ["figures", "renders", "data"]:
+        directory = (OUT / folder).resolve()
+        for path in directory.glob("1C-*"):
+            if path.is_file() and not path.name.startswith(selected + ".") and not path.name.startswith(selected + "-"):
+                path.unlink()
+    for name in ["scales_alternating.csv", "scales_independent.csv"] + [f"{key}-scales.csv" for key, _, _ in PALETTES]:
+        (OUT / "data" / name).unlink(missing_ok=True)
     print(OUT / "COMPARISON.pdf")
