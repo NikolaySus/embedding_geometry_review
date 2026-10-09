@@ -5,8 +5,8 @@ import pandas as pd
 from .data import SRC, OUT, COLORS, LABEL
 
 
-def endpoints(*, data_dir=None):
-    d = pd.read_csv(SRC / "geometry_trajectories.csv")
+def endpoints(*, data_dir=None, frame=None):
+    d = pd.read_csv(SRC / "geometry_trajectories.csv") if frame is None else frame
     fig, axes = plt.subplots(2, 2, figsize=(6.2, 5.8))
     records = []
     for ax, c in zip(
@@ -82,9 +82,9 @@ def endpoints(*, data_dir=None):
     return fig
 
 
-def compact_trajectories(dense=False, *, data_dir=None):
+def compact_trajectories(dense=False, *, data_dir=None, frame=None):
     """Return compact endpoint means/SD, optionally on a shorter print canvas."""
-    fig = endpoints(data_dir=data_dir)
+    fig = endpoints(data_dir=data_dir, frame=frame)
     fig.subplots_adjust(
         left=0.11, right=0.99, top=0.91, bottom=0.20, hspace=0.30, wspace=0.29
     )

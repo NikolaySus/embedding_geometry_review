@@ -1,0 +1,19 @@
+{
+  "en": {
+    "train": {
+      "fingerprint": "64e8d94a683368ed",
+      "rows": 11514,
+      "features": "{'id': Value(dtype='large_string', id=None), 'label': Value(dtype='large_string', id=None), 'label_text': Value(dtype='large_string', id=None), 'text': Value(dtype='large_string', id=None)}"
+    },
+    "test": {
+      "fingerprint": "777f748148ace1cc",
+      "rows": 2974,
+      "features": "{'id': Value(dtype='large_string', id=None), 'label': Value(dtype='large_string', id=None), 'label_text': Value(dtype='large_string', id=None), 'text': Value(dtype='large_string', id=None)}"
+    },
+    "validation": {
+      "fingerprint": "73f4243b7a07df0e",
+      "rows": 2033,
+      "features": "{'id': Value(dtype='large_string', id=None), 'label': Value(dtype='large_string', id=None), 'label_text': Value(dtype='large_string', id=None), 'text': Value(dtype='large_string', id=None)}"
+    }
+  }
+}

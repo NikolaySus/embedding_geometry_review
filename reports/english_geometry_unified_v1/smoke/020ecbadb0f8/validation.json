@@ -1,0 +1,20 @@
+{
+  "status": "passed",
+  "technical_only": true,
+  "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+  "five_regimes": 5,
+  "steps_each": 20,
+  "resume_stop": 10,
+  "resume_weights_match": true,
+  "elapsed_seconds": 82.1352225899991,
+  "report": {
+    "experiment_id": "english_geometry_unified_v1",
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "technical_only": true,
+    "expected_runs": 69,
+    "complete_training_runs": 5,
+    "gallery_ready": false,
+    "note": "Technical smoke only: no scientific family aggregates or interpolated surfaces"
+  },
+  "training_seconds": 9.674338849004926
+}

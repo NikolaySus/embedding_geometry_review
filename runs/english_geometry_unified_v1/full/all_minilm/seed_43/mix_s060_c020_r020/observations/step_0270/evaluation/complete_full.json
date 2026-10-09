@@ -1,0 +1,35 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s060_c020_r020",
+    "seed": 43,
+    "step": 270,
+    "weights_sha256": "b656aa29810166d40b84d8e994c7045924c3061fb3ca18a83f4e8b2155db2b37"
+  },
+  "tasks": [
+    "STSBenchmark",
+    "BIOSSES",
+    "SICK-R",
+    "STS12",
+    "STS13",
+    "STS14",
+    "Banking77Classification",
+    "EmotionClassification",
+    "AmazonCounterfactualClassification",
+    "MassiveIntentClassification",
+    "TwentyNewsgroupsClustering.v2",
+    "RedditClustering.v2",
+    "SciFact",
+    "NFCorpus",
+    "ArguAna",
+    "FiQA2018",
+    "AGNewsClassification",
+    "MSMARCORerankingGate",
+    "STSBenchmark.clean_exact",
+    "SICK-R.clean_exact",
+    "STS12.clean_exact",
+    "STS13.clean_exact",
+    "STS14.clean_exact"
+  ]
+}

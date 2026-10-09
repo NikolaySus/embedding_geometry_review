@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s040_c000_r060",
+    "seed": 44,
+    "step": 270,
+    "weights_sha256": "c75405ca47618956fac81007ec5f411512b078c2b84bf0d79f4670679e93bd72"
+  },
+  "task": "Banking77Classification",
+  "metric": "accuracy",
+  "score": 0.803961,
+  "details": {
+    "dataset": "b83f6dc831808778a5c24d700dc2bfc7dc348e28343d55c9f63725f5ae59588f"
+  },
+  "seconds": 4.693551075000869,
+  "technical_only": false
+}

@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s060_c040_r000",
+    "seed": 44,
+    "step": 270,
+    "weights_sha256": "84aab9c0d7c05a617c37cae243e499985cf1fd90790bd857fea202b023cb0be7"
+  },
+  "task": "TwentyNewsgroupsClustering.v2",
+  "metric": "v_measure",
+  "score": 0.431657,
+  "details": {
+    "dataset": "1991fa0f73683d7c4f45d2b33dc903f1b67ca025fe588a8391956bf2f67e6a26"
+  },
+  "seconds": 3.0561999329984246,
+  "technical_only": false
+}

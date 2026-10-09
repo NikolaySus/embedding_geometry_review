@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s033_c033_r033",
+    "seed": 44,
+    "step": 135,
+    "weights_sha256": "fbfdb3183befdbf1a0cd2d5d78568128ac5d7b76845f6fccfdc1621b5af79ed7"
+  },
+  "task": "SciFact",
+  "metric": "ndcg_at_10",
+  "score": 0.62332,
+  "details": {
+    "dataset": "9769e5c4e8ef69284620fd86cc5e2b7335a18c5282ca0ce8aef72f347a2fcb83"
+  },
+  "seconds": 11.245851487001346,
+  "technical_only": false
+}

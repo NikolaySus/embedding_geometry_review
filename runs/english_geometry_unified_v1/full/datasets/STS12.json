@@ -1,0 +1,12 @@
+{
+  "train": {
+    "fingerprint": "768a0a92db9ad183",
+    "rows": 2234,
+    "features": "{'split': Value(dtype='string', id=None), 'sentence1': Value(dtype='string', id=None), 'sentence2': Value(dtype='string', id=None), 'score': Value(dtype='float64', id=None)}"
+  },
+  "test": {
+    "fingerprint": "065855245d706eea",
+    "rows": 3108,
+    "features": "{'split': Value(dtype='string', id=None), 'sentence1': Value(dtype='string', id=None), 'sentence2': Value(dtype='string', id=None), 'score': Value(dtype='float64', id=None)}"
+  }
+}

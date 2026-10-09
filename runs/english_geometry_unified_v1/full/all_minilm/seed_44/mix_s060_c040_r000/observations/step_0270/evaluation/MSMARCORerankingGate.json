@@ -1,0 +1,23 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s060_c040_r000",
+    "seed": 44,
+    "step": 270,
+    "weights_sha256": "84aab9c0d7c05a617c37cae243e499985cf1fd90790bd857fea202b023cb0be7"
+  },
+  "task": "MSMARCORerankingGate",
+  "metric": "ndcg_at_10",
+  "score": 0.9445937871871634,
+  "details": {
+    "mrr": 0.9258323671497585,
+    "ndcg_at_10": 0.9445937871871634,
+    "recall_at_10": 0.999,
+    "hardest_negative_margin": 0.04299387156963348,
+    "queries": 1000,
+    "candidates_per_query": 100
+  },
+  "seconds": 1.403426569999283,
+  "technical_only": false
+}

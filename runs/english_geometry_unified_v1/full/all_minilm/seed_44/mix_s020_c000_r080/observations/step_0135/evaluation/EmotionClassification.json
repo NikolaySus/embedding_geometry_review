@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s020_c000_r080",
+    "seed": 44,
+    "step": 135,
+    "weights_sha256": "13c96e4f9dabc9b308ee35bae3e985f8c81c7c9784e8c0a325afe08d55d4f00f"
+  },
+  "task": "EmotionClassification",
+  "metric": "accuracy",
+  "score": 0.4173,
+  "details": {
+    "dataset": "e61e38ed76014597ce34c43607f4b44a0f95069779b38b970f6cf35a3d63021b"
+  },
+  "seconds": 2.441203062000568,
+  "technical_only": false
+}

@@ -41,6 +41,7 @@ def main() -> None:
         ["scripts/verify_migration.py"],
         ["src/build_article.py", "--variant", "full"],
         ["src/build_article.py", "--variant", "compact"],
+        ["src/build_article.py", "--variant", "ultracompact"],
         ["src/build_gallery.py"],
         ["src/validate_publication.py", "--all"],
     ]

@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "m0",
+    "seed": null,
+    "step": 0,
+    "weights_sha256": "1f970201d9fc2f9192a5c6c7d8306205a20e60d951099fd4359318711ee3e503"
+  },
+  "task": "AmazonCounterfactualClassification",
+  "metric": "accuracy",
+  "score": 0.635413,
+  "details": {
+    "dataset": "1058340930d8de321d7d84678f3e13939c37534029a9de6b4e2e89d5ce05f990"
+  },
+  "seconds": 4.439662429000236,
+  "technical_only": false
+}

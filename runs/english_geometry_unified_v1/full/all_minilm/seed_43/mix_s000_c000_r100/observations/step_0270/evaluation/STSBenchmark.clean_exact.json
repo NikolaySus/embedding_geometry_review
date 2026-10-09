@@ -1,0 +1,21 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s000_c000_r100",
+    "seed": 43,
+    "step": 270,
+    "weights_sha256": "edcd82953e2e9857c7889754db817a05f23fa0c840edef9a01b381e65b6b6556"
+  },
+  "task": "STSBenchmark.clean_exact",
+  "metric": "cosine_spearman",
+  "score": 0.8083212238958136,
+  "details": {
+    "rows": 1130,
+    "removed_rows": 249,
+    "filter": "clean_exact",
+    "dataset": "bad2f7f66b57ffcfc7c71bede84f3ddb642dbed7cde718ff08d12ae666fb0556"
+  },
+  "seconds": 1.566967028000363,
+  "technical_only": false
+}

@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s020_c080_r000",
+    "seed": 42,
+    "step": 270,
+    "weights_sha256": "e4b3f8288739ebe9e197fb941933a7500577cc5cfe88c810ff3cb957f0683f19"
+  },
+  "task": "NFCorpus",
+  "metric": "ndcg_at_10",
+  "score": 0.16993,
+  "details": {
+    "dataset": "320aeb5b404725ca4a6f160dea043b5c0a2372f0f8053c86ed7ac25b0aad9f5c"
+  },
+  "seconds": 8.961000612000134,
+  "technical_only": false
+}

@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s060_c040_r000",
+    "seed": 44,
+    "step": 270,
+    "weights_sha256": "84aab9c0d7c05a617c37cae243e499985cf1fd90790bd857fea202b023cb0be7"
+  },
+  "task": "RedditClustering.v2",
+  "metric": "v_measure",
+  "score": 0.456267,
+  "details": {
+    "dataset": "ac86db7074f2570e8091758a46ff755f736bb19ebd35dcc4454ba6cc02ba8800"
+  },
+  "seconds": 4.374595800996758,
+  "technical_only": false
+}

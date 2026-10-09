@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s020_c020_r060",
+    "seed": 44,
+    "step": 270,
+    "weights_sha256": "688a8c09ad72d0bcbcbef06900aaca58d31760b0d3ee6bc27ac2c89dc426b6c0"
+  },
+  "task": "BIOSSES",
+  "metric": "cosine_spearman",
+  "score": 0.802753,
+  "details": {
+    "dataset": "b9ffff424f1668a4bf6c260f993487a9ca2e243a87bacf52a6375f115388534f"
+  },
+  "seconds": 1.5038311120006256,
+  "technical_only": false
+}

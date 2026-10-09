@@ -1,0 +1,197 @@
+{
+  "schema_version": 1,
+  "model": "all_minilm",
+  "experiment_id": "english_geometry_unified_v1",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "geometry_version": "geometry_v2_knn_self_excluded",
+  "baseline": "Shared frozen M0 at fixed evaluation seed; replicated only for paired deltas, not independent repeats",
+  "regimes": [
+    {
+      "name": "control",
+      "weights": {
+        "control": 1.0
+      }
+    },
+    {
+      "name": "mix_s000_c000_r100",
+      "weights": {
+        "sts": 0.0,
+        "classification": 0.0,
+        "retrieval": 1.0
+      }
+    },
+    {
+      "name": "mix_s000_c020_r080",
+      "weights": {
+        "sts": 0.0,
+        "classification": 0.2,
+        "retrieval": 0.8
+      }
+    },
+    {
+      "name": "mix_s000_c040_r060",
+      "weights": {
+        "sts": 0.0,
+        "classification": 0.4,
+        "retrieval": 0.6
+      }
+    },
+    {
+      "name": "mix_s000_c060_r040",
+      "weights": {
+        "sts": 0.0,
+        "classification": 0.6,
+        "retrieval": 0.4
+      }
+    },
+    {
+      "name": "mix_s000_c080_r020",
+      "weights": {
+        "sts": 0.0,
+        "classification": 0.8,
+        "retrieval": 0.2
+      }
+    },
+    {
+      "name": "mix_s000_c100_r000",
+      "weights": {
+        "sts": 0.0,
+        "classification": 1.0,
+        "retrieval": 0.0
+      }
+    },
+    {
+      "name": "mix_s020_c000_r080",
+      "weights": {
+        "sts": 0.2,
+        "classification": 0.0,
+        "retrieval": 0.8
+      }
+    },
+    {
+      "name": "mix_s020_c020_r060",
+      "weights": {
+        "sts": 0.2,
+        "classification": 0.2,
+        "retrieval": 0.6
+      }
+    },
+    {
+      "name": "mix_s020_c040_r040",
+      "weights": {
+        "sts": 0.2,
+        "classification": 0.4,
+        "retrieval": 0.4
+      }
+    },
+    {
+      "name": "mix_s020_c060_r020",
+      "weights": {
+        "sts": 0.2,
+        "classification": 0.6,
+        "retrieval": 0.2
+      }
+    },
+    {
+      "name": "mix_s020_c080_r000",
+      "weights": {
+        "sts": 0.2,
+        "classification": 0.8,
+        "retrieval": 0.0
+      }
+    },
+    {
+      "name": "mix_s040_c000_r060",
+      "weights": {
+        "sts": 0.4,
+        "classification": 0.0,
+        "retrieval": 0.6
+      }
+    },
+    {
+      "name": "mix_s040_c020_r040",
+      "weights": {
+        "sts": 0.4,
+        "classification": 0.2,
+        "retrieval": 0.4
+      }
+    },
+    {
+      "name": "mix_s040_c040_r020",
+      "weights": {
+        "sts": 0.4,
+        "classification": 0.4,
+        "retrieval": 0.2
+      }
+    },
+    {
+      "name": "mix_s040_c060_r000",
+      "weights": {
+        "sts": 0.4,
+        "classification": 0.6,
+        "retrieval": 0.0
+      }
+    },
+    {
+      "name": "mix_s060_c000_r040",
+      "weights": {
+        "sts": 0.6,
+        "classification": 0.0,
+        "retrieval": 0.4
+      }
+    },
+    {
+      "name": "mix_s060_c020_r020",
+      "weights": {
+        "sts": 0.6,
+        "classification": 0.2,
+        "retrieval": 0.2
+      }
+    },
+    {
+      "name": "mix_s060_c040_r000",
+      "weights": {
+        "sts": 0.6,
+        "classification": 0.4,
+        "retrieval": 0.0
+      }
+    },
+    {
+      "name": "mix_s080_c000_r020",
+      "weights": {
+        "sts": 0.8,
+        "classification": 0.0,
+        "retrieval": 0.2
+      }
+    },
+    {
+      "name": "mix_s080_c020_r000",
+      "weights": {
+        "sts": 0.8,
+        "classification": 0.2,
+        "retrieval": 0.0
+      }
+    },
+    {
+      "name": "mix_s100_c000_r000",
+      "weights": {
+        "sts": 1.0,
+        "classification": 0.0,
+        "retrieval": 0.0
+      }
+    },
+    {
+      "name": "mix_s033_c033_r033",
+      "weights": {
+        "sts": 0.3333333333333333,
+        "classification": 0.3333333333333333,
+        "retrieval": 0.3333333333333333
+      }
+    }
+  ],
+  "complete": true
+}

@@ -9,11 +9,13 @@ import sys
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     choice = parser.add_mutually_exclusive_group(required=True)
-    choice.add_argument("--variant", choices=("full", "compact"))
+    choice.add_argument("--variant", choices=("full", "compact", "ultracompact"))
     choice.add_argument("--all", action="store_true")
     args = parser.parse_args()
-    for variant in ("full", "compact") if args.all else (args.variant,):
-        if variant == "full":
+    for variant in ("full", "compact", "ultracompact") if args.all else (args.variant,):
+        if variant == "ultracompact":
+            from publication.ultracompact import validate
+        elif variant == "full":
             from publication.validate_full import main as validate
         else:
             from publication.validate_compact import main as validate

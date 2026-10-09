@@ -1,0 +1,36 @@
+{
+  "en-ext": {
+    "train": {
+      "fingerprint": "54d7c34e6b6872b8",
+      "rows": 8000,
+      "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int32', id=None), 'label_text': Value(dtype='string', id=None)}"
+    },
+    "validation": {
+      "fingerprint": "79c00784f18e514c",
+      "rows": 666,
+      "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int32', id=None), 'label_text': Value(dtype='string', id=None)}"
+    },
+    "test": {
+      "fingerprint": "3b487dbe8bd09211",
+      "rows": 1334,
+      "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int32', id=None), 'label_text': Value(dtype='string', id=None)}"
+    }
+  },
+  "en": {
+    "train": {
+      "fingerprint": "79f262e72bdc1883",
+      "rows": 4018,
+      "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int32', id=None), 'label_text': Value(dtype='string', id=None)}"
+    },
+    "validation": {
+      "fingerprint": "9433eae50464e05e",
+      "rows": 335,
+      "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int32', id=None), 'label_text': Value(dtype='string', id=None)}"
+    },
+    "test": {
+      "fingerprint": "bc3550ad53ac4899",
+      "rows": 670,
+      "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int32', id=None), 'label_text': Value(dtype='string', id=None)}"
+    }
+  }
+}

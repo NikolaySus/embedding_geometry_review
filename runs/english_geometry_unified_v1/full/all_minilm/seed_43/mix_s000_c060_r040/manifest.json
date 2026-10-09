@@ -1,0 +1,23 @@
+{
+  "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+  "model": "all_minilm",
+  "branch": "mix_s000_c060_r040",
+  "seed": 43,
+  "status": "complete",
+  "technical_only": false,
+  "weights": {
+    "sts": 0.0,
+    "classification": 0.6,
+    "retrieval": 0.4
+  },
+  "step_counts": {
+    "retrieval": 108,
+    "classification": 162
+  },
+  "schedule_sha256": "c754d1641cd5e8ac5cad03b25cde778d71191639c9f27f7c451a3aa2847e6f74",
+  "steps": 270,
+  "weights_sha256": "f4fead5f8f480055bc10228397954dc4574ce53cbc305faca60d8f134ffdd83a",
+  "training_seconds": 26.212676788985846,
+  "examples": 17280,
+  "forward_tokens": 1686863
+}

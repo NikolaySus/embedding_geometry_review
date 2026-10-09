@@ -1,0 +1,15 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s100_c000_r000",
+    "seed": 42,
+    "step": 10,
+    "weights_sha256": "24777cc19e30a3097db388e6838e3008bef8b73e73b433430e53af03a8aef560"
+  },
+  "tasks": [
+    "technical_sts",
+    "technical_retrieval",
+    "BIOSSES"
+  ]
+}

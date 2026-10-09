@@ -1,0 +1,17 @@
+{
+  "train": {
+    "fingerprint": "3c1286edc95eb5da",
+    "rows": 5749,
+    "features": "{'split': Value(dtype='string', id=None), 'genre': Value(dtype='string', id=None), 'dataset': Value(dtype='string', id=None), 'year': Value(dtype='string', id=None), 'sid': Value(dtype='string', id=None), 'score': Value(dtype='float64', id=None), 'sentence1': Value(dtype='string', id=None), 'sentence2': Value(dtype='string', id=None)}"
+  },
+  "validation": {
+    "fingerprint": "18d0a9634bca18e3",
+    "rows": 1500,
+    "features": "{'split': Value(dtype='string', id=None), 'genre': Value(dtype='string', id=None), 'dataset': Value(dtype='string', id=None), 'year': Value(dtype='string', id=None), 'sid': Value(dtype='string', id=None), 'score': Value(dtype='float64', id=None), 'sentence1': Value(dtype='string', id=None), 'sentence2': Value(dtype='string', id=None)}"
+  },
+  "test": {
+    "fingerprint": "61901ccfa4242b8c",
+    "rows": 1379,
+    "features": "{'split': Value(dtype='string', id=None), 'genre': Value(dtype='string', id=None), 'dataset': Value(dtype='string', id=None), 'year': Value(dtype='string', id=None), 'sid': Value(dtype='string', id=None), 'score': Value(dtype='float64', id=None), 'sentence1': Value(dtype='string', id=None), 'sentence2': Value(dtype='string', id=None)}"
+  }
+}

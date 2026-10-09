@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s100_c000_r000",
+    "seed": 42,
+    "step": 20,
+    "weights_sha256": "20011bd885b2b531e101b1eb983704bac3423e2cb621e1f5d9743812af1c3dbc"
+  },
+  "task": "technical_retrieval",
+  "metric": "pair_accuracy",
+  "score": 0.96875,
+  "details": {
+    "rows": 128,
+    "scope": "technical_only"
+  },
+  "seconds": 0.16672904600090988,
+  "technical_only": true
+}

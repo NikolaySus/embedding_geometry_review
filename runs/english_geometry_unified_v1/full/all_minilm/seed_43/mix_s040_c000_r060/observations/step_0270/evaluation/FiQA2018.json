@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s040_c000_r060",
+    "seed": 43,
+    "step": 270,
+    "weights_sha256": "d10593aef42d855e44c4bb523e27134f40c30d732eb49ee9057808fbe8caa8c2"
+  },
+  "task": "FiQA2018",
+  "metric": "ndcg_at_10",
+  "score": 0.35932,
+  "details": {
+    "dataset": "be7a06acfce5fcb2e1e7c50e9b7c332c51fd581412e4ddc6c313ddfce2eef792"
+  },
+  "seconds": 33.56268752499818,
+  "technical_only": false
+}

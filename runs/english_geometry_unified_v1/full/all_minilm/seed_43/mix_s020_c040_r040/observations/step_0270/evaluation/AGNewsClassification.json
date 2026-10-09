@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s020_c040_r040",
+    "seed": 43,
+    "step": 270,
+    "weights_sha256": "917572b5822e2c669a097c21a48177d740e78f48a39db9211a6e2e4c0db5dc79"
+  },
+  "task": "AGNewsClassification",
+  "metric": "accuracy",
+  "score": 0.8809210526315789,
+  "details": {
+    "train_rows": 5760,
+    "test_rows": 7600
+  },
+  "seconds": 6.539221850998729,
+  "technical_only": false
+}

@@ -167,6 +167,7 @@ def add_table(doc: Document, rows: list[list[str]]) -> None:
     table.style = "Table Grid"
     table.autofit = True
     for row_idx, row in enumerate(rows):
+        table.rows[row_idx]._tr.get_or_add_trPr().append(OxmlElement("w:cantSplit"))
         for col_idx, value in enumerate(row):
             cell = table.cell(row_idx, col_idx)
             cell.vertical_alignment = WD_CELL_VERTICAL_ALIGNMENT.CENTER
@@ -204,7 +205,7 @@ def publication_text(text: str) -> str:
     return text
 
 
-def build_docx(manuscript: Path, references: Path, output: Path) -> Path:
+def build_docx(manuscript: Path, references: Path, output: Path, *, references_new_page: bool = False) -> Path:
     refs = json.loads(references.read_text(encoding="utf-8"))
     lines = publication_text(manuscript.read_text(encoding="utf-8")).splitlines()
     doc = Document()
@@ -249,6 +250,8 @@ def build_docx(manuscript: Path, references: Path, output: Path) -> Path:
             continue
         if line.startswith("## "):
             paragraph = doc.add_heading(line[3:], level=1)
+            if references_new_page and line[3:] == "Список литературы":
+                paragraph.paragraph_format.page_break_before = True
             paragraph.paragraph_format.first_line_indent = Cm(0)
             i += 1
             continue

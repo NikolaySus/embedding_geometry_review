@@ -1,0 +1,22 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s000_c000_r100",
+    "seed": 43,
+    "step": 68,
+    "weights_sha256": "5847403ae3ee9ad246091e1295d3e9819dd5f92db38852732c8abd5bc30bde20"
+  },
+  "tasks": [
+    "STSBenchmark",
+    "BIOSSES",
+    "Banking77Classification",
+    "EmotionClassification",
+    "TwentyNewsgroupsClustering.v2",
+    "RedditClustering.v2",
+    "SciFact",
+    "NFCorpus",
+    "AGNewsClassification",
+    "STSBenchmark.clean_exact"
+  ]
+}

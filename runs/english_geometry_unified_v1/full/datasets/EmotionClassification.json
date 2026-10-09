@@ -1,0 +1,17 @@
+{
+  "train": {
+    "fingerprint": "f72c12921fcdc598",
+    "rows": 16000,
+    "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int64', id=None), 'label_text': Value(dtype='string', id=None)}"
+  },
+  "validation": {
+    "fingerprint": "f131140ccb3b35fb",
+    "rows": 2000,
+    "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int64', id=None), 'label_text': Value(dtype='string', id=None)}"
+  },
+  "test": {
+    "fingerprint": "f3a7e3e6e17a8646",
+    "rows": 2000,
+    "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int64', id=None), 'label_text': Value(dtype='string', id=None)}"
+  }
+}

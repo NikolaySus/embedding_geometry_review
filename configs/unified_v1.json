@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "experiment_id": "english_geometry_unified_v1",
+  "seeds": [42, 43, 44],
+  "models": {
+    "all_minilm": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+      "max_seq_length": 128,
+      "attention_implementation": "eager"
+    }
+  },
+  "data": {"classification_source": "fancyzhx/ag_news"},
+  "training": {
+    "batch_size": 64, "learning_rate": 0.00002, "weight_decay": 0.01,
+    "warmup_ratio": 0.1, "max_grad_norm": 1.0, "temperature": 0.05,
+    "cosent_scale": 20.0, "total_steps": 270, "smoke_steps": 20,
+    "mixed_precision": "bf16", "deterministic": true, "checkpoint_every": 25,
+    "snapshot_steps": [0, 68, 135, 270]
+  },
+  "mixtures": {"simplex_denominator": 5, "include_barycenter": true, "include_control": true},
+  "evaluation": {
+    "seed": 42, "batch_size": 256,
+    "trajectory_regimes": ["control", "mix_s100_c000_r000", "mix_s000_c100_r000", "mix_s000_c000_r100", "mix_s033_c033_r033", "mix_s020_c000_r080"],
+    "gate_tasks": ["STSBenchmark", "BIOSSES", "Banking77Classification", "EmotionClassification", "TwentyNewsgroupsClustering.v2", "RedditClustering.v2", "SciFact", "NFCorpus"],
+    "full_tasks": ["STSBenchmark", "BIOSSES", "SICK-R", "STS12", "STS13", "STS14", "Banking77Classification", "EmotionClassification", "AmazonCounterfactualClassification", "MassiveIntentClassification", "TwentyNewsgroupsClustering.v2", "RedditClustering.v2", "SciFact", "NFCorpus", "ArguAna", "FiQA2018"]
+  },
+  "geometry": {"version": "geometry_v2_knn_self_excluded", "seed": 42, "generic_sample_size": 10000, "classification_sample_size": 4000, "knn_k": 10, "pair_sample_size": 100000},
+  "storage": {"minimum_free_gb": 5}
+}

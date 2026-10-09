@@ -1,0 +1,2702 @@
+[
+  {
+    "step": 1,
+    "objective": "classification",
+    "loss": 5.462311744689941,
+    "grad_norm": 13.578544616699219,
+    "lr": 1.4814814814814815e-06,
+    "examples": 64,
+    "forward_tokens": 3407,
+    "seconds": 0.073034370001551
+  },
+  {
+    "step": 2,
+    "objective": "classification",
+    "loss": 6.097170829772949,
+    "grad_norm": 14.110980033874512,
+    "lr": 2.222222222222222e-06,
+    "examples": 64,
+    "forward_tokens": 3654,
+    "seconds": 0.0708167129996582
+  },
+  {
+    "step": 3,
+    "objective": "classification",
+    "loss": 5.527182102203369,
+    "grad_norm": 12.50825023651123,
+    "lr": 2.962962962962963e-06,
+    "examples": 64,
+    "forward_tokens": 3583,
+    "seconds": 0.061359387000266
+  },
+  {
+    "step": 4,
+    "objective": "classification",
+    "loss": 5.832333564758301,
+    "grad_norm": 14.189056396484375,
+    "lr": 3.7037037037037037e-06,
+    "examples": 64,
+    "forward_tokens": 3807,
+    "seconds": 0.07149202000073274
+  },
+  {
+    "step": 5,
+    "objective": "retrieval",
+    "loss": 0.24833521246910095,
+    "grad_norm": 4.319043159484863,
+    "lr": 4.444444444444444e-06,
+    "examples": 64,
+    "forward_tokens": 10813,
+    "seconds": 0.15834646499934024
+  },
+  {
+    "step": 6,
+    "objective": "classification",
+    "loss": 5.494064807891846,
+    "grad_norm": 12.17536735534668,
+    "lr": 5.185185185185185e-06,
+    "examples": 64,
+    "forward_tokens": 3542,
+    "seconds": 0.07019656099873828
+  },
+  {
+    "step": 7,
+    "objective": "classification",
+    "loss": 5.781848430633545,
+    "grad_norm": 12.579402923583984,
+    "lr": 5.925925925925926e-06,
+    "examples": 64,
+    "forward_tokens": 3519,
+    "seconds": 0.06441363700287184
+  },
+  {
+    "step": 8,
+    "objective": "classification",
+    "loss": 5.618197441101074,
+    "grad_norm": 11.63996410369873,
+    "lr": 6.666666666666667e-06,
+    "examples": 64,
+    "forward_tokens": 3592,
+    "seconds": 0.07063628400283051
+  },
+  {
+    "step": 9,
+    "objective": "retrieval",
+    "loss": 0.15554842352867126,
+    "grad_norm": 3.541264772415161,
+    "lr": 7.4074074074074075e-06,
+    "examples": 64,
+    "forward_tokens": 10838,
+    "seconds": 0.1512755299991113
+  },
+  {
+    "step": 10,
+    "objective": "retrieval",
+    "loss": 0.15366652607917786,
+    "grad_norm": 2.8133397102355957,
+    "lr": 8.148148148148148e-06,
+    "examples": 64,
+    "forward_tokens": 10063,
+    "seconds": 0.13813956100057112
+  },
+  {
+    "step": 11,
+    "objective": "classification",
+    "loss": 5.120695114135742,
+    "grad_norm": 10.442253112792969,
+    "lr": 8.888888888888888e-06,
+    "examples": 64,
+    "forward_tokens": 3731,
+    "seconds": 0.06848372300009942
+  },
+  {
+    "step": 12,
+    "objective": "retrieval",
+    "loss": 0.1696683168411255,
+    "grad_norm": 3.0865139961242676,
+    "lr": 9.62962962962963e-06,
+    "examples": 64,
+    "forward_tokens": 10500,
+    "seconds": 0.14178038499812828
+  },
+  {
+    "step": 13,
+    "objective": "classification",
+    "loss": 5.546543598175049,
+    "grad_norm": 13.30119514465332,
+    "lr": 1.037037037037037e-05,
+    "examples": 64,
+    "forward_tokens": 3440,
+    "seconds": 0.06967605599857052
+  },
+  {
+    "step": 14,
+    "objective": "classification",
+    "loss": 5.008645534515381,
+    "grad_norm": 9.788115501403809,
+    "lr": 1.1111111111111113e-05,
+    "examples": 64,
+    "forward_tokens": 3711,
+    "seconds": 0.07075301599979866
+  },
+  {
+    "step": 15,
+    "objective": "classification",
+    "loss": 5.513916492462158,
+    "grad_norm": 13.307685852050781,
+    "lr": 1.1851851851851852e-05,
+    "examples": 64,
+    "forward_tokens": 3351,
+    "seconds": 0.0547874910007522
+  },
+  {
+    "step": 16,
+    "objective": "classification",
+    "loss": 5.703923225402832,
+    "grad_norm": 12.365289688110352,
+    "lr": 1.2592592592592593e-05,
+    "examples": 64,
+    "forward_tokens": 3496,
+    "seconds": 0.07180669599983958
+  },
+  {
+    "step": 17,
+    "objective": "classification",
+    "loss": 5.048468589782715,
+    "grad_norm": 11.288527488708496,
+    "lr": 1.3333333333333333e-05,
+    "examples": 64,
+    "forward_tokens": 3761,
+    "seconds": 0.07080712100287201
+  },
+  {
+    "step": 18,
+    "objective": "classification",
+    "loss": 5.461178779602051,
+    "grad_norm": 12.099516868591309,
+    "lr": 1.4074074074074075e-05,
+    "examples": 64,
+    "forward_tokens": 3539,
+    "seconds": 0.0714702479999687
+  },
+  {
+    "step": 19,
+    "objective": "retrieval",
+    "loss": 0.1938847005367279,
+    "grad_norm": 4.022152900695801,
+    "lr": 1.4814814814814815e-05,
+    "examples": 64,
+    "forward_tokens": 9900,
+    "seconds": 0.15171986800123705
+  },
+  {
+    "step": 20,
+    "objective": "retrieval",
+    "loss": 0.21520709991455078,
+    "grad_norm": 3.7949490547180176,
+    "lr": 1.555555555555556e-05,
+    "examples": 64,
+    "forward_tokens": 10453,
+    "seconds": 0.14063012699989486
+  },
+  {
+    "step": 21,
+    "objective": "classification",
+    "loss": 4.681126594543457,
+    "grad_norm": 9.251433372497559,
+    "lr": 1.6296296296296297e-05,
+    "examples": 64,
+    "forward_tokens": 3342,
+    "seconds": 0.06908787300199037
+  },
+  {
+    "step": 22,
+    "objective": "retrieval",
+    "loss": 0.17836421728134155,
+    "grad_norm": 3.3694705963134766,
+    "lr": 1.7037037037037038e-05,
+    "examples": 64,
+    "forward_tokens": 9981,
+    "seconds": 0.13774698300039745
+  },
+  {
+    "step": 23,
+    "objective": "classification",
+    "loss": 4.9591827392578125,
+    "grad_norm": 8.712807655334473,
+    "lr": 1.7777777777777777e-05,
+    "examples": 64,
+    "forward_tokens": 3385,
+    "seconds": 0.052328279001812916
+  },
+  {
+    "step": 24,
+    "objective": "classification",
+    "loss": 4.931629180908203,
+    "grad_norm": 9.567327499389648,
+    "lr": 1.851851851851852e-05,
+    "examples": 64,
+    "forward_tokens": 3591,
+    "seconds": 0.06872139699771651
+  },
+  {
+    "step": 25,
+    "objective": "classification",
+    "loss": 4.838147163391113,
+    "grad_norm": 11.508210182189941,
+    "lr": 1.925925925925926e-05,
+    "examples": 64,
+    "forward_tokens": 3457,
+    "seconds": 0.06919272600134718
+  },
+  {
+    "step": 26,
+    "objective": "classification",
+    "loss": 5.120183944702148,
+    "grad_norm": 11.73058795928955,
+    "lr": 2e-05,
+    "examples": 64,
+    "forward_tokens": 3703,
+    "seconds": 0.07776485899739782
+  },
+  {
+    "step": 27,
+    "objective": "retrieval",
+    "loss": 0.19871976971626282,
+    "grad_norm": 3.5022244453430176,
+    "lr": 2e-05,
+    "examples": 64,
+    "forward_tokens": 9459,
+    "seconds": 0.14970542200171622
+  },
+  {
+    "step": 28,
+    "objective": "classification",
+    "loss": 4.778731346130371,
+    "grad_norm": 8.882935523986816,
+    "lr": 1.991769547325103e-05,
+    "examples": 64,
+    "forward_tokens": 3352,
+    "seconds": 0.06443015200056834
+  },
+  {
+    "step": 29,
+    "objective": "retrieval",
+    "loss": 0.18601733446121216,
+    "grad_norm": 3.075239896774292,
+    "lr": 1.983539094650206e-05,
+    "examples": 64,
+    "forward_tokens": 10338,
+    "seconds": 0.15072328699898208
+  },
+  {
+    "step": 30,
+    "objective": "classification",
+    "loss": 5.001694202423096,
+    "grad_norm": 10.609902381896973,
+    "lr": 1.9753086419753087e-05,
+    "examples": 64,
+    "forward_tokens": 3705,
+    "seconds": 0.07030159200076014
+  },
+  {
+    "step": 31,
+    "objective": "classification",
+    "loss": 4.655926704406738,
+    "grad_norm": 9.246097564697266,
+    "lr": 1.9670781893004115e-05,
+    "examples": 64,
+    "forward_tokens": 3686,
+    "seconds": 0.07001076000233297
+  },
+  {
+    "step": 32,
+    "objective": "retrieval",
+    "loss": 0.18821841478347778,
+    "grad_norm": 3.7730140686035156,
+    "lr": 1.9588477366255147e-05,
+    "examples": 64,
+    "forward_tokens": 10210,
+    "seconds": 0.14969514300173614
+  },
+  {
+    "step": 33,
+    "objective": "classification",
+    "loss": 4.656277179718018,
+    "grad_norm": 9.0418119430542,
+    "lr": 1.9506172839506175e-05,
+    "examples": 64,
+    "forward_tokens": 3473,
+    "seconds": 0.059262597002089024
+  },
+  {
+    "step": 34,
+    "objective": "classification",
+    "loss": 4.304564952850342,
+    "grad_norm": 7.0381364822387695,
+    "lr": 1.9423868312757203e-05,
+    "examples": 64,
+    "forward_tokens": 3662,
+    "seconds": 0.06449191800129483
+  },
+  {
+    "step": 35,
+    "objective": "retrieval",
+    "loss": 0.2515191435813904,
+    "grad_norm": 4.070394992828369,
+    "lr": 1.934156378600823e-05,
+    "examples": 64,
+    "forward_tokens": 10286,
+    "seconds": 0.14731728699916857
+  },
+  {
+    "step": 36,
+    "objective": "classification",
+    "loss": 4.393060684204102,
+    "grad_norm": 7.035947799682617,
+    "lr": 1.925925925925926e-05,
+    "examples": 64,
+    "forward_tokens": 3737,
+    "seconds": 0.07025324400092359
+  },
+  {
+    "step": 37,
+    "objective": "classification",
+    "loss": 4.432098865509033,
+    "grad_norm": 7.896340847015381,
+    "lr": 1.9176954732510288e-05,
+    "examples": 64,
+    "forward_tokens": 3651,
+    "seconds": 0.07166275200142991
+  },
+  {
+    "step": 38,
+    "objective": "classification",
+    "loss": 4.3303399085998535,
+    "grad_norm": 6.454714775085449,
+    "lr": 1.9094650205761317e-05,
+    "examples": 64,
+    "forward_tokens": 3618,
+    "seconds": 0.06884440400244785
+  },
+  {
+    "step": 39,
+    "objective": "classification",
+    "loss": 4.239373207092285,
+    "grad_norm": 6.444221496582031,
+    "lr": 1.901234567901235e-05,
+    "examples": 64,
+    "forward_tokens": 3634,
+    "seconds": 0.07030465099887806
+  },
+  {
+    "step": 40,
+    "objective": "retrieval",
+    "loss": 0.3321586847305298,
+    "grad_norm": 5.251112937927246,
+    "lr": 1.8930041152263377e-05,
+    "examples": 64,
+    "forward_tokens": 10497,
+    "seconds": 0.15661972199814045
+  },
+  {
+    "step": 41,
+    "objective": "retrieval",
+    "loss": 0.20161184668540955,
+    "grad_norm": 3.4753589630126953,
+    "lr": 1.8847736625514405e-05,
+    "examples": 64,
+    "forward_tokens": 10081,
+    "seconds": 0.1392556680002599
+  },
+  {
+    "step": 42,
+    "objective": "retrieval",
+    "loss": 0.24911820888519287,
+    "grad_norm": 3.9963338375091553,
+    "lr": 1.8765432098765433e-05,
+    "examples": 64,
+    "forward_tokens": 10451,
+    "seconds": 0.14233758699992904
+  },
+  {
+    "step": 43,
+    "objective": "classification",
+    "loss": 4.3708391189575195,
+    "grad_norm": 7.637425899505615,
+    "lr": 1.868312757201646e-05,
+    "examples": 64,
+    "forward_tokens": 3404,
+    "seconds": 0.04688912900019204
+  },
+  {
+    "step": 44,
+    "objective": "classification",
+    "loss": 4.104497909545898,
+    "grad_norm": 5.291719436645508,
+    "lr": 1.860082304526749e-05,
+    "examples": 64,
+    "forward_tokens": 3763,
+    "seconds": 0.06706206099988776
+  },
+  {
+    "step": 45,
+    "objective": "retrieval",
+    "loss": 0.25846171379089355,
+    "grad_norm": 3.4036900997161865,
+    "lr": 1.851851851851852e-05,
+    "examples": 64,
+    "forward_tokens": 10467,
+    "seconds": 0.149679580998054
+  },
+  {
+    "step": 46,
+    "objective": "retrieval",
+    "loss": 0.1525028944015503,
+    "grad_norm": 2.719169855117798,
+    "lr": 1.843621399176955e-05,
+    "examples": 64,
+    "forward_tokens": 10372,
+    "seconds": 0.13915261199872475
+  },
+  {
+    "step": 47,
+    "objective": "classification",
+    "loss": 4.240368843078613,
+    "grad_norm": 5.571554183959961,
+    "lr": 1.835390946502058e-05,
+    "examples": 64,
+    "forward_tokens": 3535,
+    "seconds": 0.06991328399817576
+  },
+  {
+    "step": 48,
+    "objective": "classification",
+    "loss": 4.123639106750488,
+    "grad_norm": 5.797109603881836,
+    "lr": 1.8271604938271607e-05,
+    "examples": 64,
+    "forward_tokens": 3275,
+    "seconds": 0.06574141400051303
+  },
+  {
+    "step": 49,
+    "objective": "retrieval",
+    "loss": 0.22639501094818115,
+    "grad_norm": 3.8559906482696533,
+    "lr": 1.8189300411522635e-05,
+    "examples": 64,
+    "forward_tokens": 10009,
+    "seconds": 0.14629574799982947
+  },
+  {
+    "step": 50,
+    "objective": "retrieval",
+    "loss": 0.23378777503967285,
+    "grad_norm": 3.608384132385254,
+    "lr": 1.8106995884773663e-05,
+    "examples": 64,
+    "forward_tokens": 10410,
+    "seconds": 0.13783649700053502
+  },
+  {
+    "step": 51,
+    "objective": "retrieval",
+    "loss": 0.2770594358444214,
+    "grad_norm": 4.178372383117676,
+    "lr": 1.802469135802469e-05,
+    "examples": 64,
+    "forward_tokens": 10797,
+    "seconds": 0.14166944499811507
+  },
+  {
+    "step": 52,
+    "objective": "retrieval",
+    "loss": 0.25237011909484863,
+    "grad_norm": 3.984799385070801,
+    "lr": 1.7942386831275723e-05,
+    "examples": 64,
+    "forward_tokens": 9869,
+    "seconds": 0.13918227699832642
+  },
+  {
+    "step": 53,
+    "objective": "classification",
+    "loss": 4.066926956176758,
+    "grad_norm": 5.724615573883057,
+    "lr": 1.786008230452675e-05,
+    "examples": 64,
+    "forward_tokens": 3688,
+    "seconds": 0.0697637319972273
+  },
+  {
+    "step": 54,
+    "objective": "classification",
+    "loss": 3.97530198097229,
+    "grad_norm": 5.0828399658203125,
+    "lr": 1.7777777777777777e-05,
+    "examples": 64,
+    "forward_tokens": 3803,
+    "seconds": 0.06596451900259126
+  },
+  {
+    "step": 55,
+    "objective": "classification",
+    "loss": 4.232974052429199,
+    "grad_norm": 6.508706569671631,
+    "lr": 1.769547325102881e-05,
+    "examples": 64,
+    "forward_tokens": 3412,
+    "seconds": 0.07089163699856726
+  },
+  {
+    "step": 56,
+    "objective": "classification",
+    "loss": 3.915529727935791,
+    "grad_norm": 4.822282791137695,
+    "lr": 1.7613168724279837e-05,
+    "examples": 64,
+    "forward_tokens": 3771,
+    "seconds": 0.06799330600188114
+  },
+  {
+    "step": 57,
+    "objective": "classification",
+    "loss": 3.9569168090820312,
+    "grad_norm": 4.896968841552734,
+    "lr": 1.7530864197530865e-05,
+    "examples": 64,
+    "forward_tokens": 3739,
+    "seconds": 0.0710846660003881
+  },
+  {
+    "step": 58,
+    "objective": "retrieval",
+    "loss": 0.16741704940795898,
+    "grad_norm": 2.7916007041931152,
+    "lr": 1.7448559670781893e-05,
+    "examples": 64,
+    "forward_tokens": 10250,
+    "seconds": 0.15407132800100953
+  },
+  {
+    "step": 59,
+    "objective": "classification",
+    "loss": 3.9623405933380127,
+    "grad_norm": 4.777303218841553,
+    "lr": 1.7366255144032925e-05,
+    "examples": 64,
+    "forward_tokens": 3755,
+    "seconds": 0.07092152599943802
+  },
+  {
+    "step": 60,
+    "objective": "retrieval",
+    "loss": 0.20779013633728027,
+    "grad_norm": 2.951022148132324,
+    "lr": 1.728395061728395e-05,
+    "examples": 64,
+    "forward_tokens": 10319,
+    "seconds": 0.14712882800085936
+  },
+  {
+    "step": 61,
+    "objective": "classification",
+    "loss": 4.103245735168457,
+    "grad_norm": 7.370737552642822,
+    "lr": 1.720164609053498e-05,
+    "examples": 64,
+    "forward_tokens": 3331,
+    "seconds": 0.06918328900064807
+  },
+  {
+    "step": 62,
+    "objective": "retrieval",
+    "loss": 0.253875732421875,
+    "grad_norm": 3.53114914894104,
+    "lr": 1.711934156378601e-05,
+    "examples": 64,
+    "forward_tokens": 10855,
+    "seconds": 0.14939056200091727
+  },
+  {
+    "step": 63,
+    "objective": "retrieval",
+    "loss": 0.22367477416992188,
+    "grad_norm": 3.1804583072662354,
+    "lr": 1.7037037037037038e-05,
+    "examples": 64,
+    "forward_tokens": 10197,
+    "seconds": 0.13833273999989615
+  },
+  {
+    "step": 64,
+    "objective": "retrieval",
+    "loss": 0.1593618392944336,
+    "grad_norm": 2.3298697471618652,
+    "lr": 1.6954732510288067e-05,
+    "examples": 64,
+    "forward_tokens": 10064,
+    "seconds": 0.13908298899696092
+  },
+  {
+    "step": 65,
+    "objective": "classification",
+    "loss": 3.896092414855957,
+    "grad_norm": 4.970700740814209,
+    "lr": 1.68724279835391e-05,
+    "examples": 64,
+    "forward_tokens": 3391,
+    "seconds": 0.06836226100131171
+  },
+  {
+    "step": 66,
+    "objective": "classification",
+    "loss": 3.948481321334839,
+    "grad_norm": 5.784924030303955,
+    "lr": 1.6790123456790123e-05,
+    "examples": 64,
+    "forward_tokens": 3767,
+    "seconds": 0.07029286600300111
+  },
+  {
+    "step": 67,
+    "objective": "classification",
+    "loss": 3.821366786956787,
+    "grad_norm": 5.0034098625183105,
+    "lr": 1.670781893004115e-05,
+    "examples": 64,
+    "forward_tokens": 3731,
+    "seconds": 0.06758727100168471
+  },
+  {
+    "step": 68,
+    "objective": "classification",
+    "loss": 3.782841205596924,
+    "grad_norm": 4.848537445068359,
+    "lr": 1.6625514403292183e-05,
+    "examples": 64,
+    "forward_tokens": 3500,
+    "seconds": 0.06976481000310741
+  },
+  {
+    "step": 69,
+    "objective": "retrieval",
+    "loss": 0.1891155242919922,
+    "grad_norm": 2.8761138916015625,
+    "lr": 1.654320987654321e-05,
+    "examples": 64,
+    "forward_tokens": 10203,
+    "seconds": 0.14456922500176006
+  },
+  {
+    "step": 70,
+    "objective": "classification",
+    "loss": 3.911433696746826,
+    "grad_norm": 5.060100555419922,
+    "lr": 1.646090534979424e-05,
+    "examples": 64,
+    "forward_tokens": 3593,
+    "seconds": 0.07127778799986118
+  },
+  {
+    "step": 71,
+    "objective": "classification",
+    "loss": 3.734724283218384,
+    "grad_norm": 4.051547527313232,
+    "lr": 1.6378600823045268e-05,
+    "examples": 64,
+    "forward_tokens": 3403,
+    "seconds": 0.06400126299922704
+  },
+  {
+    "step": 72,
+    "objective": "retrieval",
+    "loss": 0.1995788812637329,
+    "grad_norm": 3.311746835708618,
+    "lr": 1.6296296296296297e-05,
+    "examples": 64,
+    "forward_tokens": 10242,
+    "seconds": 0.14436838699839427
+  },
+  {
+    "step": 73,
+    "objective": "retrieval",
+    "loss": 0.2920045852661133,
+    "grad_norm": 3.441993236541748,
+    "lr": 1.6213991769547325e-05,
+    "examples": 64,
+    "forward_tokens": 10152,
+    "seconds": 0.13971111999853747
+  },
+  {
+    "step": 74,
+    "objective": "classification",
+    "loss": 3.833951711654663,
+    "grad_norm": 4.93264627456665,
+    "lr": 1.6131687242798357e-05,
+    "examples": 64,
+    "forward_tokens": 3501,
+    "seconds": 0.05263688299964997
+  },
+  {
+    "step": 75,
+    "objective": "classification",
+    "loss": 3.841855049133301,
+    "grad_norm": 3.9561221599578857,
+    "lr": 1.6049382716049385e-05,
+    "examples": 64,
+    "forward_tokens": 3677,
+    "seconds": 0.07051918700017268
+  },
+  {
+    "step": 76,
+    "objective": "retrieval",
+    "loss": 0.21209335327148438,
+    "grad_norm": 3.584332227706909,
+    "lr": 1.5967078189300413e-05,
+    "examples": 64,
+    "forward_tokens": 10268,
+    "seconds": 0.1445677390001947
+  },
+  {
+    "step": 77,
+    "objective": "classification",
+    "loss": 3.7900357246398926,
+    "grad_norm": 4.1002278327941895,
+    "lr": 1.588477366255144e-05,
+    "examples": 64,
+    "forward_tokens": 3555,
+    "seconds": 0.07075222999992548
+  },
+  {
+    "step": 78,
+    "objective": "retrieval",
+    "loss": 0.2160787582397461,
+    "grad_norm": 3.3036913871765137,
+    "lr": 1.580246913580247e-05,
+    "examples": 64,
+    "forward_tokens": 10478,
+    "seconds": 0.14417904500078293
+  },
+  {
+    "step": 79,
+    "objective": "classification",
+    "loss": 3.6714539527893066,
+    "grad_norm": 4.0077691078186035,
+    "lr": 1.5720164609053498e-05,
+    "examples": 64,
+    "forward_tokens": 3452,
+    "seconds": 0.06189583800005494
+  },
+  {
+    "step": 80,
+    "objective": "classification",
+    "loss": 3.9485979080200195,
+    "grad_norm": 4.990321636199951,
+    "lr": 1.5637860082304527e-05,
+    "examples": 64,
+    "forward_tokens": 3416,
+    "seconds": 0.058229157999448944
+  },
+  {
+    "step": 81,
+    "objective": "retrieval",
+    "loss": 0.23907136917114258,
+    "grad_norm": 3.30190372467041,
+    "lr": 1.555555555555556e-05,
+    "examples": 64,
+    "forward_tokens": 10226,
+    "seconds": 0.14353144699998666
+  },
+  {
+    "step": 82,
+    "objective": "retrieval",
+    "loss": 0.2775111198425293,
+    "grad_norm": 3.9962050914764404,
+    "lr": 1.5473251028806587e-05,
+    "examples": 64,
+    "forward_tokens": 10412,
+    "seconds": 0.13981957899886766
+  },
+  {
+    "step": 83,
+    "objective": "classification",
+    "loss": 3.7362189292907715,
+    "grad_norm": 3.7797112464904785,
+    "lr": 1.5390946502057615e-05,
+    "examples": 64,
+    "forward_tokens": 3560,
+    "seconds": 0.07140874600008829
+  },
+  {
+    "step": 84,
+    "objective": "retrieval",
+    "loss": 0.36896419525146484,
+    "grad_norm": 4.654780387878418,
+    "lr": 1.5308641975308643e-05,
+    "examples": 64,
+    "forward_tokens": 9798,
+    "seconds": 0.13685343099859892
+  },
+  {
+    "step": 85,
+    "objective": "retrieval",
+    "loss": 0.23949146270751953,
+    "grad_norm": 3.603102684020996,
+    "lr": 1.5226337448559672e-05,
+    "examples": 64,
+    "forward_tokens": 10740,
+    "seconds": 0.13931664100164198
+  },
+  {
+    "step": 86,
+    "objective": "retrieval",
+    "loss": 0.27926087379455566,
+    "grad_norm": 3.4221630096435547,
+    "lr": 1.51440329218107e-05,
+    "examples": 64,
+    "forward_tokens": 10007,
+    "seconds": 0.13759976100118365
+  },
+  {
+    "step": 87,
+    "objective": "classification",
+    "loss": 3.6588921546936035,
+    "grad_norm": 4.0158915519714355,
+    "lr": 1.506172839506173e-05,
+    "examples": 64,
+    "forward_tokens": 3474,
+    "seconds": 0.06303854200086789
+  },
+  {
+    "step": 88,
+    "objective": "classification",
+    "loss": 3.689197301864624,
+    "grad_norm": 3.7733161449432373,
+    "lr": 1.4979423868312758e-05,
+    "examples": 64,
+    "forward_tokens": 3520,
+    "seconds": 0.06963768100104062
+  },
+  {
+    "step": 89,
+    "objective": "classification",
+    "loss": 3.4796810150146484,
+    "grad_norm": 3.302031993865967,
+    "lr": 1.4897119341563788e-05,
+    "examples": 64,
+    "forward_tokens": 3427,
+    "seconds": 0.06827519099897472
+  },
+  {
+    "step": 90,
+    "objective": "classification",
+    "loss": 3.9058191776275635,
+    "grad_norm": 4.577238082885742,
+    "lr": 1.4814814814814815e-05,
+    "examples": 64,
+    "forward_tokens": 3665,
+    "seconds": 0.07033043599949451
+  },
+  {
+    "step": 91,
+    "objective": "classification",
+    "loss": 3.760881185531616,
+    "grad_norm": 4.459019184112549,
+    "lr": 1.4732510288065845e-05,
+    "examples": 64,
+    "forward_tokens": 3514,
+    "seconds": 0.07090890899780788
+  },
+  {
+    "step": 92,
+    "objective": "retrieval",
+    "loss": 0.24613356590270996,
+    "grad_norm": 2.8288798332214355,
+    "lr": 1.4650205761316873e-05,
+    "examples": 64,
+    "forward_tokens": 10078,
+    "seconds": 0.15094559999852208
+  },
+  {
+    "step": 93,
+    "objective": "retrieval",
+    "loss": 0.24351191520690918,
+    "grad_norm": 3.5174829959869385,
+    "lr": 1.4567901234567903e-05,
+    "examples": 64,
+    "forward_tokens": 10370,
+    "seconds": 0.13895855200098595
+  },
+  {
+    "step": 94,
+    "objective": "retrieval",
+    "loss": 0.2679004669189453,
+    "grad_norm": 3.4592883586883545,
+    "lr": 1.4485596707818932e-05,
+    "examples": 64,
+    "forward_tokens": 10266,
+    "seconds": 0.13918291600202792
+  },
+  {
+    "step": 95,
+    "objective": "classification",
+    "loss": 3.780017375946045,
+    "grad_norm": 5.103917598724365,
+    "lr": 1.4403292181069962e-05,
+    "examples": 64,
+    "forward_tokens": 3198,
+    "seconds": 0.06780223900204874
+  },
+  {
+    "step": 96,
+    "objective": "classification",
+    "loss": 3.56158709526062,
+    "grad_norm": 3.2411727905273438,
+    "lr": 1.4320987654320988e-05,
+    "examples": 64,
+    "forward_tokens": 3421,
+    "seconds": 0.06592567400002736
+  },
+  {
+    "step": 97,
+    "objective": "classification",
+    "loss": 3.6266167163848877,
+    "grad_norm": 5.293959140777588,
+    "lr": 1.4238683127572017e-05,
+    "examples": 64,
+    "forward_tokens": 3751,
+    "seconds": 0.06861757599835983
+  },
+  {
+    "step": 98,
+    "objective": "retrieval",
+    "loss": 0.2513570785522461,
+    "grad_norm": 3.6495232582092285,
+    "lr": 1.4156378600823047e-05,
+    "examples": 64,
+    "forward_tokens": 10443,
+    "seconds": 0.14665597899875138
+  },
+  {
+    "step": 99,
+    "objective": "classification",
+    "loss": 3.708775043487549,
+    "grad_norm": 4.349383354187012,
+    "lr": 1.4074074074074075e-05,
+    "examples": 64,
+    "forward_tokens": 3484,
+    "seconds": 0.06636408399936045
+  },
+  {
+    "step": 100,
+    "objective": "classification",
+    "loss": 3.443586587905884,
+    "grad_norm": 4.020100116729736,
+    "lr": 1.3991769547325105e-05,
+    "examples": 64,
+    "forward_tokens": 3580,
+    "seconds": 0.06970960399848991
+  },
+  {
+    "step": 101,
+    "objective": "classification",
+    "loss": 3.553058385848999,
+    "grad_norm": 3.4028122425079346,
+    "lr": 1.3909465020576133e-05,
+    "examples": 64,
+    "forward_tokens": 3607,
+    "seconds": 0.06793990900041535
+  },
+  {
+    "step": 102,
+    "objective": "classification",
+    "loss": 3.5969529151916504,
+    "grad_norm": 3.782130002975464,
+    "lr": 1.3827160493827162e-05,
+    "examples": 64,
+    "forward_tokens": 3338,
+    "seconds": 0.05973548600013601
+  },
+  {
+    "step": 103,
+    "objective": "retrieval",
+    "loss": 0.20751941204071045,
+    "grad_norm": 3.7539055347442627,
+    "lr": 1.374485596707819e-05,
+    "examples": 64,
+    "forward_tokens": 10795,
+    "seconds": 0.15605406899703667
+  },
+  {
+    "step": 104,
+    "objective": "retrieval",
+    "loss": 0.22190392017364502,
+    "grad_norm": 3.418837308883667,
+    "lr": 1.366255144032922e-05,
+    "examples": 64,
+    "forward_tokens": 10901,
+    "seconds": 0.14043682999908924
+  },
+  {
+    "step": 105,
+    "objective": "classification",
+    "loss": 3.582261085510254,
+    "grad_norm": 3.4364986419677734,
+    "lr": 1.3580246913580248e-05,
+    "examples": 64,
+    "forward_tokens": 3768,
+    "seconds": 0.07032504200105905
+  },
+  {
+    "step": 106,
+    "objective": "classification",
+    "loss": 3.5699410438537598,
+    "grad_norm": 3.6335084438323975,
+    "lr": 1.3497942386831278e-05,
+    "examples": 64,
+    "forward_tokens": 3662,
+    "seconds": 0.06362257000000682
+  },
+  {
+    "step": 107,
+    "objective": "classification",
+    "loss": 3.651473045349121,
+    "grad_norm": 4.026271343231201,
+    "lr": 1.3415637860082307e-05,
+    "examples": 64,
+    "forward_tokens": 3442,
+    "seconds": 0.06872506600120687
+  },
+  {
+    "step": 108,
+    "objective": "classification",
+    "loss": 3.8341121673583984,
+    "grad_norm": 5.385273456573486,
+    "lr": 1.3333333333333333e-05,
+    "examples": 64,
+    "forward_tokens": 3438,
+    "seconds": 0.05836629400073434
+  },
+  {
+    "step": 109,
+    "objective": "classification",
+    "loss": 3.5205297470092773,
+    "grad_norm": 3.2546298503875732,
+    "lr": 1.3251028806584363e-05,
+    "examples": 64,
+    "forward_tokens": 3227,
+    "seconds": 0.06275795699912123
+  },
+  {
+    "step": 110,
+    "objective": "classification",
+    "loss": 3.576416492462158,
+    "grad_norm": 3.7556169033050537,
+    "lr": 1.3168724279835392e-05,
+    "examples": 64,
+    "forward_tokens": 3371,
+    "seconds": 0.06864218099872232
+  },
+  {
+    "step": 111,
+    "objective": "retrieval",
+    "loss": 0.3036642074584961,
+    "grad_norm": 4.559988975524902,
+    "lr": 1.3086419753086422e-05,
+    "examples": 64,
+    "forward_tokens": 10931,
+    "seconds": 0.15679742800057284
+  },
+  {
+    "step": 112,
+    "objective": "retrieval",
+    "loss": 0.2442631721496582,
+    "grad_norm": 4.699545860290527,
+    "lr": 1.300411522633745e-05,
+    "examples": 64,
+    "forward_tokens": 9885,
+    "seconds": 0.13781134000237216
+  },
+  {
+    "step": 113,
+    "objective": "classification",
+    "loss": 3.6107254028320312,
+    "grad_norm": 3.73295521736145,
+    "lr": 1.2921810699588477e-05,
+    "examples": 64,
+    "forward_tokens": 3377,
+    "seconds": 0.051594487002148526
+  },
+  {
+    "step": 114,
+    "objective": "classification",
+    "loss": 3.4680471420288086,
+    "grad_norm": 2.9380428791046143,
+    "lr": 1.2839506172839507e-05,
+    "examples": 64,
+    "forward_tokens": 3230,
+    "seconds": 0.05636923400015803
+  },
+  {
+    "step": 115,
+    "objective": "classification",
+    "loss": 3.7099854946136475,
+    "grad_norm": 3.4884800910949707,
+    "lr": 1.2757201646090535e-05,
+    "examples": 64,
+    "forward_tokens": 3383,
+    "seconds": 0.05463832699751947
+  },
+  {
+    "step": 116,
+    "objective": "classification",
+    "loss": 3.55438232421875,
+    "grad_norm": 3.0462117195129395,
+    "lr": 1.2674897119341565e-05,
+    "examples": 64,
+    "forward_tokens": 3503,
+    "seconds": 0.07025934599732864
+  },
+  {
+    "step": 117,
+    "objective": "retrieval",
+    "loss": 0.388582706451416,
+    "grad_norm": 5.209621906280518,
+    "lr": 1.2592592592592593e-05,
+    "examples": 64,
+    "forward_tokens": 10459,
+    "seconds": 0.14730650699857506
+  },
+  {
+    "step": 118,
+    "objective": "classification",
+    "loss": 3.546489953994751,
+    "grad_norm": 2.88520884513855,
+    "lr": 1.2510288065843623e-05,
+    "examples": 64,
+    "forward_tokens": 3641,
+    "seconds": 0.06668904799880693
+  },
+  {
+    "step": 119,
+    "objective": "retrieval",
+    "loss": 0.3013932704925537,
+    "grad_norm": 4.4266839027404785,
+    "lr": 1.242798353909465e-05,
+    "examples": 64,
+    "forward_tokens": 10521,
+    "seconds": 0.14741815800152835
+  },
+  {
+    "step": 120,
+    "objective": "retrieval",
+    "loss": 0.3389310836791992,
+    "grad_norm": 5.042143821716309,
+    "lr": 1.234567901234568e-05,
+    "examples": 64,
+    "forward_tokens": 10194,
+    "seconds": 0.14043533499716432
+  },
+  {
+    "step": 121,
+    "objective": "classification",
+    "loss": 3.646177291870117,
+    "grad_norm": 3.190830707550049,
+    "lr": 1.2263374485596708e-05,
+    "examples": 64,
+    "forward_tokens": 3490,
+    "seconds": 0.05147757300073863
+  },
+  {
+    "step": 122,
+    "objective": "classification",
+    "loss": 3.5623085498809814,
+    "grad_norm": 3.33544921875,
+    "lr": 1.2181069958847738e-05,
+    "examples": 64,
+    "forward_tokens": 3698,
+    "seconds": 0.0679915529981372
+  },
+  {
+    "step": 123,
+    "objective": "retrieval",
+    "loss": 0.41133666038513184,
+    "grad_norm": 6.045464038848877,
+    "lr": 1.2098765432098767e-05,
+    "examples": 64,
+    "forward_tokens": 10482,
+    "seconds": 0.14682686699961778
+  },
+  {
+    "step": 124,
+    "objective": "classification",
+    "loss": 3.5876073837280273,
+    "grad_norm": 4.105230808258057,
+    "lr": 1.2016460905349797e-05,
+    "examples": 64,
+    "forward_tokens": 3299,
+    "seconds": 0.05198426000060863
+  },
+  {
+    "step": 125,
+    "objective": "classification",
+    "loss": 3.6565237045288086,
+    "grad_norm": 3.632788896560669,
+    "lr": 1.1934156378600823e-05,
+    "examples": 64,
+    "forward_tokens": 3334,
+    "seconds": 0.06097531200066442
+  },
+  {
+    "step": 126,
+    "objective": "retrieval",
+    "loss": 0.3929134011268616,
+    "grad_norm": 6.02105712890625,
+    "lr": 1.1851851851851852e-05,
+    "examples": 64,
+    "forward_tokens": 10335,
+    "seconds": 0.14855976599938003
+  },
+  {
+    "step": 127,
+    "objective": "retrieval",
+    "loss": 0.31101298332214355,
+    "grad_norm": 5.201712131500244,
+    "lr": 1.1769547325102882e-05,
+    "examples": 64,
+    "forward_tokens": 10402,
+    "seconds": 0.13901325999904657
+  },
+  {
+    "step": 128,
+    "objective": "retrieval",
+    "loss": 0.25467729568481445,
+    "grad_norm": 3.9050166606903076,
+    "lr": 1.168724279835391e-05,
+    "examples": 64,
+    "forward_tokens": 10673,
+    "seconds": 0.13985039399995003
+  },
+  {
+    "step": 129,
+    "objective": "classification",
+    "loss": 3.4877591133117676,
+    "grad_norm": 3.6381421089172363,
+    "lr": 1.160493827160494e-05,
+    "examples": 64,
+    "forward_tokens": 3707,
+    "seconds": 0.07014944700131309
+  },
+  {
+    "step": 130,
+    "objective": "classification",
+    "loss": 3.4675729274749756,
+    "grad_norm": 3.229844570159912,
+    "lr": 1.1522633744855968e-05,
+    "examples": 64,
+    "forward_tokens": 3825,
+    "seconds": 0.06681502499850467
+  },
+  {
+    "step": 131,
+    "objective": "retrieval",
+    "loss": 0.2862522602081299,
+    "grad_norm": 5.280606746673584,
+    "lr": 1.1440329218106997e-05,
+    "examples": 64,
+    "forward_tokens": 10770,
+    "seconds": 0.14809302499998012
+  },
+  {
+    "step": 132,
+    "objective": "retrieval",
+    "loss": 0.2535076141357422,
+    "grad_norm": 3.33754825592041,
+    "lr": 1.1358024691358025e-05,
+    "examples": 64,
+    "forward_tokens": 9825,
+    "seconds": 0.13741795300302329
+  },
+  {
+    "step": 133,
+    "objective": "classification",
+    "loss": 3.482440948486328,
+    "grad_norm": 3.8861308097839355,
+    "lr": 1.1275720164609055e-05,
+    "examples": 64,
+    "forward_tokens": 3803,
+    "seconds": 0.07085294100033934
+  },
+  {
+    "step": 134,
+    "objective": "retrieval",
+    "loss": 0.23435115814208984,
+    "grad_norm": 3.5304508209228516,
+    "lr": 1.1193415637860083e-05,
+    "examples": 64,
+    "forward_tokens": 10111,
+    "seconds": 0.13769914499789593
+  },
+  {
+    "step": 135,
+    "objective": "classification",
+    "loss": 3.4940104484558105,
+    "grad_norm": 3.5772922039031982,
+    "lr": 1.1111111111111113e-05,
+    "examples": 64,
+    "forward_tokens": 3517,
+    "seconds": 0.06705708899971796
+  },
+  {
+    "step": 136,
+    "objective": "classification",
+    "loss": 3.505035638809204,
+    "grad_norm": 3.7849342823028564,
+    "lr": 1.1028806584362142e-05,
+    "examples": 64,
+    "forward_tokens": 3614,
+    "seconds": 0.06715994600017439
+  },
+  {
+    "step": 137,
+    "objective": "classification",
+    "loss": 3.637577533721924,
+    "grad_norm": 4.276152610778809,
+    "lr": 1.0946502057613168e-05,
+    "examples": 64,
+    "forward_tokens": 3451,
+    "seconds": 0.0694262869983504
+  },
+  {
+    "step": 138,
+    "objective": "retrieval",
+    "loss": 0.2803537845611572,
+    "grad_norm": 3.8432111740112305,
+    "lr": 1.0864197530864198e-05,
+    "examples": 64,
+    "forward_tokens": 10443,
+    "seconds": 0.14871707500060438
+  },
+  {
+    "step": 139,
+    "objective": "classification",
+    "loss": 3.5017600059509277,
+    "grad_norm": 3.3411245346069336,
+    "lr": 1.0781893004115227e-05,
+    "examples": 64,
+    "forward_tokens": 3431,
+    "seconds": 0.0634576289994584
+  },
+  {
+    "step": 140,
+    "objective": "classification",
+    "loss": 3.5816729068756104,
+    "grad_norm": 5.15918493270874,
+    "lr": 1.0699588477366257e-05,
+    "examples": 64,
+    "forward_tokens": 3303,
+    "seconds": 0.06937565000043833
+  },
+  {
+    "step": 141,
+    "objective": "retrieval",
+    "loss": 0.24218988418579102,
+    "grad_norm": 3.092186689376831,
+    "lr": 1.0617283950617285e-05,
+    "examples": 64,
+    "forward_tokens": 10637,
+    "seconds": 0.14834401899861405
+  },
+  {
+    "step": 142,
+    "objective": "retrieval",
+    "loss": 0.26180750131607056,
+    "grad_norm": 3.842383623123169,
+    "lr": 1.0534979423868315e-05,
+    "examples": 64,
+    "forward_tokens": 9944,
+    "seconds": 0.14075648799916962
+  },
+  {
+    "step": 143,
+    "objective": "classification",
+    "loss": 3.648749589920044,
+    "grad_norm": 4.437493801116943,
+    "lr": 1.0452674897119342e-05,
+    "examples": 64,
+    "forward_tokens": 3516,
+    "seconds": 0.06826551300036954
+  },
+  {
+    "step": 144,
+    "objective": "classification",
+    "loss": 3.502305269241333,
+    "grad_norm": 4.645315647125244,
+    "lr": 1.037037037037037e-05,
+    "examples": 64,
+    "forward_tokens": 3682,
+    "seconds": 0.07029951799995615
+  },
+  {
+    "step": 145,
+    "objective": "classification",
+    "loss": 3.6200332641601562,
+    "grad_norm": 4.307401657104492,
+    "lr": 1.02880658436214e-05,
+    "examples": 64,
+    "forward_tokens": 3720,
+    "seconds": 0.07098238300022786
+  },
+  {
+    "step": 146,
+    "objective": "retrieval",
+    "loss": 0.24958205223083496,
+    "grad_norm": 3.2640538215637207,
+    "lr": 1.0205761316872428e-05,
+    "examples": 64,
+    "forward_tokens": 10720,
+    "seconds": 0.15004422499987413
+  },
+  {
+    "step": 147,
+    "objective": "retrieval",
+    "loss": 0.22928428649902344,
+    "grad_norm": 3.2342703342437744,
+    "lr": 1.0123456790123458e-05,
+    "examples": 64,
+    "forward_tokens": 10257,
+    "seconds": 0.13973664300283417
+  },
+  {
+    "step": 148,
+    "objective": "retrieval",
+    "loss": 0.22950208187103271,
+    "grad_norm": 3.7507271766662598,
+    "lr": 1.0041152263374487e-05,
+    "examples": 64,
+    "forward_tokens": 11113,
+    "seconds": 0.14244493499791133
+  },
+  {
+    "step": 149,
+    "objective": "classification",
+    "loss": 3.333422899246216,
+    "grad_norm": 2.9815640449523926,
+    "lr": 9.958847736625515e-06,
+    "examples": 64,
+    "forward_tokens": 3373,
+    "seconds": 0.06945167400044738
+  },
+  {
+    "step": 150,
+    "objective": "classification",
+    "loss": 3.3932037353515625,
+    "grad_norm": 3.7697677612304688,
+    "lr": 9.876543209876543e-06,
+    "examples": 64,
+    "forward_tokens": 3487,
+    "seconds": 0.07369824499983224
+  },
+  {
+    "step": 151,
+    "objective": "retrieval",
+    "loss": 0.29529833793640137,
+    "grad_norm": 4.191885948181152,
+    "lr": 9.794238683127573e-06,
+    "examples": 64,
+    "forward_tokens": 10714,
+    "seconds": 0.15169656300349743
+  },
+  {
+    "step": 152,
+    "objective": "classification",
+    "loss": 3.549297332763672,
+    "grad_norm": 4.640913963317871,
+    "lr": 9.711934156378602e-06,
+    "examples": 64,
+    "forward_tokens": 3394,
+    "seconds": 0.06920296799944481
+  },
+  {
+    "step": 153,
+    "objective": "retrieval",
+    "loss": 0.24107635021209717,
+    "grad_norm": 3.2895700931549072,
+    "lr": 9.62962962962963e-06,
+    "examples": 64,
+    "forward_tokens": 10198,
+    "seconds": 0.14704817699748673
+  },
+  {
+    "step": 154,
+    "objective": "retrieval",
+    "loss": 0.17985689640045166,
+    "grad_norm": 3.3097736835479736,
+    "lr": 9.547325102880658e-06,
+    "examples": 64,
+    "forward_tokens": 9977,
+    "seconds": 0.13935250400027144
+  },
+  {
+    "step": 155,
+    "objective": "classification",
+    "loss": 3.779301881790161,
+    "grad_norm": 5.575626850128174,
+    "lr": 9.465020576131688e-06,
+    "examples": 64,
+    "forward_tokens": 3764,
+    "seconds": 0.066963544999453
+  },
+  {
+    "step": 156,
+    "objective": "retrieval",
+    "loss": 0.287728488445282,
+    "grad_norm": 4.750950336456299,
+    "lr": 9.382716049382717e-06,
+    "examples": 64,
+    "forward_tokens": 10635,
+    "seconds": 0.1401202729975921
+  },
+  {
+    "step": 157,
+    "objective": "classification",
+    "loss": 3.4259259700775146,
+    "grad_norm": 3.959381341934204,
+    "lr": 9.300411522633745e-06,
+    "examples": 64,
+    "forward_tokens": 3389,
+    "seconds": 0.06612342999869725
+  },
+  {
+    "step": 158,
+    "objective": "classification",
+    "loss": 3.358410358428955,
+    "grad_norm": 3.8652281761169434,
+    "lr": 9.218106995884775e-06,
+    "examples": 64,
+    "forward_tokens": 3470,
+    "seconds": 0.06011632599984296
+  },
+  {
+    "step": 159,
+    "objective": "classification",
+    "loss": 3.4892351627349854,
+    "grad_norm": 3.9785289764404297,
+    "lr": 9.135802469135803e-06,
+    "examples": 64,
+    "forward_tokens": 3471,
+    "seconds": 0.06501896299960208
+  },
+  {
+    "step": 160,
+    "objective": "classification",
+    "loss": 3.558356523513794,
+    "grad_norm": 4.280310153961182,
+    "lr": 9.053497942386832e-06,
+    "examples": 64,
+    "forward_tokens": 3783,
+    "seconds": 0.0708635390001291
+  },
+  {
+    "step": 161,
+    "objective": "classification",
+    "loss": 3.5923824310302734,
+    "grad_norm": 5.01799201965332,
+    "lr": 8.971193415637862e-06,
+    "examples": 64,
+    "forward_tokens": 3696,
+    "seconds": 0.07043119800073327
+  },
+  {
+    "step": 162,
+    "objective": "classification",
+    "loss": 3.512751340866089,
+    "grad_norm": 3.8233160972595215,
+    "lr": 8.888888888888888e-06,
+    "examples": 64,
+    "forward_tokens": 3417,
+    "seconds": 0.07077503400068963
+  },
+  {
+    "step": 163,
+    "objective": "retrieval",
+    "loss": 0.25078070163726807,
+    "grad_norm": 4.12205696105957,
+    "lr": 8.806584362139918e-06,
+    "examples": 64,
+    "forward_tokens": 9750,
+    "seconds": 0.1502662839993718
+  },
+  {
+    "step": 164,
+    "objective": "classification",
+    "loss": 3.4606266021728516,
+    "grad_norm": 3.5536465644836426,
+    "lr": 8.724279835390947e-06,
+    "examples": 64,
+    "forward_tokens": 3443,
+    "seconds": 0.05913930899987463
+  },
+  {
+    "step": 165,
+    "objective": "retrieval",
+    "loss": 0.24243509769439697,
+    "grad_norm": 3.325249195098877,
+    "lr": 8.641975308641975e-06,
+    "examples": 64,
+    "forward_tokens": 10493,
+    "seconds": 0.1482095589999517
+  },
+  {
+    "step": 166,
+    "objective": "classification",
+    "loss": 3.5730791091918945,
+    "grad_norm": 3.949366807937622,
+    "lr": 8.559670781893005e-06,
+    "examples": 64,
+    "forward_tokens": 3521,
+    "seconds": 0.06393660399771761
+  },
+  {
+    "step": 167,
+    "objective": "classification",
+    "loss": 3.5269854068756104,
+    "grad_norm": 3.3365397453308105,
+    "lr": 8.477366255144033e-06,
+    "examples": 64,
+    "forward_tokens": 3619,
+    "seconds": 0.07002146300146705
+  },
+  {
+    "step": 168,
+    "objective": "retrieval",
+    "loss": 0.3220841884613037,
+    "grad_norm": 4.70916223526001,
+    "lr": 8.395061728395062e-06,
+    "examples": 64,
+    "forward_tokens": 10536,
+    "seconds": 0.14690763399994466
+  },
+  {
+    "step": 169,
+    "objective": "retrieval",
+    "loss": 0.35936784744262695,
+    "grad_norm": 4.261335849761963,
+    "lr": 8.312757201646092e-06,
+    "examples": 64,
+    "forward_tokens": 10333,
+    "seconds": 0.14004066599954967
+  },
+  {
+    "step": 170,
+    "objective": "retrieval",
+    "loss": 0.2343156933784485,
+    "grad_norm": 3.2298707962036133,
+    "lr": 8.23045267489712e-06,
+    "examples": 64,
+    "forward_tokens": 10336,
+    "seconds": 0.14079207599934307
+  },
+  {
+    "step": 171,
+    "objective": "classification",
+    "loss": 3.3219571113586426,
+    "grad_norm": 3.365183115005493,
+    "lr": 8.148148148148148e-06,
+    "examples": 64,
+    "forward_tokens": 3398,
+    "seconds": 0.06816543500099215
+  },
+  {
+    "step": 172,
+    "objective": "classification",
+    "loss": 3.5503766536712646,
+    "grad_norm": 3.313174247741699,
+    "lr": 8.065843621399178e-06,
+    "examples": 64,
+    "forward_tokens": 3484,
+    "seconds": 0.06392691300061415
+  },
+  {
+    "step": 173,
+    "objective": "retrieval",
+    "loss": 0.22153520584106445,
+    "grad_norm": 4.0724029541015625,
+    "lr": 7.983539094650207e-06,
+    "examples": 64,
+    "forward_tokens": 10540,
+    "seconds": 0.145044943998073
+  },
+  {
+    "step": 174,
+    "objective": "retrieval",
+    "loss": 0.22829389572143555,
+    "grad_norm": 3.4602105617523193,
+    "lr": 7.901234567901235e-06,
+    "examples": 64,
+    "forward_tokens": 10559,
+    "seconds": 0.14287653700012015
+  },
+  {
+    "step": 175,
+    "objective": "classification",
+    "loss": 3.393444538116455,
+    "grad_norm": 2.868095636367798,
+    "lr": 7.818930041152263e-06,
+    "examples": 64,
+    "forward_tokens": 3485,
+    "seconds": 0.054872099000931485
+  },
+  {
+    "step": 176,
+    "objective": "classification",
+    "loss": 3.337763786315918,
+    "grad_norm": 3.408737897872925,
+    "lr": 7.736625514403293e-06,
+    "examples": 64,
+    "forward_tokens": 3306,
+    "seconds": 0.06654688900016481
+  },
+  {
+    "step": 177,
+    "objective": "retrieval",
+    "loss": 0.34389328956604004,
+    "grad_norm": 4.4001688957214355,
+    "lr": 7.654320987654322e-06,
+    "examples": 64,
+    "forward_tokens": 10144,
+    "seconds": 0.14859746799993445
+  },
+  {
+    "step": 178,
+    "objective": "retrieval",
+    "loss": 0.2398194670677185,
+    "grad_norm": 4.170638561248779,
+    "lr": 7.57201646090535e-06,
+    "examples": 64,
+    "forward_tokens": 10648,
+    "seconds": 0.13882871199893998
+  },
+  {
+    "step": 179,
+    "objective": "classification",
+    "loss": 3.4389328956604004,
+    "grad_norm": 3.1799540519714355,
+    "lr": 7.489711934156379e-06,
+    "examples": 64,
+    "forward_tokens": 3498,
+    "seconds": 0.06692454500080203
+  },
+  {
+    "step": 180,
+    "objective": "classification",
+    "loss": 3.452085018157959,
+    "grad_norm": 3.4806838035583496,
+    "lr": 7.4074074074074075e-06,
+    "examples": 64,
+    "forward_tokens": 3616,
+    "seconds": 0.06959269900107756
+  },
+  {
+    "step": 181,
+    "objective": "retrieval",
+    "loss": 0.29469338059425354,
+    "grad_norm": 4.788701057434082,
+    "lr": 7.325102880658437e-06,
+    "examples": 64,
+    "forward_tokens": 9755,
+    "seconds": 0.1447288599993044
+  },
+  {
+    "step": 182,
+    "objective": "classification",
+    "loss": 3.3875937461853027,
+    "grad_norm": 3.9682421684265137,
+    "lr": 7.242798353909466e-06,
+    "examples": 64,
+    "forward_tokens": 4003,
+    "seconds": 0.06765142700169235
+  },
+  {
+    "step": 183,
+    "objective": "retrieval",
+    "loss": 0.18510818481445312,
+    "grad_norm": 3.1979105472564697,
+    "lr": 7.160493827160494e-06,
+    "examples": 64,
+    "forward_tokens": 10266,
+    "seconds": 0.1468841979985882
+  },
+  {
+    "step": 184,
+    "objective": "classification",
+    "loss": 3.5452141761779785,
+    "grad_norm": 3.365461587905884,
+    "lr": 7.078189300411523e-06,
+    "examples": 64,
+    "forward_tokens": 3495,
+    "seconds": 0.06966980300057912
+  },
+  {
+    "step": 185,
+    "objective": "classification",
+    "loss": 3.6558923721313477,
+    "grad_norm": 4.419517993927002,
+    "lr": 6.9958847736625525e-06,
+    "examples": 64,
+    "forward_tokens": 3610,
+    "seconds": 0.06412165900110267
+  },
+  {
+    "step": 186,
+    "objective": "classification",
+    "loss": 3.5600509643554688,
+    "grad_norm": 3.6712887287139893,
+    "lr": 6.913580246913581e-06,
+    "examples": 64,
+    "forward_tokens": 3573,
+    "seconds": 0.07010348399853683
+  },
+  {
+    "step": 187,
+    "objective": "retrieval",
+    "loss": 0.1778148114681244,
+    "grad_norm": 3.464982748031616,
+    "lr": 6.83127572016461e-06,
+    "examples": 64,
+    "forward_tokens": 10295,
+    "seconds": 0.14682932200230425
+  },
+  {
+    "step": 188,
+    "objective": "classification",
+    "loss": 3.2727489471435547,
+    "grad_norm": 3.1356184482574463,
+    "lr": 6.748971193415639e-06,
+    "examples": 64,
+    "forward_tokens": 3349,
+    "seconds": 0.04863787800059072
+  },
+  {
+    "step": 189,
+    "objective": "retrieval",
+    "loss": 0.20826449990272522,
+    "grad_norm": 3.0767152309417725,
+    "lr": 6.666666666666667e-06,
+    "examples": 64,
+    "forward_tokens": 10426,
+    "seconds": 0.14654123099899152
+  },
+  {
+    "step": 190,
+    "objective": "retrieval",
+    "loss": 0.37945443391799927,
+    "grad_norm": 5.774959087371826,
+    "lr": 6.584362139917696e-06,
+    "examples": 64,
+    "forward_tokens": 10128,
+    "seconds": 0.1383095230012259
+  },
+  {
+    "step": 191,
+    "objective": "classification",
+    "loss": 3.42722487449646,
+    "grad_norm": 3.365898609161377,
+    "lr": 6.502057613168725e-06,
+    "examples": 64,
+    "forward_tokens": 3572,
+    "seconds": 0.07069744399996125
+  },
+  {
+    "step": 192,
+    "objective": "retrieval",
+    "loss": 0.21402263641357422,
+    "grad_norm": 3.9199740886688232,
+    "lr": 6.419753086419753e-06,
+    "examples": 64,
+    "forward_tokens": 9871,
+    "seconds": 0.1381422320009733
+  },
+  {
+    "step": 193,
+    "objective": "retrieval",
+    "loss": 0.30852949619293213,
+    "grad_norm": 4.519077301025391,
+    "lr": 6.3374485596707825e-06,
+    "examples": 64,
+    "forward_tokens": 10702,
+    "seconds": 0.13935461300206953
+  },
+  {
+    "step": 194,
+    "objective": "retrieval",
+    "loss": 0.22748535871505737,
+    "grad_norm": 3.9638116359710693,
+    "lr": 6.255144032921812e-06,
+    "examples": 64,
+    "forward_tokens": 10615,
+    "seconds": 0.14061658900027396
+  },
+  {
+    "step": 195,
+    "objective": "retrieval",
+    "loss": 0.2958163022994995,
+    "grad_norm": 4.909816265106201,
+    "lr": 6.17283950617284e-06,
+    "examples": 64,
+    "forward_tokens": 10288,
+    "seconds": 0.14066810599979362
+  },
+  {
+    "step": 196,
+    "objective": "classification",
+    "loss": 3.415928602218628,
+    "grad_norm": 3.933983325958252,
+    "lr": 6.090534979423869e-06,
+    "examples": 64,
+    "forward_tokens": 3651,
+    "seconds": 0.06683546799831674
+  },
+  {
+    "step": 197,
+    "objective": "retrieval",
+    "loss": 0.16907340288162231,
+    "grad_norm": 3.631118059158325,
+    "lr": 6.008230452674898e-06,
+    "examples": 64,
+    "forward_tokens": 10004,
+    "seconds": 0.138225937000243
+  },
+  {
+    "step": 198,
+    "objective": "classification",
+    "loss": 3.4926164150238037,
+    "grad_norm": 4.9483842849731445,
+    "lr": 5.925925925925926e-06,
+    "examples": 64,
+    "forward_tokens": 3754,
+    "seconds": 0.06823351600178285
+  },
+  {
+    "step": 199,
+    "objective": "classification",
+    "loss": 3.5948452949523926,
+    "grad_norm": 4.257822036743164,
+    "lr": 5.843621399176955e-06,
+    "examples": 64,
+    "forward_tokens": 3532,
+    "seconds": 0.06958072700217599
+  },
+  {
+    "step": 200,
+    "objective": "retrieval",
+    "loss": 0.2195664644241333,
+    "grad_norm": 3.7614004611968994,
+    "lr": 5.761316872427984e-06,
+    "examples": 64,
+    "forward_tokens": 10054,
+    "seconds": 0.14607435899961274
+  },
+  {
+    "step": 201,
+    "objective": "classification",
+    "loss": 3.368830680847168,
+    "grad_norm": 3.672050952911377,
+    "lr": 5.6790123456790125e-06,
+    "examples": 64,
+    "forward_tokens": 3657,
+    "seconds": 0.06761420399925555
+  },
+  {
+    "step": 202,
+    "objective": "classification",
+    "loss": 3.551696300506592,
+    "grad_norm": 4.2782182693481445,
+    "lr": 5.596707818930042e-06,
+    "examples": 64,
+    "forward_tokens": 3648,
+    "seconds": 0.07065286500073853
+  },
+  {
+    "step": 203,
+    "objective": "classification",
+    "loss": 3.437352418899536,
+    "grad_norm": 3.1498286724090576,
+    "lr": 5.514403292181071e-06,
+    "examples": 64,
+    "forward_tokens": 3355,
+    "seconds": 0.06235193200336653
+  },
+  {
+    "step": 204,
+    "objective": "classification",
+    "loss": 3.4091715812683105,
+    "grad_norm": 3.943906784057617,
+    "lr": 5.432098765432099e-06,
+    "examples": 64,
+    "forward_tokens": 3781,
+    "seconds": 0.07298129099945072
+  },
+  {
+    "step": 205,
+    "objective": "classification",
+    "loss": 3.6219024658203125,
+    "grad_norm": 4.187036514282227,
+    "lr": 5.349794238683128e-06,
+    "examples": 64,
+    "forward_tokens": 3377,
+    "seconds": 0.06739754899899708
+  },
+  {
+    "step": 206,
+    "objective": "retrieval",
+    "loss": 0.12917155027389526,
+    "grad_norm": 3.0423295497894287,
+    "lr": 5.2674897119341575e-06,
+    "examples": 64,
+    "forward_tokens": 9965,
+    "seconds": 0.15160095100145554
+  },
+  {
+    "step": 207,
+    "objective": "retrieval",
+    "loss": 0.25823795795440674,
+    "grad_norm": 3.898850440979004,
+    "lr": 5.185185185185185e-06,
+    "examples": 64,
+    "forward_tokens": 10193,
+    "seconds": 0.1384152609971352
+  },
+  {
+    "step": 208,
+    "objective": "retrieval",
+    "loss": 0.24063199758529663,
+    "grad_norm": 3.4942564964294434,
+    "lr": 5.102880658436214e-06,
+    "examples": 64,
+    "forward_tokens": 10445,
+    "seconds": 0.1396432379988255
+  },
+  {
+    "step": 209,
+    "objective": "retrieval",
+    "loss": 0.26036715507507324,
+    "grad_norm": 3.5682666301727295,
+    "lr": 5.020576131687243e-06,
+    "examples": 64,
+    "forward_tokens": 9852,
+    "seconds": 0.1383415630007221
+  },
+  {
+    "step": 210,
+    "objective": "retrieval",
+    "loss": 0.21918964385986328,
+    "grad_norm": 3.5001847743988037,
+    "lr": 4.938271604938272e-06,
+    "examples": 64,
+    "forward_tokens": 10184,
+    "seconds": 0.1411917950026691
+  },
+  {
+    "step": 211,
+    "objective": "classification",
+    "loss": 3.5377039909362793,
+    "grad_norm": 4.374831199645996,
+    "lr": 4.855967078189301e-06,
+    "examples": 64,
+    "forward_tokens": 3463,
+    "seconds": 0.0676445219978632
+  },
+  {
+    "step": 212,
+    "objective": "retrieval",
+    "loss": 0.24189618229866028,
+    "grad_norm": 3.9106791019439697,
+    "lr": 4.773662551440329e-06,
+    "examples": 64,
+    "forward_tokens": 10154,
+    "seconds": 0.13893930400081445
+  },
+  {
+    "step": 213,
+    "objective": "classification",
+    "loss": 3.418473482131958,
+    "grad_norm": 3.095304012298584,
+    "lr": 4.691358024691358e-06,
+    "examples": 64,
+    "forward_tokens": 3418,
+    "seconds": 0.04657049100205768
+  },
+  {
+    "step": 214,
+    "objective": "retrieval",
+    "loss": 0.2091480791568756,
+    "grad_norm": 3.318531036376953,
+    "lr": 4.6090534979423875e-06,
+    "examples": 64,
+    "forward_tokens": 10448,
+    "seconds": 0.13971677299923613
+  },
+  {
+    "step": 215,
+    "objective": "retrieval",
+    "loss": 0.1977865993976593,
+    "grad_norm": 3.2726891040802,
+    "lr": 4.526748971193416e-06,
+    "examples": 64,
+    "forward_tokens": 10741,
+    "seconds": 0.14145001799988677
+  },
+  {
+    "step": 216,
+    "objective": "retrieval",
+    "loss": 0.23266780376434326,
+    "grad_norm": 3.56813383102417,
+    "lr": 4.444444444444444e-06,
+    "examples": 64,
+    "forward_tokens": 10372,
+    "seconds": 0.13980600500144647
+  },
+  {
+    "step": 217,
+    "objective": "classification",
+    "loss": 3.4763505458831787,
+    "grad_norm": 3.72825288772583,
+    "lr": 4.362139917695473e-06,
+    "examples": 64,
+    "forward_tokens": 3566,
+    "seconds": 0.0694010849983897
+  },
+  {
+    "step": 218,
+    "objective": "classification",
+    "loss": 3.524045944213867,
+    "grad_norm": 4.089598178863525,
+    "lr": 4.2798353909465025e-06,
+    "examples": 64,
+    "forward_tokens": 3377,
+    "seconds": 0.06760095299978275
+  },
+  {
+    "step": 219,
+    "objective": "retrieval",
+    "loss": 0.17837417125701904,
+    "grad_norm": 2.7459309101104736,
+    "lr": 4.197530864197531e-06,
+    "examples": 64,
+    "forward_tokens": 10066,
+    "seconds": 0.14771152299726964
+  },
+  {
+    "step": 220,
+    "objective": "classification",
+    "loss": 3.5236496925354004,
+    "grad_norm": 4.578797340393066,
+    "lr": 4.11522633744856e-06,
+    "examples": 64,
+    "forward_tokens": 3592,
+    "seconds": 0.06970091499897535
+  },
+  {
+    "step": 221,
+    "objective": "retrieval",
+    "loss": 0.16913454234600067,
+    "grad_norm": 2.8203799724578857,
+    "lr": 4.032921810699589e-06,
+    "examples": 64,
+    "forward_tokens": 9721,
+    "seconds": 0.14238851399932173
+  },
+  {
+    "step": 222,
+    "objective": "classification",
+    "loss": 3.4748430252075195,
+    "grad_norm": 4.934267044067383,
+    "lr": 3.9506172839506175e-06,
+    "examples": 64,
+    "forward_tokens": 3550,
+    "seconds": 0.06940341600056854
+  },
+  {
+    "step": 223,
+    "objective": "classification",
+    "loss": 3.5396370887756348,
+    "grad_norm": 4.354552745819092,
+    "lr": 3.868312757201647e-06,
+    "examples": 64,
+    "forward_tokens": 3455,
+    "seconds": 0.06913476299814647
+  },
+  {
+    "step": 224,
+    "objective": "retrieval",
+    "loss": 0.24766799807548523,
+    "grad_norm": 3.9166672229766846,
+    "lr": 3.786008230452675e-06,
+    "examples": 64,
+    "forward_tokens": 10019,
+    "seconds": 0.14605067299999064
+  },
+  {
+    "step": 225,
+    "objective": "classification",
+    "loss": 3.5833687782287598,
+    "grad_norm": 3.741586685180664,
+    "lr": 3.7037037037037037e-06,
+    "examples": 64,
+    "forward_tokens": 3686,
+    "seconds": 0.06994646900056978
+  },
+  {
+    "step": 226,
+    "objective": "classification",
+    "loss": 3.560575008392334,
+    "grad_norm": 4.053412437438965,
+    "lr": 3.621399176954733e-06,
+    "examples": 64,
+    "forward_tokens": 3412,
+    "seconds": 0.06752141500328435
+  },
+  {
+    "step": 227,
+    "objective": "classification",
+    "loss": 3.489072561264038,
+    "grad_norm": 3.7904036045074463,
+    "lr": 3.5390946502057617e-06,
+    "examples": 64,
+    "forward_tokens": 3689,
+    "seconds": 0.07133854299900122
+  },
+  {
+    "step": 228,
+    "objective": "retrieval",
+    "loss": 0.17442020773887634,
+    "grad_norm": 2.857506036758423,
+    "lr": 3.4567901234567904e-06,
+    "examples": 64,
+    "forward_tokens": 10639,
+    "seconds": 0.15569800799858058
+  },
+  {
+    "step": 229,
+    "objective": "classification",
+    "loss": 3.416257619857788,
+    "grad_norm": 4.132504463195801,
+    "lr": 3.3744855967078196e-06,
+    "examples": 64,
+    "forward_tokens": 3382,
+    "seconds": 0.05619848200149136
+  },
+  {
+    "step": 230,
+    "objective": "classification",
+    "loss": 3.3540120124816895,
+    "grad_norm": 3.2296037673950195,
+    "lr": 3.292181069958848e-06,
+    "examples": 64,
+    "forward_tokens": 3644,
+    "seconds": 0.07005905799815082
+  },
+  {
+    "step": 231,
+    "objective": "classification",
+    "loss": 3.2752387523651123,
+    "grad_norm": 3.0303146839141846,
+    "lr": 3.2098765432098767e-06,
+    "examples": 64,
+    "forward_tokens": 3532,
+    "seconds": 0.06764631799887866
+  },
+  {
+    "step": 232,
+    "objective": "classification",
+    "loss": 3.543715238571167,
+    "grad_norm": 4.441979885101318,
+    "lr": 3.127572016460906e-06,
+    "examples": 64,
+    "forward_tokens": 3736,
+    "seconds": 0.0633569189994887
+  },
+  {
+    "step": 233,
+    "objective": "retrieval",
+    "loss": 0.16370630264282227,
+    "grad_norm": 3.029674530029297,
+    "lr": 3.0452674897119346e-06,
+    "examples": 64,
+    "forward_tokens": 10560,
+    "seconds": 0.1531304470008763
+  },
+  {
+    "step": 234,
+    "objective": "classification",
+    "loss": 3.5705621242523193,
+    "grad_norm": 4.714400291442871,
+    "lr": 2.962962962962963e-06,
+    "examples": 64,
+    "forward_tokens": 3764,
+    "seconds": 0.06995683499917504
+  },
+  {
+    "step": 235,
+    "objective": "classification",
+    "loss": 3.364471673965454,
+    "grad_norm": 3.4058971405029297,
+    "lr": 2.880658436213992e-06,
+    "examples": 64,
+    "forward_tokens": 3441,
+    "seconds": 0.061342122997302795
+  },
+  {
+    "step": 236,
+    "objective": "retrieval",
+    "loss": 0.1845235824584961,
+    "grad_norm": 3.0335447788238525,
+    "lr": 2.798353909465021e-06,
+    "examples": 64,
+    "forward_tokens": 10290,
+    "seconds": 0.14509106599871302
+  },
+  {
+    "step": 237,
+    "objective": "classification",
+    "loss": 3.4526267051696777,
+    "grad_norm": 3.775336265563965,
+    "lr": 2.7160493827160496e-06,
+    "examples": 64,
+    "forward_tokens": 3924,
+    "seconds": 0.07133463199716061
+  },
+  {
+    "step": 238,
+    "objective": "classification",
+    "loss": 3.5015335083007812,
+    "grad_norm": 3.7128827571868896,
+    "lr": 2.6337448559670788e-06,
+    "examples": 64,
+    "forward_tokens": 3508,
+    "seconds": 0.0564767230025609
+  },
+  {
+    "step": 239,
+    "objective": "classification",
+    "loss": 3.3460500240325928,
+    "grad_norm": 3.6797242164611816,
+    "lr": 2.551440329218107e-06,
+    "examples": 64,
+    "forward_tokens": 3894,
+    "seconds": 0.06799683300050674
+  },
+  {
+    "step": 240,
+    "objective": "classification",
+    "loss": 3.397292137145996,
+    "grad_norm": 3.7933640480041504,
+    "lr": 2.469135802469136e-06,
+    "examples": 64,
+    "forward_tokens": 3409,
+    "seconds": 0.05574174100183882
+  },
+  {
+    "step": 241,
+    "objective": "classification",
+    "loss": 3.319397449493408,
+    "grad_norm": 3.5055606365203857,
+    "lr": 2.3868312757201646e-06,
+    "examples": 64,
+    "forward_tokens": 3645,
+    "seconds": 0.07018723799774307
+  },
+  {
+    "step": 242,
+    "objective": "classification",
+    "loss": 3.324793577194214,
+    "grad_norm": 4.182974338531494,
+    "lr": 2.3045267489711937e-06,
+    "examples": 64,
+    "forward_tokens": 3452,
+    "seconds": 0.07005387699973653
+  },
+  {
+    "step": 243,
+    "objective": "classification",
+    "loss": 3.389619827270508,
+    "grad_norm": 3.477050304412842,
+    "lr": 2.222222222222222e-06,
+    "examples": 64,
+    "forward_tokens": 3412,
+    "seconds": 0.06807613699857029
+  },
+  {
+    "step": 244,
+    "objective": "classification",
+    "loss": 3.447368621826172,
+    "grad_norm": 3.2072665691375732,
+    "lr": 2.1399176954732512e-06,
+    "examples": 64,
+    "forward_tokens": 3513,
+    "seconds": 0.07051402700017206
+  },
+  {
+    "step": 245,
+    "objective": "classification",
+    "loss": 3.5644640922546387,
+    "grad_norm": 3.459683418273926,
+    "lr": 2.05761316872428e-06,
+    "examples": 64,
+    "forward_tokens": 3610,
+    "seconds": 0.06831159200010006
+  },
+  {
+    "step": 246,
+    "objective": "retrieval",
+    "loss": 0.25889062881469727,
+    "grad_norm": 3.9497792720794678,
+    "lr": 1.9753086419753087e-06,
+    "examples": 64,
+    "forward_tokens": 10692,
+    "seconds": 0.15392736200010404
+  },
+  {
+    "step": 247,
+    "objective": "classification",
+    "loss": 3.6884374618530273,
+    "grad_norm": 5.783048152923584,
+    "lr": 1.8930041152263375e-06,
+    "examples": 64,
+    "forward_tokens": 3629,
+    "seconds": 0.07070026400106144
+  },
+  {
+    "step": 248,
+    "objective": "classification",
+    "loss": 3.3814258575439453,
+    "grad_norm": 3.3955626487731934,
+    "lr": 1.8106995884773665e-06,
+    "examples": 64,
+    "forward_tokens": 3420,
+    "seconds": 0.05800012100007734
+  },
+  {
+    "step": 249,
+    "objective": "classification",
+    "loss": 3.351588010787964,
+    "grad_norm": 3.4243271350860596,
+    "lr": 1.7283950617283952e-06,
+    "examples": 64,
+    "forward_tokens": 3632,
+    "seconds": 0.07083447499826434
+  },
+  {
+    "step": 250,
+    "objective": "classification",
+    "loss": 3.390692949295044,
+    "grad_norm": 3.446012020111084,
+    "lr": 1.646090534979424e-06,
+    "examples": 64,
+    "forward_tokens": 3481,
+    "seconds": 0.0680530390018248
+  },
+  {
+    "step": 251,
+    "objective": "retrieval",
+    "loss": 0.16256630420684814,
+    "grad_norm": 2.8781776428222656,
+    "lr": 1.563786008230453e-06,
+    "examples": 64,
+    "forward_tokens": 10201,
+    "seconds": 0.153323733000434
+  },
+  {
+    "step": 252,
+    "objective": "retrieval",
+    "loss": 0.23600244522094727,
+    "grad_norm": 4.045456886291504,
+    "lr": 1.4814814814814815e-06,
+    "examples": 64,
+    "forward_tokens": 10720,
+    "seconds": 0.13938461399811786
+  },
+  {
+    "step": 253,
+    "objective": "retrieval",
+    "loss": 0.14137494564056396,
+    "grad_norm": 2.388394832611084,
+    "lr": 1.3991769547325104e-06,
+    "examples": 64,
+    "forward_tokens": 10318,
+    "seconds": 0.13881524099997478
+  },
+  {
+    "step": 254,
+    "objective": "classification",
+    "loss": 3.37760066986084,
+    "grad_norm": 3.7154719829559326,
+    "lr": 1.3168724279835394e-06,
+    "examples": 64,
+    "forward_tokens": 3596,
+    "seconds": 0.06950808799956576
+  },
+  {
+    "step": 255,
+    "objective": "classification",
+    "loss": 3.359682083129883,
+    "grad_norm": 2.874070167541504,
+    "lr": 1.234567901234568e-06,
+    "examples": 64,
+    "forward_tokens": 3511,
+    "seconds": 0.06627014199693804
+  },
+  {
+    "step": 256,
+    "objective": "retrieval",
+    "loss": 0.1915038824081421,
+    "grad_norm": 2.9203107357025146,
+    "lr": 1.1522633744855969e-06,
+    "examples": 64,
+    "forward_tokens": 10965,
+    "seconds": 0.14222431400048663
+  },
+  {
+    "step": 257,
+    "objective": "classification",
+    "loss": 3.3102900981903076,
+    "grad_norm": 3.0777440071105957,
+    "lr": 1.0699588477366256e-06,
+    "examples": 64,
+    "forward_tokens": 3484,
+    "seconds": 0.05676555999889388
+  },
+  {
+    "step": 258,
+    "objective": "classification",
+    "loss": 3.424177646636963,
+    "grad_norm": 3.211547613143921,
+    "lr": 9.876543209876544e-07,
+    "examples": 64,
+    "forward_tokens": 3353,
+    "seconds": 0.06365706500218948
+  },
+  {
+    "step": 259,
+    "objective": "classification",
+    "loss": 3.421788215637207,
+    "grad_norm": 3.204338550567627,
+    "lr": 9.053497942386832e-07,
+    "examples": 64,
+    "forward_tokens": 3640,
+    "seconds": 0.06966443800047273
+  },
+  {
+    "step": 260,
+    "objective": "classification",
+    "loss": 3.3453407287597656,
+    "grad_norm": 3.6926088333129883,
+    "lr": 8.23045267489712e-07,
+    "examples": 64,
+    "forward_tokens": 3533,
+    "seconds": 0.06872719000239158
+  },
+  {
+    "step": 261,
+    "objective": "retrieval",
+    "loss": 0.15243399143218994,
+    "grad_norm": 2.9398624897003174,
+    "lr": 7.407407407407407e-07,
+    "examples": 64,
+    "forward_tokens": 10695,
+    "seconds": 0.13952720200177282
+  },
+  {
+    "step": 262,
+    "objective": "retrieval",
+    "loss": 0.16153651475906372,
+    "grad_norm": 2.6386098861694336,
+    "lr": 6.584362139917697e-07,
+    "examples": 64,
+    "forward_tokens": 10158,
+    "seconds": 0.13703944699955173
+  },
+  {
+    "step": 263,
+    "objective": "classification",
+    "loss": 3.5458297729492188,
+    "grad_norm": 3.611499547958374,
+    "lr": 5.761316872427984e-07,
+    "examples": 64,
+    "forward_tokens": 3612,
+    "seconds": 0.06575401600275654
+  },
+  {
+    "step": 264,
+    "objective": "classification",
+    "loss": 3.416469097137451,
+    "grad_norm": 4.148764133453369,
+    "lr": 4.938271604938272e-07,
+    "examples": 64,
+    "forward_tokens": 3544,
+    "seconds": 0.06918616899929475
+  },
+  {
+    "step": 265,
+    "objective": "classification",
+    "loss": 3.276939868927002,
+    "grad_norm": 3.159926176071167,
+    "lr": 4.11522633744856e-07,
+    "examples": 64,
+    "forward_tokens": 3326,
+    "seconds": 0.06343420900157071
+  },
+  {
+    "step": 266,
+    "objective": "retrieval",
+    "loss": 0.24588167667388916,
+    "grad_norm": 3.959923267364502,
+    "lr": 3.2921810699588484e-07,
+    "examples": 64,
+    "forward_tokens": 10410,
+    "seconds": 0.14743415799966897
+  },
+  {
+    "step": 267,
+    "objective": "classification",
+    "loss": 3.349691390991211,
+    "grad_norm": 2.9122934341430664,
+    "lr": 2.469135802469136e-07,
+    "examples": 64,
+    "forward_tokens": 3578,
+    "seconds": 0.06952330599960987
+  },
+  {
+    "step": 268,
+    "objective": "classification",
+    "loss": 3.4690499305725098,
+    "grad_norm": 3.8554351329803467,
+    "lr": 1.6460905349794242e-07,
+    "examples": 64,
+    "forward_tokens": 3338,
+    "seconds": 0.06332014600047842
+  },
+  {
+    "step": 269,
+    "objective": "retrieval",
+    "loss": 0.18504178524017334,
+    "grad_norm": 3.0141282081604004,
+    "lr": 8.230452674897121e-08,
+    "examples": 64,
+    "forward_tokens": 9776,
+    "seconds": 0.14432499399845256
+  },
+  {
+    "step": 270,
+    "objective": "retrieval",
+    "loss": 0.23257958889007568,
+    "grad_norm": 3.4902968406677246,
+    "lr": 0.0,
+    "examples": 64,
+    "forward_tokens": 10491,
+    "seconds": 0.13829196199731086
+  }
+]

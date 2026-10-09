@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import proj3d
 import plotly.io as pio
 from pypdf import PdfReader
-from .build import OUT, BASES, ALTERNATIVES, snap_camera, apply_font
+from .build import OUT, BASES, ALTERNATIVES, snap_camera, apply_font, publication_values, publication_bundle
 from .data import ASSETS, SRC, Q, G, load_data, load_absolute_data, absolute_config
 from .tables import absolute_scales
 
@@ -14,7 +14,7 @@ from .tables import absolute_scales
 def main():
     for name, digest in json.loads((ASSETS / "inputs.json").read_text()).items():
         assert hashlib.sha256((SRC / name).read_bytes()).hexdigest() == digest, name
-    _, vertices, residual, triangles = load_data()
+    frame, vertices, residual, triangles = publication_values()
     np.testing.assert_array_equal(
         pd.read_csv(OUT / "data/triangles.csv").to_numpy(), triangles
     )
@@ -24,10 +24,8 @@ def main():
         check_names=False,
     )
     data = pd.read_csv(OUT / "data/quality_geometry_by_seed.csv")
-    assert (OUT / "data/quality_geometry_by_seed.csv").read_bytes() == (
-        SRC / "quality_geometry_by_seed.csv"
-    ).read_bytes()
-    absolute = load_absolute_data()
+    pd.testing.assert_frame_equal(data, frame)
+    absolute = publication_bundle()["absolute"]
     pd.testing.assert_frame_equal(
         pd.read_csv(OUT / "data/absolute_quality_geometry_by_seed.csv"), absolute,
         check_exact=False, atol=1e-12, rtol=1e-12,

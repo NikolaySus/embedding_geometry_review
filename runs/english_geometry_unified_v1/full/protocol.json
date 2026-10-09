@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "config": {
+    "schema_version": 1,
+    "experiment_id": "english_geometry_unified_v1",
+    "seeds": [
+      42,
+      43,
+      44
+    ],
+    "models": {
+      "all_minilm": {
+        "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+        "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+        "max_seq_length": 128,
+        "attention_implementation": "eager"
+      }
+    },
+    "data": {
+      "classification_source": "fancyzhx/ag_news"
+    },
+    "training": {
+      "batch_size": 64,
+      "learning_rate": 2e-05,
+      "weight_decay": 0.01,
+      "warmup_ratio": 0.1,
+      "max_grad_norm": 1.0,
+      "temperature": 0.05,
+      "cosent_scale": 20.0,
+      "total_steps": 270,
+      "smoke_steps": 20,
+      "mixed_precision": "bf16",
+      "deterministic": true,
+      "checkpoint_every": 25,
+      "snapshot_steps": [
+        0,
+        68,
+        135,
+        270
+      ]
+    },
+    "mixtures": {
+      "simplex_denominator": 5,
+      "include_barycenter": true,
+      "include_control": true
+    },
+    "evaluation": {
+      "seed": 42,
+      "batch_size": 256,
+      "trajectory_regimes": [
+        "control",
+        "mix_s100_c000_r000",
+        "mix_s000_c100_r000",
+        "mix_s000_c000_r100",
+        "mix_s033_c033_r033",
+        "mix_s020_c000_r080"
+      ],
+      "gate_tasks": [
+        "STSBenchmark",
+        "BIOSSES",
+        "Banking77Classification",
+        "EmotionClassification",
+        "TwentyNewsgroupsClustering.v2",
+        "RedditClustering.v2",
+        "SciFact",
+        "NFCorpus"
+      ],
+      "full_tasks": [
+        "STSBenchmark",
+        "BIOSSES",
+        "SICK-R",
+        "STS12",
+        "STS13",
+        "STS14",
+        "Banking77Classification",
+        "EmotionClassification",
+        "AmazonCounterfactualClassification",
+        "MassiveIntentClassification",
+        "TwentyNewsgroupsClustering.v2",
+        "RedditClustering.v2",
+        "SciFact",
+        "NFCorpus",
+        "ArguAna",
+        "FiQA2018"
+      ]
+    },
+    "geometry": {
+      "version": "geometry_v2_knn_self_excluded",
+      "seed": 42,
+      "generic_sample_size": 10000,
+      "classification_sample_size": 4000,
+      "knn_k": 10,
+      "pair_sample_size": 100000
+    },
+    "storage": {
+      "minimum_free_gb": 5
+    }
+  },
+  "data": {
+    "neutral_control": "d571513ff87a8d4565df72845c9835721a7b2d2f31f740b2dfaa5f153ec4a770",
+    "sts": "84562f075c775940cad3550fdd1be4cc1b6dc73d6e3e3ae7d2f99418038bbf96",
+    "classification": "9836a437b17d226390d46e141b5391707c1a2200b10062a7b23f388d36d06c1d",
+    "retrieval": "7a63462bc796abf4ff8d928bc3a0b115188d7470c812cef0dedd1d4553a876a2",
+    "neutral_diagnostic": "84079d6b0ef005ec9d625019656dc38711f8270d9454eaca4254cc9291b0d7e7",
+    "retrieval_gate": "906f1367f693568227f10fce10a4d77cdad331608248c9fb0cd6fefa438dcadb"
+  },
+  "audits": {
+    "reports/pilot_v1_data_audit.json": "23912e49f819e0ae2c92031b34741d58d8c75f6bd2edc3a204c3ca42fd4493f2",
+    "reports/pilot_v1_evaluation_overlap_audit.json": "99dcfea6db00caaf4bde509e353782d4b7ca063d9eb0ddb7e985d4a067210f1c",
+    "data/processed/manifest.json": "c1028e64db364a8feece0d23861679e0e45fd76bf3ec3cd04f2c989f1bd67322"
+  },
+  "code": {
+    "src/embedding_geometry/__init__.py": "73af4f0bdeb214b95379bfc2239fa749cc33bd5abba995f16078993b1bbbc047",
+    "src/embedding_geometry/common.py": "5e55ee5d292c8df193971de297e9e39cc0c5ff2c98150a312df6ecfecd188131",
+    "src/embedding_geometry/data.py": "e4ebb010954a8fe7bd72f4512af6b4cd1d256e4fa848f6d76b7ab35b4f9f18f1",
+    "src/embedding_geometry/evaluation.py": "08c3368101b1e4d091cdbe18587facd1f282fcc74493abbaaa553c00d5245be4",
+    "src/embedding_geometry/geometry.py": "76f22e5c0cd290d1da237e800d128f4a508c0a67d11e91b60a75bf2245f9f02d",
+    "src/embedding_geometry/mixtures.py": "3ef4022f37ca5080ffa751e1271285030c581ea9b4065a252ccbad1030c57236",
+    "src/embedding_geometry/modeling.py": "7425389f526a8f96c25f29dc3931f7b99ed396b3597c0d0ca80cc56a8b56e2d9",
+    "src/embedding_geometry/orchestration.py": "88d36f4b39e940b09596d1f7f1720d92c510aff53da7b8d886d615c34b4a8c13",
+    "src/embedding_geometry/reporting.py": "ac1301726b1cc3080d3a28833245e85ce305843c99af4596baaadae88db56dad",
+    "src/embedding_geometry/training.py": "4eeb618b6b1ab94996fc5a4a2cfcfc82346f1c2add159aa6ee2a21c5a8252bbe",
+    "src/embedding_geometry/unified.py": "6e4cfe8609f498bdd5ebd08b0412d7d3c55aa83a550447267309f0773b6c18f0",
+    "src/embedding_geometry/unified_evaluation.py": "c26b41d2e3988c3aaa096416a73b525a34d5989c03ff09e6147d1e9a4a8248a3",
+    "src/embedding_geometry/unified_geometry.py": "e42382f7851cfd7c87183bd7291f5e3505d67b24a6ce8ae9fff20fce2c2ae748",
+    "src/embedding_geometry/unified_report.py": "1080d602e133cdbf62e9f4cb602ce69247859e893c70d8f0814d1892919827dc",
+    "src/embedding_geometry/unified_state.py": "0d09618c37954577493504de023f82675105ef1bdbc5280d09fc127fafc8993c"
+  },
+  "uv_lock": "da56d4758ff61e68ed7741770a5595b0b1b9bc5f8a99951618ee8efb2f8a9e54",
+  "identity": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697"
+}

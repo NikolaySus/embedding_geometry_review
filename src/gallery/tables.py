@@ -18,8 +18,8 @@ PALETTES = [
 ]
 
 
-def absolute_scales(mean, variant):
-    config = absolute_config()
+def absolute_scales(mean, variant, config=None):
+    config = absolute_config() if config is None else config
     bounds = variant["quality_range"]
     if bounds == "observed":
         bounds = [float(mean[Q].to_numpy().min()), float(mean[Q].to_numpy().max())]
@@ -34,13 +34,13 @@ def absolute_scales(mean, variant):
     return pd.DataFrame(rows).set_index("column")
 
 
-def absolute_table(frame, variant, *, data_dir=None):
+def absolute_table(frame, variant, *, data_dir=None, scale_config=None):
     """Same numeric-table design as 1C-01, with explicit absolute scales."""
     mean = frame.groupby("branch")[Q + G].mean()
     order = ["m0"] + [b for b in mean.index if b != "m0"]
     mean = mean.loc[order]
     sd = frame.groupby("branch")[Q + G].std().loc[order]
-    scales = absolute_scales(mean, variant)
+    scales = absolute_scales(mean, variant, scale_config)
     # Keep cell sizes and font sizes; reclaim vertical space above the table.
     dense = variant.get("layout") == "dense"
     height = 7.1 if dense else 7.6

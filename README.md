@@ -4,8 +4,8 @@
 пространства представлений. Здесь находятся экспериментальный код, исходные
 метрики, конфигурации, две рукописи и галерея вариантов рисунков.
 
-История редакций ведётся в Git. **full** и **compact** являются двумя намеренно
-сохранёнными вариантами статьи, а не последовательными версиями. Галерея одна;
+История редакций ведётся в Git. **full**, **compact** и **ultracompact** являются
+намеренно сохранёнными вариантами статьи, а не последовательными версиями. Галерея одна;
 её альтернативы предназначены для выбора оформления рисунков.
 
 ## Установка
@@ -27,6 +27,7 @@ Poppler (`pdftoppm`) и Chrome/Chromium для экспорта Plotly чере�
 ```bash
 uv run python src/build_article.py --variant full
 uv run python src/build_article.py --variant compact
+uv run python src/build_article.py --variant ultracompact
 uv run python src/build_gallery.py
 uv run python src/validate_publication.py --all
 ```
@@ -35,6 +36,7 @@ uv run python src/validate_publication.py --all
 |---|---|---|
 | Полная статья | `manuscript/full.md` | `build/full/` |
 | Компактная статья | `manuscript/compact.md` | `build/compact/` |
+| Очень компактная статья | `manuscript/ultracompact.md` | `build/ultracompact/` |
 | Галерея и интерактивные панели | `src/gallery/`, `assets/gallery/` | `build/gallery/` |
 
 В Git входят исходники, числовые таблицы и выбранные настройки визуализаций.
@@ -47,8 +49,17 @@ uv run python src/validate_publication.py --all
 
 Компактная статья использует пять dense-вариантов галереи. Её команда сборки
 самостоятельно создаёт выбранные рисунки; предварительная сборка галереи не нужна.
-Текущее размещение и ограничения первой попытки описаны в
+Обе статьи и галерея используют единый завершённый эксперимент из
+`configs/publication.json`. Численные вставки разрешаются при сборке;
+готовый Markdown сохраняется в `build/{variant}/manuscript.md`.
+Текущее размещение и ограничения описаны в
 [редакционных заметках](docs/COMPACT_EDITORIAL_NOTES.md).
+
+`ultracompact` сохраняет аннотации и ключевые слова compact дословно, пять рисунков
+и все численные подписи. Четырёхпанельные рисунки перестроены в один ряд.
+Проверка `uv run python src/validate_publication.py --variant ultracompact`
+отдельно считает 6–7 страниц основной статьи; литература начинается с новой страницы.
+Ограничения и состав описаны в [заметках ultracompact](docs/ULTRACOMPACT.md).
 
 ## Экспериментальные данные
 
@@ -76,6 +87,17 @@ uv run python src/validate_publication.py --all
 статистики, но не содержит корпуса и веса для повторного обучения.
 
 ## Запуски исследования
+
+Новый единый протокол специализаций и смесей описан в
+[UNIFIED_PIPELINE.md](docs/UNIFIED_PIPELINE.md). План без запуска GPU:
+
+```bash
+uv run python src/unified_experiment.py plan
+```
+
+Он не перезаписывает исторические опыты. Полный запуск завершён: 69 ветвей,
+конечная полная оценка, промежуточные gate-оценки и геометрические снимки.
+Проверка: `reports/english_geometry_unified_v1/full/VALIDATION.md`.
 
 Команды ниже приведены для будущих запусков, **не как обязательный этап переноса**.
 Они могут загружать данные, занимать GPU и изменять файлы результатов.

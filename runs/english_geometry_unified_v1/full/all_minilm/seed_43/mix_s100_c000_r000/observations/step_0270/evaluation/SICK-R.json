@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s100_c000_r000",
+    "seed": 43,
+    "step": 270,
+    "weights_sha256": "8a0c6c2b8264a720805427e681765553fd1bf0aaf32680eac69b3c3ac3801df8"
+  },
+  "task": "SICK-R",
+  "metric": "cosine_spearman",
+  "score": 0.77945,
+  "details": {
+    "dataset": "f258dbf1444972f3bed47013336915bdc9a4f2352b3ea254121ddf85b1ee7d7a"
+  },
+  "seconds": 3.7528232680015208,
+  "technical_only": false
+}

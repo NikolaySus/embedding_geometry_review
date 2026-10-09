@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s000_c040_r060",
+    "seed": 43,
+    "step": 270,
+    "weights_sha256": "83e07927b6a84a74c174428c1fd2c5778e7632f3ec242c18dbb12f8155ab77c9"
+  },
+  "task": "MassiveIntentClassification",
+  "metric": "accuracy",
+  "score": 0.6663939999999999,
+  "details": {
+    "dataset": "38d566fbfd6e067119551afa98d8e8f4bb8a51589916e7c35d0765e4379bd9b3"
+  },
+  "seconds": 6.672759532000782,
+  "technical_only": false
+}

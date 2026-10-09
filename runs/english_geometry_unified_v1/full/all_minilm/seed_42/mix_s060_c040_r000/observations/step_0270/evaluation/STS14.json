@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s060_c040_r000",
+    "seed": 42,
+    "step": 270,
+    "weights_sha256": "40005cf8ed494d205b986358c46cc86d12d4bb9815e89f41226d8bf6f4749d80"
+  },
+  "task": "STS14",
+  "metric": "cosine_spearman",
+  "score": 0.774089,
+  "details": {
+    "dataset": "b5c68ddf737e7e7f8a8b80b3c0ff5d9799986f655746738da179d7b42b1692e4"
+  },
+  "seconds": 2.4716175619996648,
+  "technical_only": false
+}

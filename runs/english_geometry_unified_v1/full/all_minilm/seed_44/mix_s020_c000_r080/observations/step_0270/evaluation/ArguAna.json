@@ -1,0 +1,18 @@
+{
+  "identity": {
+    "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+    "model": "all_minilm",
+    "branch": "mix_s020_c000_r080",
+    "seed": 44,
+    "step": 270,
+    "weights_sha256": "ff866ce5ba5fd8918b0f4e5d93d863b0cdbb9aa5ae42cbd71f91859fea7b3ad2"
+  },
+  "task": "ArguAna",
+  "metric": "ndcg_at_10",
+  "score": 0.5,
+  "details": {
+    "dataset": "7eeef2243c66763f0f26d3b7e61e1d757b98fbc91ea16444d9ef74c9bc8467ad"
+  },
+  "seconds": 19.94615956999769,
+  "technical_only": false
+}

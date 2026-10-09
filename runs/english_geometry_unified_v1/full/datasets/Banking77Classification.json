@@ -1,0 +1,12 @@
+{
+  "train": {
+    "fingerprint": "4320d1a32f30f4c8",
+    "rows": 10003,
+    "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int64', id=None), 'label_text': Value(dtype='string', id=None)}"
+  },
+  "test": {
+    "fingerprint": "e0e614fdfb1d4f6f",
+    "rows": 3080,
+    "features": "{'text': Value(dtype='string', id=None), 'label': Value(dtype='int64', id=None), 'label_text': Value(dtype='string', id=None)}"
+  }
+}

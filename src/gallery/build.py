@@ -18,6 +18,23 @@ from .surfaces import compact_surface
 from .trajectories import compact_trajectories
 from .interactive import compact_scene, interactive, apply_roof, apply_font, snap_camera
 
+
+def publication_bundle():
+    from publication.unified_assets import SETTINGS
+    from .bundles import load_bundle
+    from .data import ROOT
+    runs = pd.read_csv(ROOT / "reports" / SETTINGS["experiment"] / "full/runs.csv")
+    if set(runs.protocol) != {SETTINGS["protocol_hash"]}:
+        raise ValueError("Publication protocol mismatch")
+    return load_bundle(SETTINGS["experiment"], SETTINGS["model"])
+
+
+def publication_values():
+    bundle = publication_bundle()
+    frame = bundle["deltas"]
+    mean = frame[frame.branch != "control"].groupby("branch")[Q + G].mean()
+    return frame, mean, bundle["residual"], bundle["triangles"]
+
 BASES = ["1C-09-absolute-unit", "2D-compact", "3E-compact", "4A-compact", "5A-compact"]
 ALTERNATIVES = [identity + "-dense" for identity in BASES]
 
@@ -36,7 +53,7 @@ def camera_figure(state):
     if not 0.15 <= ratio <= 1.5 or not 5 <= font <= 12:
         raise ValueError("Roof or font outside supported range")
     kind, _, panel = identity.split("-")
-    _, mean, residual, tri = load_data()
+    _, mean, residual, tri = publication_values()
     values = {"2D": mean[G], "3E": mean[Q[1:]], "5A": residual}[kind]
     cfg = layout_config()[kind]
     f = compact_scene(values, tri, kind, int(panel), cfg["azimuth"], cfg["label_font"])
@@ -75,7 +92,15 @@ def export_camera(path):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument("--camera")
+    p.add_argument("--experiment", help="Build five dense figures from a complete unified report, or historical")
+    p.add_argument("--model", default="all_minilm")
     args = p.parse_args()
+    if args.experiment:
+        if args.camera:
+            p.error("--camera uses the historical interactive gallery, not --experiment")
+        from .bundles import build_dense
+        print(build_dense(args.experiment, args.model))
+        return
     if args.camera:
         return export_camera(args.camera)
     for folder in ["data", "figures", "interactive", "renders"]:
@@ -83,21 +108,23 @@ def main():
     plt.rcParams.update(
         {"font.family": "DejaVu Sans", "font.size": 8, "axes.labelsize": 8}
     )
-    _, m, residual, tri = load_data()
+    from publication.unified_assets import SETTINGS, trajectory_figure, normalize_caption
+    frame, m, residual, tri = publication_values()
+    bundle = publication_bundle()
     config = layout_config()
-    shutil.copyfile(
-        SRC / "quality_geometry_by_seed.csv", OUT / "data/quality_geometry_by_seed.csv"
-    )
+    frame.to_csv(OUT / "data/quality_geometry_by_seed.csv", index=False)
+    (OUT / "source.json").write_text(json.dumps(SETTINGS, indent=2))
     residual.to_csv(OUT / "data/residual_means.csv")
     pd.DataFrame(tri, columns=["i", "j", "k"]).to_csv(
         OUT / "data/triangles.csv", index=False
     )
     variants = []
-    absolute = load_absolute_data()
+    absolute = bundle["absolute"]
     absolute.to_csv(OUT / "data/absolute_quality_geometry_by_seed.csv", index=False)
     absolute.groupby("branch")[Q + G].agg(["mean", "std"]).to_csv(OUT / "data/absolute_summary.csv")
 
     def save(key, fig, note):
+        normalize_caption(fig)
         width, height = fig.get_size_inches()
         fig.savefig(OUT / "figures" / f"{key}.pdf")
         fig.savefig(OUT / "figures" / f"{key}.png", dpi=180)
@@ -136,8 +163,8 @@ def main():
     for dense in (False, True):
         save(
             "4A-compact" + ("-dense" if dense else ""),
-            compact_trajectories(dense=dense),
-            "Траектории первого этапа; все шаги, конечные значения и SD сохранены. "
+            trajectory_figure(dense=dense),
+            "Единый протокол: gate STS и поиск, ранг и соседства; шесть режимов и SD. "
             + ("Плотная альтернатива: меньше промежутки, поля и высота рисунка; шрифты не уменьшены."
                if dense else "Прежний compact теперь основа, без изменений."),
         )

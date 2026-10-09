@@ -35,6 +35,7 @@ node_modules/
 
 # Keep run metrics, manifests and logs visible; never ignore all of runs/.
 final_model/
+.final_model.tmp-*/
 checkpoints/
 checkpoint-*/
 *.pt
@@ -45,6 +46,8 @@ checkpoint-*/
 *.onnx
 *.npy
 *.npz
+# Interrupted atomic publication of run JSON manifests.
+/runs/**/*.json.tmp
 cache/
 .cache/
 /models/

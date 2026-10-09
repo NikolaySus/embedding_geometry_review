@@ -1,0 +1,11 @@
+{
+  "protocol": "020ecbadb0f8084f4adc9c7df9fad5ddaafacd138a16559ae5210c40a29eb697",
+  "model": "all_minilm",
+  "branch": "mix_s100_c000_r000",
+  "seed": 43,
+  "step": 270,
+  "weights_sha256": "8a0c6c2b8264a720805427e681765553fd1bf0aaf32680eac69b3c3ac3801df8",
+  "evaluation_seed": 42,
+  "mteb": "1.38.30",
+  "technical_only": false
+}
