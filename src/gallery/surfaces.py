@@ -5,6 +5,42 @@ from matplotlib.colors import Normalize
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection, Line3DCollection
 import numpy as np
 from .data import LABEL, xy, ternary_grid, project
+from mpl_toolkits.mplot3d import proj3d
+
+
+def outside_vertex_labels(ax):
+    """Place source names beyond triangle vertices, aligned away from its centre."""
+    center = np.array([.5, np.sqrt(3)/6])
+    for text, weights in zip(list(ax.texts)[:3], np.eye(3)):
+        vertex = project(weights)
+        position = center + 1.16*(vertex-center)
+        floor = text.get_position_3d()[2]
+        text.set_position_3d((*position, floor))
+        cx, cy, _ = proj3d.proj_transform(*center, floor, ax.get_proj())
+        tx, ty, _ = proj3d.proj_transform(*position, floor, ax.get_proj())
+        text.set_horizontalalignment('left' if tx > cx else 'right')
+        text.set_verticalalignment('bottom' if ty > cy else 'top')
+
+
+def front_edge_percentages(ax, fontsize):
+    """Four interior ticks on the edge nearest the camera; order STS/Cls/Ret."""
+    weights = np.eye(3)
+    vertices = np.array([project(w) for w in weights])
+    center = vertices.mean(axis=0)
+    eye = np.array([np.cos(np.deg2rad(ax.azim)), np.sin(np.deg2rad(ax.azim))])
+    i,j = max([(0,1),(1,2),(0,2)], key=lambda ij: np.dot((vertices[ij[0]]+vertices[ij[1]])/2,eye))
+    outward = (vertices[i]+vertices[j])/2-center
+    outward /= np.linalg.norm(outward)
+    floor = ax.texts[0].get_position_3d()[2]
+    labels=[]
+    for step in range(1,5):
+        w = ((5-step)*weights[i]+step*weights[j])/5
+        position = project(w)+.045*outward
+        t=ax.text(*position,floor,'\n'.join(f'{int(round(v*100))}%' for v in w),
+                  fontsize=fontsize,ha='center',va='top',linespacing=.95,color='#444')
+        t.set_gid('mixture-percentages')
+        labels.append(t)
+    return labels
 
 
 def surface(m, tri, kind, style, azim=-55, font=7):
@@ -142,13 +178,13 @@ def surface(m, tri, kind, style, azim=-55, font=7):
     return fig, labels
 
 
-def compact_surface(m, tri, kind, dense=False):
+def compact_surface(m, tri, kind, dense=False, azim=-60):
     """Return the original compact surface or its tighter static print layout.
 
     Dense pages retain the physical panel size, fonts, camera and data scales;
     only the vertical panel spacing and unused page margins change.
     """
-    fig, labels = large_surface(m, tri, kind, -60, 6.5)
+    fig, labels = large_surface(m, tri, kind, azim, 6.5)
     for n, ax in enumerate(fig.axes):
         ax.set_position(
             [0.065 + (n % 2) * 0.49, 0.545 if n < 2 else 0.165, 0.445, 0.405]

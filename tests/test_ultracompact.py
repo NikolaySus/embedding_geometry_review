@@ -9,15 +9,17 @@ from docx import Document
 
 from gallery.bundles import load_bundle
 from gallery.data import G, Q
-from gallery.surfaces import compact_surface
-from publication import document, ultracompact
+from gallery.surfaces import compact_surface, front_edge_percentages
+from publication import conference, document, ultracompact
 from publication import unified_assets as shared
 
 
-def test_front_matter_is_unchanged():
-    compact = (shared.ROOT / "manuscript/compact.md").read_text()
-    ultra = (shared.ROOT / "manuscript/ultracompact.md").read_text()
-    assert ultra.split("## 1.")[0] == compact.split("## 1.")[0]
+def test_conference_metadata_and_reference_mapping():
+    from publication.conference import CONFIG, prepare_text, selected_references
+    assert prepare_text('{{author_ru}} [9, 11]') == CONFIG['author_ru']+' [1, 2]'
+    refs = selected_references()
+    assert [r['source_id'] for r in refs] == [9,11,1,2,3,8,18,4,15,16]
+    assert [r['id'] for r in refs] == list(range(1,11))
 
 
 @pytest.mark.parametrize("kind", ["2D", "3E", "5A"])
@@ -26,7 +28,7 @@ def test_surface_row_preserves_labels_camera_limits_and_data(kind):
     frame = bundle["deltas"]
     mean = frame[frame.branch != "control"].groupby("branch")[Q + G].mean()
     values = {"2D": mean[G], "3E": mean[Q[1:]], "5A": bundle["residual"]}[kind]
-    fig, labels = compact_surface(values, bundle["triangles"], kind, dense=True)
+    fig, labels = compact_surface(values, bundle["triangles"], kind, dense=True, azim=conference.CONFIG['surface_azimuth'])
     assert len(labels) == 4 * 22
     before = [(ax.elev, ax.azim, ax.get_xlim(), ax.get_ylim(), ax.get_zlim(),
                [t.get_text() for t in ax.texts], [tuple(np.array(a) for a in l.get_data_3d()) for l in ax.lines]) for ax in fig.axes]
@@ -34,18 +36,35 @@ def test_surface_row_preserves_labels_camera_limits_and_data(kind):
     fig.canvas.draw()
     renderer = fig.canvas.get_renderer()
     for ax, recorded in zip(fig.axes, before):
-        assert (ax.elev, ax.azim, ax.get_xlim(), ax.get_ylim(), ax.get_zlim(), [t.get_text() for t in ax.texts]) == recorded[:6]
+        assert ax.elev == conference.CONFIG['surface_elevation']
+        assert ax.azim == conference.CONFIG['surface_azimuth']
+        assert (ax.azim, ax.get_xlim(), ax.get_ylim(), ax.get_zlim(), [t.get_text() for t in ax.texts]) == recorded[1:6]
         for line, old in zip(ax.lines, recorded[6]):
             for actual, expected in zip(line.get_data_3d(), old):
                 np.testing.assert_array_equal(actual, expected)
+        boxes = []
         for text in ax.texts:
             # Text3D restores world coordinates after draw; measure projected text.
             x, y, _ = proj3d.proj_transform(*text.get_position_3d(), ax.get_proj())
             projected = copy(text)
             projected.set_position((x, y))
             box = projected.get_window_extent(renderer)
+            boxes.append(box)
             assert box.x0 >= 0 and box.y0 >= 0
             assert box.x1 <= fig.bbox.width and box.y1 <= fig.bbox.height
+        assert boxes[1].y1 < min(box.y0 for box in boxes[3:25]), 'Cls must be below all 22 roof values'
+        ticks = front_edge_percentages(ax,3)
+        assert [t.get_text() for t in ticks] == ['80%\n20%\n0%', '60%\n40%\n0%', '40%\n60%\n0%', '20%\n80%\n0%']
+        tick_boxes=[]
+        for text in ticks:
+            x,y,_=proj3d.proj_transform(*text.get_position_3d(),ax.get_proj())
+            projected=copy(text)
+            projected.set_position((x,y))
+            box=projected.get_window_extent(renderer)
+            assert 0 <= box.x0 < box.x1 <= fig.bbox.width
+            assert 0 <= box.y0 < box.y1 <= fig.bbox.height
+            assert not any(box.overlaps(other) for other in tick_boxes)
+            tick_boxes.append(box)
     assert np.ptp([ax.get_position().y0 for ax in fig.axes]) < 1e-9
     plt.close(fig)
 

@@ -26,17 +26,24 @@ def build(variant: str) -> Path:
             values = unified_assets.main(variant)
     output = ROOT / "build" / variant
     source = ROOT / "manuscript" / f"{variant}.md"
-    text = unified_assets.render_text(source.read_text(), values)
+    text = source.read_text(encoding='utf-8')
+    if variant == "ultracompact":
+        from publication import conference
+        text = conference.prepare_text(text)
+    text = unified_assets.render_text(text, values)
     # The resolved manuscript is reproducible output, not a second editable source.
     text = text.replace(f"../build/{variant}/figures/", "figures/")
     resolved = output / "manuscript.md"
     resolved.write_text(text, encoding="utf-8")
-    docx = document.build_docx(
-        resolved,
-        ROOT / "references" / "references.json",
-        output / f"cross_task_interference_{variant}.docx",
-        references_new_page=variant == "ultracompact",
-    )
+    if variant == "ultracompact":
+        docx = conference.build_docx(resolved, output / f"cross_task_interference_{variant}.docx")
+    else:
+        docx = document.build_docx(
+            resolved,
+            ROOT / "references" / "references.json",
+            output / f"cross_task_interference_{variant}.docx",
+            references_new_page=False,
+        )
     pdf = document.export_pdf(docx)
     pages = document.render_pages(pdf, output / "pages")
     sheets = document.build_contact_sheets(pages, output / "contact_sheets")

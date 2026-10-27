@@ -20,6 +20,7 @@ node_modules/
 /tmp/
 *.pdf
 *.docx
+!/rules/**/*.docx
 *.png
 *.jpg
 *.jpeg

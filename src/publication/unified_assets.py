@@ -90,15 +90,15 @@ def normalize_caption(fig):
     return fig
 
 
-def shared_figures(bundle, data):
+def shared_figures(bundle, data, surface_azimuth=-60):
     delta = bundle["deltas"]
     mean = delta[delta.branch != "control"].groupby("branch")[Q + G].mean()
     variant = next(v for v in absolute_config()["variants"] if v.get("layout") == "dense")
     return [normalize_caption(absolute_table(bundle["absolute"], variant, data_dir=data)),
-            normalize_caption(compact_surface(mean[G], bundle["triangles"], "2D", dense=True)[0]),
-            normalize_caption(compact_surface(mean[Q[1:]], bundle["triangles"], "3E", dense=True)[0]),
+            normalize_caption(compact_surface(mean[G], bundle["triangles"], "2D", dense=True, azim=surface_azimuth)[0]),
+            normalize_caption(compact_surface(mean[Q[1:]], bundle["triangles"], "3E", dense=True, azim=surface_azimuth)[0]),
             trajectory_figure(),
-            normalize_caption(compact_surface(bundle["residual"], bundle["triangles"], "5A", dense=True)[0])]
+            normalize_caption(compact_surface(bundle["residual"], bundle["triangles"], "5A", dense=True, azim=surface_azimuth)[0])]
 
 
 def extra_figures(bundle):

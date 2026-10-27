@@ -55,11 +55,13 @@ uv run python src/validate_publication.py --all
 Текущее размещение и ограничения описаны в
 [редакционных заметках](docs/COMPACT_EDITORIAL_NOTES.md).
 
-`ultracompact` сохраняет аннотации и ключевые слова compact дословно, пять рисунков
-и все численные подписи. Четырёхпанельные рисунки перестроены в один ряд.
-Проверка `uv run python src/validate_publication.py --variant ultracompact`
-отдельно считает 6–7 страниц основной статьи; литература начинается с новой страницы.
-Ограничения и состав описаны в [заметках ultracompact](docs/ULTRACOMPACT.md).
+`ultracompact` занимает 6 страниц целиком, включая сведения об авторе, аннотации,
+пять рисунков и литературу. Оформление следует правилам из `rules/`:
+Times New Roman 12 pt, интервал 1,5. Все численные подписи рисунков сохранены.
+Команда `uv run python src/build_talk.py` собирает презентацию из 6 слайдов
+в PPTX/PDF и отдельный DOCX текста выступления в `build/presentation/`.
+Проверки: `src/validate_publication.py --variant ultracompact` и `src/validate_talk.py`.
+Зависимости сборки, ограничения и состав описаны в [заметках ultracompact](docs/ULTRACOMPACT.md).
 
 ## Экспериментальные данные
 
